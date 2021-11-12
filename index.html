@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Monty</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/headhesive.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/headhesive.min.js"></script>
+</head>
+
+<body>
+    <header class="banner p-4 text-white">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="me-auto">
+                    <img src="images/logo.svg" width="80px" alt="My Monty">
+                    <span class="fs-2">MyMonty</span>
+                    <img src="images/chevron-down-solid.svg" width="15px" alt="chevron down solid" class="ms-3">
+                </div>
+                <div id="language">English <img src="images/chevron-down-solid.svg" width="15px"
+                        alt="chevron down solid" class="ms-3"></div>
+                <div class="ms-5">
+                    <img src="images/bars-solid.svg" width="15px" alt="Bars Solid">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="d-flex align-items-center grey-bg" style="width:100%; height:100vh;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-2"></div>
+                <div class="col-md-7">
+                    <h1 class="display-1 font-bold ">Money Has <br />a Bright Future</h1>
+                    <form action="" method="POST">
+                        <div class="row mt-5">
+                            <div class="col-auto">
+                                <select name="countryCode" id="countryCode" class="p-3 bg-white border-0 rounded cursor-pointer">
+                                    <option value="">Choose</option>
+                                    <option value="+961" selected>+961</option>
+                                </select>
+                            </div>
+                            <div class="col-auto ps-0">
+                                <input type="text" class="p-3 border-0 rounded" placeholder="Mobile Number">
+                            </div>
+                            <div class="col-auto">
+                                <input type="submit" value="&#10142;" class="text-white clickable border-0 rounded-circle p-3 bg-danger cursor-pointer" style="">
+                                <!-- <button class="border-0 rounded-circle p-3 bg-danger">
+                                    <img src="images/long-arrow-right-solid.svg" alt="long arrow right solid" width="20px">
+                                </button> -->
+                            </div>
+                        </div>
+                    </form>
+                    <p class="mt-4 fs-4">Open a free account with an unrivalled, global, digital experience. Transact
+                        anytime, anywhere with confidence</p>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div style="position:absolute; top:0; right:100px;">
+                <img src="images/logo.svg" width="600px" alt="Compass">
+            </div> 
+        </div>
+        <div style="position:absolute; bottom:30px; right:20px;writing-mode: vertical-rl; text-orientation: mixed;">------ SCROLL</div>        
+    </section>
+    <a id="showHere"></a>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    <!--  -->
+    <footer id="footer">
+
+    </footer>
+    
+    <script>
+        $(document).ready(function(){
+            // Set options
+            var options = {
+                offset: '#showHere',
+                offsetSide: 'top',
+                classes: {
+                    clone:   'banner--clone',
+                    stick:   'banner--stick',
+                    unstick: 'banner--unstick'
+                }
+            };
+
+            // Initialise with options
+            var banner = new Headhesive('.banner', options);
+        });
+    </script>
+</body>
+
+</html>
