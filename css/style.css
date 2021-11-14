@@ -1,7 +1,7 @@
-.grey {
+.gray {
   color: var(--primary-text);
 }
-.grey-bg {
+.gray-bg {
   background-color: var(--secondary-bg);
 }
 .cursor-pointer{
