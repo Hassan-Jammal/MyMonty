@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Monty</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/MotionPathPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 align-self-center">
+					<a class="header-logo" href="#">
+						<img src="./assets/logo-dark.svg" width="150px" alt="My Monty">
+						<img src="./assets/chevron-down-solid.svg" width="15px" alt="chevron down solid" class="ms-3">
+					</a>
+				</div>
+				<div class="col-6 align-self-center text-end">
+					<span class="cursor-pointer align-self-center">English
+						<img class="ms-2" src="./assets/chevron-down-solid.svg" width="15px" alt="chevron down solid">
+					</span>
+					<span>
+						<img class="open-nav-btn cursor-pointer align-self-center ms-5" src="./assets/bars-solid.svg" width="15px" alt="Open Nav">
+						<img class="close-nav-btn d-none cursor-pointer align-self-center ms-5" src="./assets/close.svg" width="15px" alt="Open Nav">
+					</span>	
+				</div>
+			</div>
+		</div>
+		<!-- <nav class="navbar navbar-expand-xs fixed-top navbar-light">
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<img src="./assets/logo-dark.svg" width="150px" alt="My Monty">
+					<img src="./assets/chevron-down-solid.svg" width="15px" alt="chevron down solid" class="ms-3">
+				</a>
+				<div class="d-flex">
+					<div class="me-5 align-self-center">
+						<div id="language" class="cursor-pointer">English <img src="./assets/chevron-down-solid.svg" width="15px" alt="chevron down solid" class="ms-1"></div>
+					</div>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+						<img class="menu-btn" src="./assets/bars-solid.svg" width="15px" alt="Bars Solid">
+						<img class="close-btn d-none" src="./assets/close.svg" width="15px" alt="Close">
+					</button>
+					<div class="collapse navbar-collapse text-center" id="navbarToggler">
+						<ul class="navbar-nav justify-content-center">
+							<li class="display-4 mt-4 nav-item dropdown align-self-center">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Company</a>
+								<div class="dropdown-menu border-0 bg-transparent text-center fs-2 align-self-center" aria-labelledby="navbarDropdownMenuLink">
+									<a href="" class="text-decoration-none text-dark">Action</a>	
+									<a href="" class="text-decoration-none text-dark ms-3">Action</a>	
+									<a href="" class="text-decoration-none text-dark ms-3">Action</a>	
+								</div>
+							</li>
+							<li class="display-4 mt-4 nav-item align-self-center">
+								<a class="nav-link" href="#">Newsroom</a>
+							</li>
+							<li class="display-4 mt-4 nav-item dropdown align-self-center">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Partnership</a>
+								<div class="dropdown-menu border-0 bg-transparent text-center fs-2 align-self-center" aria-labelledby="navbarDropdownMenuLink">
+									<a href="" class="text-decoration-none text-dark">Action</a>	
+									<a href="" class="text-decoration-none text-dark ms-3">Action</a>	
+									<a href="" class="text-decoration-none text-dark ms-3">Action</a>	
+								</div>
+							</li>
+							<li class="display-4 mt-4 nav-item align-self-center">
+								<a class="nav-link" href="#">Presence</a>
+							</li>
+							<li class="display-4 mt-4 nav-item align-self-center">
+								<a class="nav-link" href="#">Pioneer</a>
+							</li>
+							<li class="display-4 mt-4 nav-item align-self-center">
+								<a class="nav-link" href="#">Help</a>
+							</li>
+							<li class="display-4 mt-4 nav-item align-self-center">
+								<a class="nav-link" href="#">Contact Us</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav> -->
+	</header>
+	
+	<nav class="navbar d-none">
+		<div class="container justify-content-center text-center">
+			<ul class="navbar-nav mt-5">
+				<li class="display-4 mt-4 nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Company</a>
+					<div class="dropdown-menu border-0 bg-transparent text-center fs-2 align-self-center" aria-labelledby="navbarDropdownMenuLink">
+						<a href="" class="text-decoration-none text-dark">Action</a>	
+						<a href="" class="text-decoration-none text-dark ms-3">Action</a>	
+						<a href="" class="text-decoration-none text-dark ms-3">Action</a>	
+					</div>
+				</li>
+				<li class="display-4 mt-4 nav-item">
+					<a class="nav-link text-dark" href="#">Newsroom</a>
+				</li>
+				<li class="display-4 mt-4 nav-item dropdown">
+					<a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Partnership</a>
+					<div class="dropdown-menu border-0 bg-transparent text-center fs-2 align-self-center" aria-labelledby="navbarDropdownMenuLink">
+						<a href="" class="text-decoration-none text-dark">Action</a>	
+						<a href="" class="text-decoration-none text-dark ms-3">Action</a>	
+						<a href="" class="text-decoration-none text-dark ms-3">Action</a>	
+					</div>
+				</li>
+				<li class="display-4 mt-4 nav-item">
+					<a class="nav-link text-dark" href="#">Presence</a>
+				</li>
+				<li class="display-4 mt-4 nav-item">
+					<a class="nav-link text-dark" href="#">Pioneer</a>
+				</li>
+				<li class="display-4 mt-4 nav-item">
+					<a class="nav-link text-dark" href="#">Help</a>
+				</li>
+				<li class="display-4 mt-4 nav-item">
+					<a class="nav-link text-dark" href="#">Contact Us</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="section1" class="section1 vh-100 bg-dark">
+		<div class="hero-text">
+			<div class="container">
+				<div class="row justify-content-center align-items-center text-white">
+					<div class="col-lg-6 col-md-10 col-sm-11 col-12">
+						<h1 class="display-1 fw-bold">Money Has a Bright Future</h1>
+						<form action="" method="POST">
+							<div class="input-group mt-4">
+								<select name="code" id="code" class="p-2 border-2 border-white border-end-0 bg-transparent text-white cursor-pointer text-center">
+									<option class="text-black" value="Code">Code</option>
+									<option class="text-black" value="+961">+961</option>
+									<option class="text-black" value="+961">+962</option>
+									<option class="text-black" value="+961">+963</option>
+									<option class="text-black" value="+961">+964</option>
+								</select>
+								<input type="text" class="form-control p-2 border-2 border-white border-start-0 bg-transparent text-white" placeholder="Mobile Number">
+								<input type="submit" value="&#10142;" class="p-4 ms-3 border-0 rounded-circle bg-danger text-white">
+							</div>
+
+							<!-- <div class="row">
+								<div class="col-auto mt-2 pe-0">
+									<select name="code" id="code" class="p-4 border-0 rounded cursor-pointer bg-white">
+										<option value="Code">Code</option>
+										<option value="+961">+961</option>
+									</select>
+								</div>
+								<div class="col-auto mt-2">
+									<input type="text" class="p-4 border-0 rounded" placeholder="Mobile Number">
+								</div>
+								<div class="col-auto mt-2">
+									<input type="submit" value="&#10142;" class="p-4 border-0 rounded-circle bg-danger text-white">
+								</div>
+							</div> -->
+						</form>
+						<p class="mt-5 fs-5">Open a free account with an unrivalled, global, digital experience, Transact anytime, anywhere with confidence</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="scroll" class="text-white">----- SCROLL</div>
+	</div>
+
+	<a id="showHere"></a>
+
+	<section id="section2" class="pt-5 pb-5" style="position:relative;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-12">
+					<h1 class="m-0 display-3 text-start">All in MyMonty<sup>&trade;</sup></h1>
+				</div>
+				<div class="col-lg-7 col-md-6 col-12 animated text-start mb-5">
+					<h1 class="m-0 display-3">Prepaid Mastercard</h1>
+					<h1 class="m-0 display-3">Individual IBAN account</h1>
+					<h1 class="m-0 display-3">Basic & Junior Cards</h1>
+				</div>
+				<div class="col-lg-5 col-md-6 col-12 mt-2">
+					<p class="mt-5 fs-5 align-self-baseline">Trust is our driver, enjoy your spending locally and internationally at a reasonable cost. MyMonty is not simply like any bank, it is your financial partner</p>
+				</div>
+			</div>
+			<div id="learnMore" class="hover-underline fw-bold mt-3 cursor-pointer">LEARN MORE +</div>
+		</div>
+	</section>
+	<section id="section2" class="pt-5 pb-5" style="position:relative;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-12">
+					<h1 class="m-0 display-3 text-start">All in MyMonty<sup>&trade;</sup></h1>
+				</div>
+				<div class="col-lg-7 col-md-6 col-12 animated text-start mb-5">
+					<h1 class="m-0 display-3">Prepaid Mastercard</h1>
+					<h1 class="m-0 display-3">Individual IBAN account</h1>
+					<h1 class="m-0 display-3">Basic & Junior Cards</h1>
+				</div>
+				<div class="col-lg-5 col-md-6 col-12 mt-2">
+					<p class="mt-5 fs-5 align-self-baseline">Trust is our driver, enjoy your spending locally and internationally at a reasonable cost. MyMonty is not simply like any bank, it is your financial partner</p>
+				</div>
+			</div>
+			<div id="learnMore" class="hover-underline fw-bold mt-3 cursor-pointer">LEARN MORE +</div>
+		</div>
+	</section>
+	<section id="section2" class="pt-5 pb-5" style="position:relative;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-12">
+					<h1 class="m-0 display-3 text-start">All in MyMonty<sup>&trade;</sup></h1>
+				</div>
+				<div class="col-lg-7 col-md-6 col-12 animated text-start mb-5">
+					<h1 class="m-0 display-3">Prepaid Mastercard</h1>
+					<h1 class="m-0 display-3">Individual IBAN account</h1>
+					<h1 class="m-0 display-3">Basic & Junior Cards</h1>
+				</div>
+				<div class="col-lg-5 col-md-6 col-12 mt-2">
+					<p class="mt-5 fs-5 align-self-baseline">Trust is our driver, enjoy your spending locally and internationally at a reasonable cost. MyMonty is not simply like any bank, it is your financial partner</p>
+				</div>
+			</div>
+			<div id="learnMore" class="hover-underline fw-bold mt-3 cursor-pointer">LEARN MORE +</div>
+		</div>
+	</section>
+	<section id="section2" class="pt-5 pb-5" style="position:relative;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-12">
+					<h1 class="m-0 display-3 text-start">All in MyMonty<sup>&trade;</sup></h1>
+				</div>
+				<div class="col-lg-7 col-md-6 col-12 animated text-start mb-5">
+					<h1 class="m-0 display-3">Prepaid Mastercard</h1>
+					<h1 class="m-0 display-3">Individual IBAN account</h1>
+					<h1 class="m-0 display-3">Basic & Junior Cards</h1>
+				</div>
+				<div class="col-lg-5 col-md-6 col-12 mt-2">
+					<p class="mt-5 fs-5 align-self-baseline">Trust is our driver, enjoy your spending locally and internationally at a reasonable cost. MyMonty is not simply like any bank, it is your financial partner</p>
+				</div>
+			</div>
+			<div id="learnMore" class="hover-underline fw-bold mt-3 cursor-pointer">LEARN MORE +</div>
+		</div>
+	</section>
+	<section id="section2" class="pt-5 pb-5" style="position:relative;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-12">
+					<h1 class="m-0 display-3 text-start">All in MyMonty<sup>&trade;</sup></h1>
+				</div>
+				<div class="col-lg-7 col-md-6 col-12 animated text-start mb-5">
+					<h1 class="m-0 display-3">Prepaid Mastercard</h1>
+					<h1 class="m-0 display-3">Individual IBAN account</h1>
+					<h1 class="m-0 display-3">Basic & Junior Cards</h1>
+				</div>
+				<div class="col-lg-5 col-md-6 col-12 mt-2">
+					<p class="mt-5 fs-5 align-self-baseline">Trust is our driver, enjoy your spending locally and internationally at a reasonable cost. MyMonty is not simply like any bank, it is your financial partner</p>
+				</div>
+			</div>
+			<div id="learnMore" class="hover-underline fw-bold mt-3 cursor-pointer">LEARN MORE +</div>
+		</div>
+	</section>
+	<section id="section2" class="pt-5 pb-5" style="position:relative;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-12">
+					<h1 class="m-0 display-3 text-start">All in MyMonty<sup>&trade;</sup></h1>
+				</div>
+				<div class="col-lg-7 col-md-6 col-12 animated text-start mb-5">
+					<h1 class="m-0 display-3">Prepaid Mastercard</h1>
+					<h1 class="m-0 display-3">Individual IBAN account</h1>
+					<h1 class="m-0 display-3">Basic & Junior Cards</h1>
+				</div>
+				<div class="col-lg-5 col-md-6 col-12 mt-2">
+					<p class="mt-5 fs-5 align-self-baseline">Trust is our driver, enjoy your spending locally and internationally at a reasonable cost. MyMonty is not simply like any bank, it is your financial partner</p>
+				</div>
+			</div>
+			<div id="learnMore" class="hover-underline fw-bold mt-3 cursor-pointer">LEARN MORE +</div>
+		</div>
+	</section>
+
+	<footer id="footer">
+		
+	</footer>
+
+	<script>
+
+			
+	</script>
+
+</body>
+
+</html>
