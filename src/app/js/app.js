@@ -17,7 +17,6 @@ export const run = () => {
         hamburger.classList.toggle("toggle");
         
         language.classList.toggle("d-flex");
-        language.classList.toggle("fading");
     });
 
     var toggle = document.getElementById("language");

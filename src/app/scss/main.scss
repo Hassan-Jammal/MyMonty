@@ -128,9 +128,6 @@ header {
 
 		.language {
 			display: flex;
-			opacity: 1;
-			transition: all 0.5s ease-in-out;
-			
 
 			.chevron-down {
 				path {
@@ -175,15 +172,15 @@ header {
 					opacity: 0;
 
 					&:nth-child(1) {
-						transition: all 0.5s ease-in-out 0.2s;
-					}
-
-					&:nth-child(2) {
 						transition: all 0.5s ease-in-out 0.4s;
 					}
 
-					&:nth-child(3) {
+					&:nth-child(2) {
 						transition: all 0.5s ease-in-out 0.6s;
+					}
+
+					&:nth-child(3) {
+						transition: all 0.5s ease-in-out 0.8s;
 					}
 
 					&.fading {
@@ -199,13 +196,8 @@ header {
 				transition: all 0.5s ease-in-out;
 			}
 			.language{
-				opacity: 0;
-				transition: opacity 0.5s ease-in-out;
+				display: none;
 				z-index: 2;
-
-				&.fading {
-					opacity: 1;
-				}
 			}
 		}
 	}
