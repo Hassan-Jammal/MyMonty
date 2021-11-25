@@ -4,16 +4,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /********************************** GENERAL **********************************/
---root{
+:root {
 	--primary-text: #000000;
 	--primary-bg: #000000;
-	--secondary-text: #FFFFFF;
-	--secondary-bg: #FFFFFF;
+	--secondary-text: #ffffff;
+	--secondary-bg: #ffffff;
+	--hover-btns-bg: #346edf;
+	--from-gradient-bg: #FFFFFF;
+	--to-gradient-bg: #EFEFF1
+}
+body[data-theme="dark-mode"] {
+	--primary-text: #ffffff;
+	--primary-bg: #ffffff;
+	--secondary-text: #000000;
+	--secondary-bg: #000000;
+	--from-gradient-bg: #000000;
+	--to-gradient-bg: #141414;
 }
 body {
 	font-family: "Roboto";
 	overflow-x: hidden;
-	color:var(--primary-text);
+	color: var(--primary-text);
 }
 h1,
 h2,
@@ -26,47 +37,25 @@ h6 {
 div {
 	position: relative;
 }
-.hover-underline {
-	display: inline-block;
-	position: relative;
-
-	&:hover {
-		color: red;
-	}
-
-	&:after {
-		content: "";
-		position: absolute;
-		width: 100%;
-		transform: scaleX(0);
-		height: 4px;
-		bottom: -5px;
-		left: 0;
-		background-color: red;
-		transform-origin: bottom right;
-		transition: transform ease-in-out 250ms;
-	}
-
-	&:hover:after {
-		transform: scaleX(1);
-		transform-origin: bottom left;
-	}
+.cursor-pointer {
+	cursor: pointer;
 }
-
 /********************************** HEADER **********************************/
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
 	header {
 		backdrop-filter: saturate(180%) blur(20px);
 		-webkit-backdrop-filter: saturate(180%) blur(20px);
-		background-color: rgba(255, 255, 255, 0.8);
+		background:var(--secondary-bg);
+		opacity:0.8;
 	}
 }
 
 //  slightly transparent fallback for Firefox (not supporting backdrop-filter)
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
 	header {
-		background-color: rgba(255, 255, 255, 0.8);
+		background:var(--secondary-bg);
+		opacity:0.8;
 	}
 }
 
@@ -82,8 +71,13 @@ header {
 
 		/*Styling logo*/
 		.logo {
+			width: 200px;
 			text-align: center;
 			cursor: pointer;
+			
+			path{
+				fill:var(--primary-bg);
+			}
 		}
 
 		/*Styling Links*/
@@ -99,8 +93,12 @@ header {
 				position: relative;
 				a {
 					text-decoration: none;
-					color: #000000;
+					color: var(--primary-text);
 					margin: 0 15px;
+
+					&:hover {
+						color: var(--hover-btns-bg);
+					}
 				}
 			}
 		}
@@ -112,16 +110,24 @@ header {
 			div {
 				width: 30px;
 				height: 3px;
-				background: #000000;
+				background: var(--primary-bg);
 				margin: 5px;
-				transition: all 0.3s ease;
+				transition: all 0.5s ease-in-out;
+			}
+		}
+
+		.language{
+			.chevron-down {
+				path {
+					fill:var(--primary-text)
+				}
 			}
 		}
 	}
 }
 
 /*Stying for small screens*/
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
 	header {
 		position: fixed;
 		width: 100%;
@@ -140,11 +146,12 @@ header {
 				justify-content: space-evenly;
 				clip-path: circle(50px at 90% -20%);
 				-webkit-clip-path: circle(50px at 90% -10%);
-				transition: all 1s ease-out;
+				transition: all 1s ease-in-out;
 				pointer-events: none;
 				backdrop-filter: saturate(180%) blur(20px);
 				-webkit-backdrop-filter: saturate(180%) blur(20px);
-				background-color: rgba(255, 255, 255, 0.8);
+				background:var(--secondary-bg);
+				opacity: 0.8;
 
 				&.open {
 					clip-path: circle(1000px at 90% -10%);
@@ -156,32 +163,32 @@ header {
 					opacity: 0;
 
 					&:nth-child(1) {
-						transition: all 0.5s ease 0.2s;
+						transition: all 0.5s ease-in-out 0.2s;
 					}
 
 					&:nth-child(2) {
-						transition: all 0.5s ease 0.4s;
+						transition: all 0.5s ease-in-out 0.4s;
 					}
 
 					&:nth-child(3) {
-						transition: all 0.5s ease 0.6s;
+						transition: all 0.5s ease-in-out 0.6s;
 					}
 
 					&:nth-child(4) {
-						transition: all 0.5s ease 0.7s;
+						transition: all 0.5s ease-in-out 0.7s;
 					}
 
 					&:nth-child(5) {
-						transition: all 0.5s ease 0.8s;
+						transition: all 0.5s ease-in-out 0.8s;
 					}
 
 					&:nth-child(6) {
-						transition: all 0.5s ease 0.9s;
+						transition: all 0.5s ease-in-out 0.9s;
 						margin: 0;
 					}
 
 					&:nth-child(7) {
-						transition: all 0.5s ease 1s;
+						transition: all 0.5s ease-in-out 1s;
 						margin: 0;
 					}
 
@@ -195,11 +202,7 @@ header {
 				display: block;
 				cursor: pointer;
 				z-index: 2;
-				transition: all 0.7s ease;
-			}
-
-			.language {
-				display: none;
+				transition: all 0.5s ease-in-out;
 			}
 		}
 	}
@@ -212,7 +215,7 @@ header {
 	}
 
 	.line2 {
-		transition: all 0.7s ease;
+		transition: all 0.5s ease-in-out;
 		width: 0;
 	}
 
@@ -236,41 +239,17 @@ header {
 }
 
 .hero-banner {
-	padding:70px 0;
-	
-	h1 {
-		font-size: 48px;
-	}
+	padding-top: 70px;
+	background: linear-gradient(180deg, var(--from-gradient-bg), 0%, var(--to-gradient-bg) 100%);
 
-	.btn {
-		position: relative;
-		overflow: hidden;
-		z-index: 9;
+	input[type="submit"] {
+		color:var(--secondary-text);
+		background: var(--primary-bg);
 
-		&:before {
-			content: "";
-			background: #ed5561;
-			width: 4px;
-			height: 100%;
-			position: absolute;
-			left: 0;
-			top: 0;
-			z-index: -1;
-			-webkit-transition: all 0.5s ease-in-out 0s;
-			-moz-transition: all 0.5s ease-in-out 0s;
-			-ms-transition: all 0.5s ease-in-out 0s;
-			-o-transition: all 0.5s ease-in-out 0s;
-			transition: all 0.5s ease-in-out 0s;
+		transition: all 0.5s ease-in-out;
+
+		&:hover{
+			background: var(--hover-btns-bg);
 		}
-
-		&:hover:before {
-			width: 100%;
-		}
-	}
-
-	.btn-primary {
-		color: #2f2f41;
-		background-color: rgba(1, 164, 121, 0.1);
-		border-color: #01a479;
 	}
 }
