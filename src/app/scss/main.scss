@@ -11,7 +11,8 @@
 	--secondary-bg: #ffffff;
 	--hover-btns-bg: #346edf;
 	--from-gradient-bg: #FFFFFF;
-	--to-gradient-bg: #EFEFF1
+	--to-gradient-bg: #EFEFF1;
+	--glass-effect: #FFFFFFCC;
 }
 body[data-theme="dark-mode"] {
 	--primary-text: #ffffff;
@@ -20,6 +21,7 @@ body[data-theme="dark-mode"] {
 	--secondary-bg: #000000;
 	--from-gradient-bg: #000000;
 	--to-gradient-bg: #141414;
+	--glass-effect: #000000CC;
 }
 body {
 	font-family: "Roboto";
@@ -46,8 +48,7 @@ div {
 	header {
 		backdrop-filter: saturate(180%) blur(20px);
 		-webkit-backdrop-filter: saturate(180%) blur(20px);
-		background:var(--secondary-bg);
-		opacity:0.8;
+		background:var(--glass-effect);
 	}
 }
 
