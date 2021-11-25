@@ -3,16 +3,21 @@ export const run = () => {
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
     const links = document.querySelectorAll(".nav-links li");
+    const language = document.querySelector(".language");
 
     hamburger.addEventListener('click', () => {
         //Animate Links
         navLinks.classList.toggle("open");
+
         links.forEach(link => {
             link.classList.toggle("fading");
         });
 
         //Hamburger Animation
         hamburger.classList.toggle("toggle");
+        
+        language.classList.toggle("d-flex");
+        language.classList.toggle("fading");
     });
 
     var toggle = document.getElementById("language");

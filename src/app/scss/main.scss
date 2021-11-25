@@ -4,15 +4,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /********************************** GENERAL **********************************/
+
 :root {
 	--primary-text: #000000;
 	--primary-bg: #000000;
 	--secondary-text: #ffffff;
 	--secondary-bg: #ffffff;
 	--hover-btns-bg: #346edf;
-	--from-gradient-bg: #FFFFFF;
-	--to-gradient-bg: #EFEFF1;
-	--glass-effect: #FFFFFFCC;
+	--from-gradient-bg: #ffffff;
+	--to-gradient-bg: #efeff1;
+	--glass-effect: #f1f2f4cc;
+	--no-glass-effect: #f1f2f4;
 }
 html[data-theme="dark-mode"] {
 	--primary-text: #ffffff;
@@ -21,50 +23,40 @@ html[data-theme="dark-mode"] {
 	--secondary-bg: #000000;
 	--from-gradient-bg: #000000;
 	--to-gradient-bg: #141414;
-	--glass-effect: #000000CC;
+	--glass-effect: #000000cc;
+	--no-glass-effect: #141414;
 }
 body {
 	font-family: "Roboto";
-	overflow-x: hidden;
 	color: var(--primary-text);
 	background: var(--secondary-bg);
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: "Roboto";
-}
-div {
-	position: relative;
 }
 .cursor-pointer {
 	cursor: pointer;
 }
+
 /********************************** HEADER **********************************/
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
 	header {
 		backdrop-filter: saturate(180%) blur(20px);
 		-webkit-backdrop-filter: saturate(180%) blur(20px);
-		background:var(--glass-effect);
+		background: var(--glass-effect);
 	}
 }
 
-//  slightly transparent fallback for Firefox (not supporting backdrop-filter)
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
 	header {
-		background:var(--secondary-bg);
-		opacity:0.8;
+		background: var(--no-glass-effect);
 	}
 }
 
 header {
 	position: fixed;
 	width: 100%;
-	z-index: 10;
 
 	nav {
 		display: flex;
@@ -73,12 +65,12 @@ header {
 
 		/*Styling logo*/
 		.logo {
-			width: 200px;
+			width: 160px;
 			text-align: center;
 			cursor: pointer;
-			
-			path{
-				fill:var(--primary-bg);
+
+			path {
+				fill: var(--primary-bg);
 			}
 		}
 
@@ -118,22 +110,41 @@ header {
 			}
 		}
 
-		.language{
+		/*Animating Hamburger Icon on Click*/
+		.toggle {
+			.line1 {
+				transform: rotate(-45deg) translate(-5px, 6px);
+			}
+
+			.line2 {
+				transition: all 0.5s ease-in-out;
+				width: 0;
+			}
+
+			.line3 {
+				transform: rotate(45deg) translate(-5px, -6px);
+			}
+		}
+
+		.language {
+			display: flex;
+			opacity: 1;
+			transition: all 0.5s ease-in-out;
+			
+
 			.chevron-down {
 				path {
-					fill:var(--primary-text)
+					fill: var(--primary-text);
 				}
 			}
 		}
 	}
 }
 
-/*Stying for small screens*/
 @media screen and (max-width: 767.98px) {
 	header {
 		position: fixed;
 		width: 100%;
-		z-index: 10;
 
 		nav {
 			justify-content: space-between;
@@ -152,8 +163,7 @@ header {
 				pointer-events: none;
 				backdrop-filter: saturate(180%) blur(20px);
 				-webkit-backdrop-filter: saturate(180%) blur(20px);
-				background:var(--secondary-bg);
-				opacity: 0.8;
+				background: var(--glass-effect);
 
 				&.open {
 					clip-path: circle(1000px at 90% -10%);
@@ -176,24 +186,6 @@ header {
 						transition: all 0.5s ease-in-out 0.6s;
 					}
 
-					&:nth-child(4) {
-						transition: all 0.5s ease-in-out 0.7s;
-					}
-
-					&:nth-child(5) {
-						transition: all 0.5s ease-in-out 0.8s;
-					}
-
-					&:nth-child(6) {
-						transition: all 0.5s ease-in-out 0.9s;
-						margin: 0;
-					}
-
-					&:nth-child(7) {
-						transition: all 0.5s ease-in-out 1s;
-						margin: 0;
-					}
-
 					&.fading {
 						opacity: 1;
 					}
@@ -206,23 +198,17 @@ header {
 				z-index: 2;
 				transition: all 0.5s ease-in-out;
 			}
+
+			.language{
+				opacity: 0;
+				transition: opacity 0.5s ease-in-out;
+				z-index: 2;
+
+				&.fading {
+					opacity: 1;
+				}
+			}
 		}
-	}
-}
-
-/*Animating Hamburger Icon on Click*/
-.toggle {
-	.line1 {
-		transform: rotate(-45deg) translate(-5px, 6px);
-	}
-
-	.line2 {
-		transition: all 0.5s ease-in-out;
-		width: 0;
-	}
-
-	.line3 {
-		transform: rotate(45deg) translate(-5px, -6px);
 	}
 }
 
@@ -241,17 +227,28 @@ header {
 }
 
 .hero-banner {
-	padding-top: calc(70px + 1rem);
+	padding-top: calc(70px + 3rem);
 	background: linear-gradient(180deg, var(--from-gradient-bg), 0%, var(--to-gradient-bg) 100%);
 
-	input[type="submit"] {
-		color:var(--secondary-text);
-		background: var(--primary-bg);
-
-		transition: all 0.5s ease-in-out;
-
-		&:hover{
-			background: var(--hover-btns-bg);
+	input{
+		&[type="text"]{
+			border-bottom-right-radius: 50rem;
+			border-top-right-radius: 50rem;
 		}
+
+		&[type="submit"] {
+			color: var(--secondary-text);
+			background: var(--primary-bg);
+			transition: background-color 0.5s ease-in-out;
+	
+			&:hover {
+				background: var(--hover-btns-bg);
+			}
+		}
+	}
+
+	select{
+		border-bottom-left-radius: 50rem;
+		border-top-left-radius: 50rem;
 	}
 }
