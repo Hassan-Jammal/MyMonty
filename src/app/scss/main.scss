@@ -14,7 +14,7 @@
 	--to-gradient-bg: #EFEFF1;
 	--glass-effect: #FFFFFFCC;
 }
-body[data-theme="dark-mode"] {
+html[data-theme="dark-mode"] {
 	--primary-text: #ffffff;
 	--primary-bg: #ffffff;
 	--secondary-text: #000000;
@@ -27,6 +27,7 @@ body {
 	font-family: "Roboto";
 	overflow-x: hidden;
 	color: var(--primary-text);
+	background: var(--secondary-bg);
 }
 h1,
 h2,
@@ -240,7 +241,7 @@ header {
 }
 
 .hero-banner {
-	padding-top: 70px;
+	padding-top: calc(70px + 1rem);
 	background: linear-gradient(180deg, var(--from-gradient-bg), 0%, var(--to-gradient-bg) 100%);
 
 	input[type="submit"] {
