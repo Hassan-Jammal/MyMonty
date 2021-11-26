@@ -33,13 +33,23 @@ body {
 	}
 	background: var(--secondary-bg);
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: "Roboto";
+}
+div {
+	position: relative;
 }
 .cursor-pointer {
 	cursor: pointer;
 }
-select, input, button {
+select,
+input,
+button {
 	outline: none;
 }
 input[type="submit"] {
@@ -59,12 +69,26 @@ input[type="submit"] {
 		backdrop-filter: saturate(180%) blur(20px);
 		-webkit-backdrop-filter: saturate(180%) blur(20px);
 		background: var(--glass-effect);
+
+		.nav-links{
+			&.open{
+				backdrop-filter: saturate(180%) blur(20px);
+				-webkit-backdrop-filter: saturate(180%) blur(20px);
+				background: var(--glass-effect);
+			}
+		}
 	}
 }
 
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
 	header {
 		background: var(--no-glass-effect);
+
+		.nav-links{
+			&.open{
+				background: var(--no-glass-effect);
+			}
+		}
 	}
 }
 
@@ -73,13 +97,13 @@ header {
 	width: 100%;
 	font-size: 1rem;
 	padding: 0.313rem;
-
+	z-index:3;
+	
 	nav {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 
-		/*Styling logo*/
 		.logo {
 			width: 160px;
 			text-align: center;
@@ -102,10 +126,11 @@ header {
 			li {
 				position: relative;
 				margin: 0 0.938rem;
-				
+
 				a {
 					text-decoration: none;
 					color: var(--primary-text);
+					transition: color 0.5s ease;
 
 					&:hover {
 						color: var(--hover-btns-bg);
@@ -163,7 +188,7 @@ header {
 	header {
 		position: fixed;
 		width: 100%;
-		
+
 		nav {
 			justify-content: space-between;
 
@@ -179,9 +204,6 @@ header {
 				-webkit-clip-path: circle(50px at 90% -10%);
 				transition: all 1s ease-in-out;
 				pointer-events: none;
-				backdrop-filter: saturate(180%) blur(20px);
-				-webkit-backdrop-filter: saturate(180%) blur(20px);
-				background: var(--glass-effect);
 
 				&.open {
 					clip-path: circle(1000px at 90% -10%);
@@ -192,16 +214,28 @@ header {
 				li {
 					opacity: 0;
 
+					a {
+						font-size: 2.25rem;
+					}
+
 					&:nth-child(1) {
-						transition: all 0.5s ease-in-out 0.4s;
+						transition: all 0.7s ease-in-out 0.6s;
 					}
 
 					&:nth-child(2) {
-						transition: all 0.5s ease-in-out 0.6s;
+						transition: all 0.7s ease-in-out 0.8s;
 					}
 
 					&:nth-child(3) {
-						transition: all 0.5s ease-in-out 0.8s;
+						transition: all 0.7s ease-in-out 1s;
+					}
+
+					&:nth-child(4) {
+						transition: all 0.7s ease-in-out 1.2s;
+					}
+
+					&:nth-child(5) {
+						transition: all 0.7s ease-in-out 1.4s;
 					}
 
 					&.fading {
@@ -213,12 +247,13 @@ header {
 			.hamburger {
 				display: block;
 				cursor: pointer;
-				z-index: 2;
+				z-index: 4;
 				transition: all 0.5s ease-in-out;
 			}
-			.nav-end{
+
+			.nav-end {
 				display: none;
-				z-index: 2;
+				z-index: 4;
 			}
 		}
 	}
@@ -244,14 +279,14 @@ header {
 		padding-bottom: calc(50px + 1rem);
 		background: linear-gradient(180deg, var(--from-gradient-bg) 0%, var(--to-gradient-bg) 100%);
 
-		input{
-			&[type="text"]{
+		input {
+			&[type="text"] {
 				border-bottom-right-radius: 50rem;
 				border-top-right-radius: 50rem;
 			}
 		}
 
-		select{
+		select {
 			border-bottom-left-radius: 50rem;
 			border-top-left-radius: 50rem;
 		}
@@ -259,32 +294,35 @@ header {
 }
 
 section {
-	.sub-category{
+	.sub-category {
 		opacity: 0.7;
 		font-weight: 500;
 	}
-	.category{
+	.category {
 		font-size: 3.75rem;
 		font-weight: 700;
-		line-height: 70px
+		line-height: 70px;
 	}
-	.card{
-		border-radius:20px;
-		padding-left: 3.75rem;
+	.card {
+		border-radius: 20px;
 
-		&.card-whole{
-			.card-title{
-				font-size: 2.25rem;
-				font-weight: 700;
+		&.card-whole {
+			.card-content {
+				padding: 3.75rem;
+
+				.card-title {
+					font-size: 2.25rem;
+					font-weight: 700;
+				}
 			}
 		}
 
-		a{
-			font-size:1.25rem;
+		a {
+			font-size: 1.25rem;
 			color: var(--hover-btns-bg);
 			text-decoration: none;
 
-			&:after{
+			&:after {
 				// content: ' \279C';
 			}
 		}
