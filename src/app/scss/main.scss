@@ -79,7 +79,7 @@ path {
 		-webkit-backdrop-filter: saturate(180%) blur(20px);
 		background: var(--glass-effect);
 
-		.nav-links {
+		.nav_links {
 			&.open {
 				backdrop-filter: saturate(180%) blur(20px);
 				-webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -93,7 +93,7 @@ path {
 	header {
 		background: var(--no-glass-effect);
 
-		.nav-links {
+		.nav_links {
 			&.open {
 				background: var(--no-glass-effect);
 			}
@@ -121,7 +121,7 @@ header {
 		}
 
 		/*Styling Links*/
-		.nav-links {
+		.nav_links {
 			display: flex;
 			list-style: none;
 			justify-content: center;
@@ -174,7 +174,7 @@ header {
 			}
 		}
 
-		.nav-end {
+		.nav_end {
 			display: flex;
 
 			select {
@@ -192,7 +192,7 @@ header {
 		nav {
 			justify-content: space-between;
 
-			.nav-links {
+			.nav_links {
 				position: fixed;
 				top: 0;
 				left: 0;
@@ -251,7 +251,7 @@ header {
 				transition: all 0.5s ease-in-out;
 			}
 
-			.nav-end {
+			.nav_end {
 				display: none;
 				z-index: 4;
 			}

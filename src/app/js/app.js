@@ -3,9 +3,9 @@ export const run = () => {
 
     // Toggle Mobile Menu and do other stuff
     const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    const links = document.querySelectorAll(".nav-links li");
-    const navEnd = document.querySelector(".nav-end");
+    const navLinks = document.querySelector(".nav_links");
+    const links = document.querySelectorAll(".nav_links li");
+    const navEndMobile = document.querySelector(".nav_end--mobile");
 
     hamburger.addEventListener('click', () => {
         //Animate Links
