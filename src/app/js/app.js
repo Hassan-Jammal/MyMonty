@@ -1,5 +1,7 @@
 
 export const run = () => {
+
+    // Toggle Mobile Menu and do other stuff
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
     const links = document.querySelectorAll(".nav-links li");
@@ -19,15 +21,15 @@ export const run = () => {
         navEnd.classList.toggle("d-flex");
     });
 
-    const toggle = document.querySelector(".theme-mode");
-    const storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark-mode)").matches ? "dark-mode" : "light-mode");
+    // Toggle Theme Mode
+    var toggle = document.querySelector(".theme-mode");
+    var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark-mode)").matches ? "dark-mode" : "light-mode");
     if (storedTheme)
         document.documentElement.setAttribute('data-theme', storedTheme)
 
     toggle.onclick = function() {
-        alert("!!!")
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        const targetTheme = "light-mode";
+        var currentTheme = document.documentElement.getAttribute("data-theme");
+        var targetTheme = "light-mode";
 
         if (currentTheme === "light-mode") {
             targetTheme = "dark-mode";

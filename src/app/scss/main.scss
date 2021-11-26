@@ -28,7 +28,9 @@ html[data-theme="dark-mode"] {
 }
 body {
 	font: normal normal 400 24px/1.2 "Roboto";
-	color: var(--primary-text);
+	&:not(div) {
+		color: var(--primary-text);
+	}
 	background: var(--secondary-bg);
 }
 h1, h2, h3, h4, h5, h6 {
@@ -49,6 +51,7 @@ input[type="submit"] {
 		background: var(--hover-btns-bg);
 	}
 }
+
 /********************************** HEADER **********************************/
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -98,10 +101,11 @@ header {
 
 			li {
 				position: relative;
+				margin: 0 0.938rem;
+				
 				a {
 					text-decoration: none;
 					color: var(--primary-text);
-					margin: 0 0.938rem;
 
 					&:hover {
 						color: var(--hover-btns-bg);
@@ -159,7 +163,7 @@ header {
 	header {
 		position: fixed;
 		width: 100%;
-
+		
 		nav {
 			justify-content: space-between;
 
@@ -234,20 +238,55 @@ header {
 @media (min-width: 992px) {
 }
 
-.hero-banner {
-	padding-top: calc(50px + 1rem);
-	padding-bottom: calc(50px + 1rem);
-	background: linear-gradient(180deg, var(--from-gradient-bg) 0%, var(--to-gradient-bg) 100%);
+#section-1 {
+	&.hero-banner {
+		padding-top: calc(50px + 1rem);
+		padding-bottom: calc(50px + 1rem);
+		background: linear-gradient(180deg, var(--from-gradient-bg) 0%, var(--to-gradient-bg) 100%);
 
-	input{
-		&[type="text"]{
-			border-bottom-right-radius: 50rem;
-			border-top-right-radius: 50rem;
+		input{
+			&[type="text"]{
+				border-bottom-right-radius: 50rem;
+				border-top-right-radius: 50rem;
+			}
+		}
+
+		select{
+			border-bottom-left-radius: 50rem;
+			border-top-left-radius: 50rem;
 		}
 	}
+}
 
-	select{
-		border-bottom-left-radius: 50rem;
-		border-top-left-radius: 50rem;
+section {
+	.sub-category{
+		opacity: 0.7;
+		font-weight: 500;
+	}
+	.category{
+		font-size: 3.75rem;
+		font-weight: 700;
+		line-height: 70px
+	}
+	.card{
+		border-radius:20px;
+		padding-left: 3.75rem;
+
+		&.card-whole{
+			.card-title{
+				font-size: 2.25rem;
+				font-weight: 700;
+			}
+		}
+
+		a{
+			font-size:1.25rem;
+			color: var(--hover-btns-bg);
+			text-decoration: none;
+
+			&:after{
+				// content: ' \279C';
+			}
+		}
 	}
 }
