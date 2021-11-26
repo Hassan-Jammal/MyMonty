@@ -22,23 +22,22 @@ export const run = () => {
     });
 
     // Toggle Theme Mode
-    var toggle = document.querySelector(".theme-mode");
+    var toggle = document.getElementsByClassName("theme-mode");
     var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark-mode)").matches ? "dark-mode" : "light-mode");
     if (storedTheme)
         document.documentElement.setAttribute('data-theme', storedTheme)
 
-    toggle.onclick = function() {
-        var currentTheme = document.documentElement.getAttribute("data-theme");
-        var targetTheme = "light-mode";
+    for (var i = 0; i < toggle.length; i++) {
+        toggle[i].onclick = function() {
+            var currentTheme = document.documentElement.getAttribute("data-theme");
+            var targetTheme = "light-mode";
 
-        if (currentTheme === "light-mode") {
-            targetTheme = "dark-mode";
-        }
+            if (currentTheme === "light-mode") {
+                targetTheme = "dark-mode";
+            }
 
-        document.documentElement.setAttribute('data-theme', targetTheme)
-        localStorage.setItem('theme', targetTheme);
-    };
-
-
-
+            document.documentElement.setAttribute('data-theme', targetTheme)
+            localStorage.setItem('theme', targetTheme);
+        };
+    }
 }
