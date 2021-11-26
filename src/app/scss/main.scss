@@ -260,19 +260,6 @@ header {
 }
 
 /********************************** HOMEPAGE **********************************/
-
-/* Medium devices (Portrait Phones) */
-@media (max-width: 575.98px) {
-}
-
-/* Medium devices (Landscape Phones and Tablets) */
-@media (min-width: 576px) and (max-width: 991.98px) {
-}
-
-/* large devices (Laptops) */
-@media (min-width: 992px) {
-}
-
 #section-1 {
 	&.hero-banner {
 		padding-top: calc(50px + 1rem);
@@ -321,9 +308,14 @@ section {
 			font-size: 1.25rem;
 			color: var(--hover-btns-bg);
 			text-decoration: none;
-
-			&:after {
-				// content: ' \279C';
+		}
+	}
+}
+@media screen and (max-width: 767.98px) {
+	.card {
+		&.card-whole {
+			.card-content {
+				padding: 1.875rem;
 			}
 		}
 	}
