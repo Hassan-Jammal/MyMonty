@@ -3,7 +3,7 @@ export const run = () => {
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
     const links = document.querySelectorAll(".nav-links li");
-    const language = document.querySelector(".language");
+    const navEnd = document.querySelector(".nav-end");
 
     hamburger.addEventListener('click', () => {
         //Animate Links
@@ -16,10 +16,10 @@ export const run = () => {
         //Hamburger Animation
         hamburger.classList.toggle("toggle");
         
-        language.classList.toggle("d-flex");
+        navEnd.classList.toggle("d-flex");
     });
 
-    var toggle = document.getElementById("language");
+    var toggle = document.getElementById("theme-mode");
     var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark-mode)").matches ? "dark-mode" : "light-mode");
     if (storedTheme)
         document.documentElement.setAttribute('data-theme', storedTheme)
@@ -35,5 +35,7 @@ export const run = () => {
         document.documentElement.setAttribute('data-theme', targetTheme)
         localStorage.setItem('theme', targetTheme);
     };
+
+    
 
 }

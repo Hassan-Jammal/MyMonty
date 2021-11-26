@@ -15,10 +15,10 @@
 
 <body>
 
-	<header class="p-2">
+	<header>
 		<nav>
-			<div class="logo order-1 order-md-1">
-				<svg width="100%" viewBox="0 0 206 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<div class="nav-start logo order-1 order-md-1">
+				<svg height="60px" viewBox="0 0 206 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M38.4854 60.9011H39.0121V62.5121H39.3655V60.9011H39.8911V60.624H38.4854V60.9011Z"/>
 					<path d="M41.3662 61.9135L40.8691 60.624H40.3994V62.5121H40.7164V61.0869L41.2899 62.5121H41.4027L41.9659 61.0869V62.5121H42.3171V60.624H41.8519L41.3662 61.9135Z"/>
 					<path d="M44.0628 41.2156L48.6279 42.862L45.0718 39.8623L43.2898 40.1473L44.0628 41.2156Z"/>
@@ -98,20 +98,31 @@
 				<div class="line2"></div>
 				<div class="line3"></div>
 			</div>
-			<ul class="nav-links order-4 order-md-3">
+			<ul class="nav-center nav-links order-4 order-md-3">
 				<li>
-					<a class="" href="#">Company</a>
+					<a class="fw-bold" href="#">Company</a>
 				</li>
 				<li>
-					<a class="" href="#">Newsroom</a>
+					<a class="fw-bold" href="#">Newsroom</a>
 				</li>
 				<li>
-					<a class="" href="#">Contact Us</a>
+					<a class="fw-bold" href="#">Partnership</a>
+				</li>
+				<li>
+					<a class="fw-bold" href="#">Contact Us</a>
 				</li>
 			</ul>
-			<div id="language" class="language order-2 order-md-4 cursor-pointer">
-				<div class="me-2">English</div> 
-				<svg class="chevron-down" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15px"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>
+			<div class="nav-end order-2 order-md-4">
+				<select name="" id="" class="border-0 bg-transparent cursor-pointer"> 
+					<option value="English">English</option>
+					<option value="French">French</option>
+					<option value="Espagnol">Espagnol</option>
+				</select>
+				<!-- <div class="me-3 cursor-pointer">English</div> 
+				<svg class="chevron-down cursor-pointer" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15px"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg> -->
+				<svg id="theme-mode" class="ms-2 cursor-pointer" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="adjust" class="svg-inline--fa fa-adjust fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px"><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg>
+
+				<input type="submit" value="Get MyMonty" class="ms-2 p-1 border-0 rounded-pill fs-4 lh-sm">
 			</div>
 		</nav>
 	</header>
@@ -120,27 +131,27 @@
 	<section class="hero-banner text-center text-md-start">
 		<div class="container">
 			<div class="row row align-items-center">
-				<div class="col-md-5 order-md-1">
+				<div class="col-md-5 order-md-1 align-self-end">
 					<img src="./assets/hero--desktop.png" class="img-fluid" alt="MyMonty - Shaping the future of money">
 				</div>
 				<div class="col-md-7">
-					<h1 class="display-1 fw-bolder mt-3">Shaping The Future Of Money</h1>
-					<p class="lead mt-3 col-md-8 col-12">Enter your phone number, and we'll send you an invite link to download the app.</p>
+					<h1 class="display-1 fw-bolder mt-4">Shaping The Future Of Money</h1>
+					<p class="col-md-8 col-12 mt-5">Enter your phone number, and we'll send you an invite link to download the app.</p>
 					<form action="">
 						<div class="row">
-							<div class="col-md-8 col-12 mt-2">	
+							<div class="col-md-8 col-12 mt-3">	
 								<div class="input-group position-static">
-									<select id="code" class="border-0 p-3 cursor-pointer">
+									<select id="code" class="border-0 p-2 cursor-pointer fs-4 lh-sm">
 										<option value="">Code</option>
 										<option value="+961">+961</option>
 										<option value="+962">+962</option>
 										<option value="+963">+963</option>
 									</select>
-									<input type="text" class="form-control position-static border-0 p-3" placeholder="Enter your Number">
+									<input type="text" class="form-control position-static border-0 p-2 fs-4 lh-sm" placeholder="Enter your Number">
 								</div>
 							</div>
-							<div class="col-md-4 col-12 mt-2">
-								<input type="submit" value="Get MyMonty" class="border-0 rounded-pill p-3">
+							<div class="col-md-4 col-12 mt-3">
+								<input type="submit" value="Get MyMonty" class="border-0 rounded-pill p-2 fs-4 lh-sm">
 							</div>
 						</div>
 					</form>

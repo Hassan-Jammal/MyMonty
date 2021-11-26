@@ -1,1 +1,20 @@
+$font-weight-bold: 500;
 $font-weight-bolder: 900;
+$input-btn-focus-box-shadow: none;
+
+$font-sizes: (
+  1: 2.25rem, //36px
+  2: 1.5rem, //24px
+  3: 1.25rem, //20px
+  4: 1rem //16px
+);
+
+$spacers: (
+  0: 0,
+  1: 0.5rem, //8px
+  2: 1.25rem, //20px
+  3: 1.875rem, //30px
+  4: 2.5rem, //40px
+  5: 3.75rem, //60px
+  6: 5rem, //80px
+);
