@@ -17,7 +17,7 @@
 
 	<header>
 		<nav>
-			<div class="nav-start logo order-1 order-md-1">
+			<div class="nav-start order-3 logo order-1 order-md-1">
 				<svg height="60px" viewBox="0 0 206 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M38.4854 60.9011H39.0121V62.5121H39.3655V60.9011H39.8911V60.624H38.4854V60.9011Z"/>
 					<path d="M41.3662 61.9135L40.8691 60.624H40.3994V62.5121H40.7164V61.0869L41.2899 62.5121H41.4027L41.9659 61.0869V62.5121H42.3171V60.624H41.8519L41.3662 61.9135Z"/>
@@ -93,12 +93,19 @@
 					<path d="M203.281 26.1729L197.876 39.6906L192.473 26.1729H189.754L196.595 42.9079L193.909 49.2443H196.502L199.096 43.069L206 26.1729H203.281Z"/>
 				</svg>
 			</div>
-			<div class="hamburger order-3 order-md-2">
-				<div class="line1"></div>
-				<div class="line2"></div>
-				<div class="line3"></div>
+			<div class="nav-end order-1 order-md-4 d-none d-md-block">
+				<select name="" id="" class="border-0 bg-transparent cursor-pointer"> 
+					<option value="English">English</option>
+					<option value="French">French</option>
+					<option value="Espagnol">Espagnol</option>
+				</select>
+				<!-- <div class="me-3 cursor-pointer">English</div> 
+				<svg class="chevron-down cursor-pointer" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15px"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg> -->
+				<svg class="theme-mode ms-2 cursor-pointer" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="adjust" class="svg-inline--fa fa-adjust fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px"><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg>
+
+				<input type="submit" value="Get MyMonty" class="ms-2 p-1 border-0 rounded-pill fs-4 lh-sm">
 			</div>
-			<ul class="nav-center nav-links order-4 order-md-3">
+			<ul class="nav-center order-2 nav-links order-md-3">
 				<li>
 					<a class="fw-bold" href="#">Company</a>
 				</li>
@@ -111,18 +118,24 @@
 				<li>
 					<a class="fw-bold" href="#">Contact Us</a>
 				</li>
+				<li>
+					<input type="submit" value="Get MyMonty" class="ms-2 p-1 border-0 rounded-pill fs-4 lh-sm">
+				</li>
+				<li>
+					<div class="nav-end d-block d-md-none">
+						<select name="" id="" class="border-0 bg-transparent cursor-pointer"> 
+							<option value="English">English</option>
+							<option value="French">French</option>
+							<option value="Espagnol">Espagnol</option>
+						</select>
+						<svg class="theme-mode ms-2 cursor-pointer" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="adjust" class="svg-inline--fa fa-adjust fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px"><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg>
+					</div>
+				</li>
 			</ul>
-			<div class="nav-end order-2 order-md-4">
-				<select name="" id="" class="border-0 bg-transparent cursor-pointer"> 
-					<option value="English">English</option>
-					<option value="French">French</option>
-					<option value="Espagnol">Espagnol</option>
-				</select>
-				<!-- <div class="me-3 cursor-pointer">English</div> 
-				<svg class="chevron-down cursor-pointer" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15px"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg> -->
-				<svg id="theme-mode" class="ms-2 cursor-pointer" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="adjust" class="svg-inline--fa fa-adjust fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px"><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg>
-
-				<input type="submit" value="Get MyMonty" class="ms-2 p-1 border-0 rounded-pill fs-4 lh-sm">
+			<div class="hamburger order-4 order-md-2">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
 			</div>
 		</nav>
 	</header>

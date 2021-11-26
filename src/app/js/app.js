@@ -19,7 +19,7 @@ export const run = () => {
         navEnd.classList.toggle("d-flex");
     });
 
-    var toggle = document.getElementById("theme-mode");
+    var toggle = document.querySelector(".theme-mode");
     var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark-mode)").matches ? "dark-mode" : "light-mode");
     if (storedTheme)
         document.documentElement.setAttribute('data-theme', storedTheme)
@@ -36,6 +36,6 @@ export const run = () => {
         localStorage.setItem('theme', targetTheme);
     };
 
-    
+
 
 }
