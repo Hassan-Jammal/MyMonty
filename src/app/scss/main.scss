@@ -6,6 +6,7 @@
 /********************************** GENERAL **********************************/
 
 :root {
+	--body-bg: #e5e5e5;
 	--primary-text: #000000;
 	--primary-bg: #000000;
 	--secondary-text: #ffffff;
@@ -18,22 +19,21 @@
 }
 
 html[data-theme="dark-mode"] {
+	--body-bg: #000000;
 	--primary-text: #ffffff;
 	--primary-bg: #ffffff;
-	--secondary-text: #000000;
-	--secondary-bg: #000000;
+	--secondary-text: #141414;
+	--secondary-bg: #141414;
 	--from-gradient-bg: #000000;
 	--to-gradient-bg: #141414;
-	--glass-effect: #000000cc;
+	--glass-effect: #020101cc;
 	--no-glass-effect: #141414;
 }
 
 body {
 	font: normal normal 400 24px/1.2 "Roboto";
-	&:not(div) {
-		color: var(--primary-text);
-	}
-	background: var(--secondary-bg);
+	color: var(--primary-text);
+	background: var(--body-bg);
 }
 
 h1,
@@ -45,9 +45,18 @@ h6 {
 	font-family: "Roboto";
 }
 
+p {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
 div {
 	position: relative;
 }
+
 .cursor-pointer {
 	cursor: pointer;
 }
@@ -290,30 +299,85 @@ section {
 		font-weight: 700;
 		line-height: 70px;
 	}
-	.card {
+	.box-wrapper {
 		border-radius: 20px;
 
-		.card-content {
-			padding: 3.75rem;
-
-			.card-title {
-				font-size: 2.25rem;
-				font-weight: 700;
+		@media screen and (min-width: 767.98px) {
+			&--one-half {
+				&:nth-child(odd) {
+					padding-right: 1.875rem;
+				}
+				&:nth-child(even) {
+					padding-left: 1.875rem;
+				}
 			}
 		}
 
-		a {
-			font-size: 1.25rem;
-			color: var(--hover-btns-bg);
-			text-decoration: none;
+		.card--theme-color {
+			background: var(--secondary-bg);
+		}
+
+		.box {
+			border-radius: 20px;
+
+			&--one-whole {
+				.box-content {
+					padding: 3.75rem;
+				}
+			}
+
+			&--one-half {
+				padding: 3.75rem;
+			}
+
+			&--one-third {
+				padding: 2.5rem 1.875rem;
+			}
+
+			&-title {
+				font-size: 2.25rem;
+				font-weight: 700;
+			}
+
+			a {
+				font-size: 1.25rem;
+				color: var(--hover-btns-bg);
+				text-decoration: none;
+			}
 		}
 	}
 }
+
 @media screen and (max-width: 767.98px) {
 	section {
-		.card {
-			.card-content {
-				padding: 1.875rem;
+		.box-wrapper {
+			&--one-whole {
+			}
+
+			&--one-half {
+			}
+
+			&--one-third {
+			}
+
+			.box {
+				&--one-whole {
+					.box-content {
+						padding: 1.875rem;
+					}
+				}
+
+				&--one-half {
+					padding: 1.875rem;
+
+					.box-content {
+						padding-top: 1.875rem;
+					}
+				}
+
+				&--one-third {
+					padding: 1.875rem 1.25rem;
+				}
 			}
 		}
 	}
