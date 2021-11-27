@@ -273,7 +273,7 @@ header {
 	&.hero-banner {
 		padding-top: calc(50px + 1rem);
 		padding-bottom: calc(50px + 1rem);
-		background: linear-gradient(180deg, var(--from-gradient-bg) 0%, var(--to-gradient-bg) 100%);
+		background: linear-gradient(180deg, var(--from-gradient-bg) 0%, var(--to-gradient-bg) 50%, var(--body-bg) 100%);
 
 		input {
 			&[type="text"] {
