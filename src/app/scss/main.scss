@@ -6,34 +6,24 @@
 /********************************** GENERAL **********************************/
 
 :root {
-	--body-bg: #e5e5e5;
-	--primary-text: #000000;
-	--primary-bg: #000000;
-	--secondary-text: #ffffff;
-	--secondary-bg: #ffffff;
-	--hover-btns-bg: #346edf;
-	--from-gradient-bg: #ffffff;
-	--to-gradient-bg: #efeff1;
+	--primary-color: #000000;
+	--secondary-color: #ffffff;
+	--tertiary-color: #e5e5e5;
 	--glass-effect: #ffffffcc;
-	--no-glass-effect: #f1f2f4;
+	--hover-btns-bg: #346edf;
 }
 
 html[data-theme="dark-mode"] {
-	--body-bg: #000000;
-	--primary-text: #ffffff;
-	--primary-bg: #ffffff;
-	--secondary-text: #141414;
-	--secondary-bg: #141414;
-	--from-gradient-bg: #000000;
-	--to-gradient-bg: #141414;
-	--glass-effect: #020101cc;
-	--no-glass-effect: #141414;
+	--primary-color: #ffffff;
+	--secondary-color: #000000;
+	--tertiary-color: #191c1f;
+	--glass-effect: #000000cc;
 }
 
 body {
 	font: normal normal 400 24px/1.2 "Roboto";
-	color: var(--primary-text);
-	background: var(--body-bg);
+	color: var(--primary-color);
+	background: var(--tertiary-color);
 }
 
 h1,
@@ -68,8 +58,8 @@ button {
 }
 
 input[type="submit"] {
-	color: var(--secondary-text);
-	background: var(--primary-bg);
+	color: var(--secondary-color);
+	background: var(--primary-color);
 	transition: background-color 0.5s ease-in-out;
 
 	&:hover {
@@ -78,7 +68,7 @@ input[type="submit"] {
 }
 
 path {
-	fill: var(--primary-bg);
+	fill: var(--primary-color);
 }
 /********************************** HEADER **********************************/
 
@@ -100,11 +90,11 @@ path {
 
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
 	header {
-		background: var(--no-glass-effect);
+		background: var(--tertiary-color);
 
 		.nav_links {
 			&.open {
-				background: var(--no-glass-effect);
+				background: var(--tertiary-color);
 			}
 		}
 	}
@@ -144,7 +134,7 @@ header {
 
 				a {
 					text-decoration: none;
-					color: var(--primary-text);
+					color: var(--primary-color);
 					transition: color 0.5s ease-in-out;
 
 					&:hover {
@@ -161,7 +151,7 @@ header {
 			div {
 				width: 30px;
 				height: 3px;
-				background: var(--primary-bg);
+				background: var(--primary-color);
 				margin: 5px;
 				transition: all 0.5s ease-in-out;
 			}
@@ -187,7 +177,7 @@ header {
 			display: flex;
 
 			select {
-				color: var(--primary-text);
+				color: var(--primary-color);
 			}
 		}
 	}
@@ -273,7 +263,10 @@ header {
 	&.hero-banner {
 		padding-top: calc(50px + 1rem);
 		padding-bottom: calc(50px + 1rem);
-		background: linear-gradient(180deg, var(--from-gradient-bg) 0%, var(--to-gradient-bg) 50%, var(--body-bg) 100%);
+		// background: linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 50%, var(--tertiary-color) 100%);
+		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
+		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
+		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
 
 		input {
 			&[type="text"] {
@@ -314,7 +307,7 @@ section {
 		}
 
 		.card--theme-color {
-			background: var(--secondary-bg);
+			background: var(--secondary-color);
 		}
 
 		.box {
