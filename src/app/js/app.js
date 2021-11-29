@@ -60,15 +60,4 @@ export const run = () => {
         input.addEventListener('change', checkMembership);
     });
 
-
-    // Logo Drawer
-
-    const logo = document.querySelector(".logo");
-    const countryWrapper = document.querySelector(".country-wrapper");
-    logo.addEventListener('click', () => {
-        //Animate Links
-        countryWrapper.classList.toggle("open");
-    });
-
-
 }

@@ -9,6 +9,7 @@
 	--primary-color: #000000;
 	--secondary-color: #ffffff;
 	--tertiary-color: #f8f8f8;
+	--test-color:#EFEFEF;
 	--paragraph-color: #494646;
 	--special-color: #c1c1c1;
 	--tertiary-color-invert: #191c1f;
@@ -23,6 +24,7 @@ html[data-theme="dark-mode"] {
 	--primary-color: #ffffff;
 	--secondary-color: #000000;
 	--tertiary-color: #191c1f;
+	--test-color:#101214;
 	--paragraph-color: #ffffff;
 	--special-color: #000000;
 	--tertiary-color-invert: #e5e5e5;
@@ -334,9 +336,9 @@ header {
 #section-1 {
 	&.hero-banner {
 		padding-top: calc(50px + 1rem);
-		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
-		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
-		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
+		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
+		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
+		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 
 		input {
 			&[type="text"] {
@@ -499,14 +501,23 @@ section {
 }
 
 /********************************** FOOTER **********************************/
-.country-wrapper{
-	position:absolute; 
-	top:0; 
-	left:0; 
-	background:red;
-	padding:70px 40px 10px 0px; 
-	border-radius:20px; 
-	display:none;
+
+.dropdown-toggle::after {
+    content: none;
+}
+.dropdown-menu {
+	border:20px;
+	margin:0;
+	padding:0;
+	background:var(--primary-color);
+	
+	path{
+		fill:var(--secondary-color)
+	}
+
+	& .dropdown-item{
+		padding:0;
+	}
 }
 footer{
 	color:var(--secondary-color);
