@@ -5,8 +5,7 @@ export const run = () => {
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav_links");
     const links = document.querySelectorAll(".nav_links li");
-    const navEndMobile = document.querySelector(".nav_end--mobile");
-
+    
     hamburger.addEventListener('click', () => {
         //Animate Links
         navLinks.classList.toggle("open");
@@ -17,8 +16,6 @@ export const run = () => {
 
         //Hamburger Animation
         hamburger.classList.toggle("toggle");
-        
-        navEnd.classList.toggle("d-flex");
     });
 
     // Toggle Theme Mode
@@ -40,4 +37,35 @@ export const run = () => {
             localStorage.setItem('theme', targetTheme);
         };
     }
+
+    var monthly = document.getElementsByClassName("monthly");
+    var yearly = document.getElementsByClassName("yearly");
+
+    function checkMembership(event) {
+        if(event.target.id == 'monthly'){
+            for (var i = 0; i < monthly.length; i++) {
+                monthly[i].style.display = "block";
+                yearly[i].style.display = "none";
+            }
+        }
+        else{
+            for (var i = 0; i < yearly.length; i++) {
+                yearly[i].style.display = "block";
+                monthly[i].style.display = "none";
+            }
+        }
+    }
+
+    document.querySelectorAll("input[name='membership']").forEach((input) => {
+        input.addEventListener('change', checkMembership);
+    });
+
+    var liCount;
+    $(document).ready(function () {
+        $('.box-content ul').each(function () {
+            liCount = $(this).children('li').length
+            console.log(liCount);
+        });
+    });
+   
 }

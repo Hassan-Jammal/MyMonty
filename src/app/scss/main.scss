@@ -9,15 +9,24 @@
 	--primary-color: #000000;
 	--secondary-color: #ffffff;
 	--tertiary-color: #e5e5e5;
+	--tertiary-color-invert: #191c1f;
 	--glass-effect: #ffffffcc;
-	--hover-btns-bg: #346edf;
+	--hover-color: #346edf;
 }
 
+#section-5.section-membership ul{
+	list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'><path d='M4.49859 8.10016L2.74859 6.35016C2.55359 6.15516 2.24359 6.15516 2.04859 6.35016C1.85359 6.54516 1.85359 6.85516 2.04859 7.05016L4.14359 9.14516C4.33859 9.34016 4.65359 9.34016 4.84859 9.14516L10.1486 3.85016C10.3436 3.65516 10.3436 3.34516 10.1486 3.15016C9.95359 2.95516 9.64359 2.95516 9.44859 3.15016L4.49859 8.10016Z' fill='black'/></svg>");
+}
 html[data-theme="dark-mode"] {
 	--primary-color: #ffffff;
 	--secondary-color: #000000;
 	--tertiary-color: #191c1f;
+	--tertiary-color-invert: #e5e5e5;
 	--glass-effect: #000000cc;
+
+	#section-5.section-membership ul{
+		list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'><path d='M4.49859 8.10016L2.74859 6.35016C2.55359 6.15516 2.24359 6.15516 2.04859 6.35016C1.85359 6.54516 1.85359 6.85516 2.04859 7.05016L4.14359 9.14516C4.33859 9.34016 4.65359 9.34016 4.84859 9.14516L10.1486 3.85016C10.3436 3.65516 10.3436 3.34516 10.1486 3.15016C9.95359 2.95516 9.64359 2.95516 9.44859 3.15016L4.49859 8.10016Z' fill='white'/></svg>");
+	}
 }
 
 body {
@@ -51,6 +60,10 @@ div {
 	cursor: pointer;
 }
 
+ul {
+	list-style: none;
+}
+
 select,
 input,
 button {
@@ -63,13 +76,69 @@ input[type="submit"] {
 	transition: background-color 0.5s ease-in-out;
 
 	&:hover {
-		background: var(--hover-btns-bg);
+		background: var(--hover-color);
 	}
 }
 
 path {
 	fill: var(--primary-color);
 }
+
+.pricing-switcher {
+	text-align: center;
+
+	.fieldset {
+		position: relative;
+		display: inline-block;
+		background: var(--secondary-color);
+		border-radius: 50rem;
+	}
+
+	input[type="radio"] {
+		position: absolute;
+		opacity: 0;
+
+		&:checked + label{
+			color: var(--secondary-color);
+			& + .switch, &:nth-of-type(n) + .switch{
+				-webkit-transform: translateX(130px);
+				-moz-transform: translateX(130px);
+				-ms-transform: translateX(130px);
+				-o-transform: translateX(130px);
+				transform: translateX(130px);
+			} 
+		}
+	}
+
+	label {
+		position: relative;
+		width: 130px;
+		float: left;
+		padding: 15px 0;
+		color: var(--primary-color);
+		font-size:1rem;
+		cursor: pointer;
+		z-index: 1;	
+	}
+
+	.switch {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 130px;
+		height: 100%;
+		background-color: var(--primary-color);
+		border-radius: 50rem;
+		-webkit-transition: -webkit-transform 0.5s;
+		-moz-transition: -moz-transform 0.5s;
+		transition: transform 0.5s ease-in-out;
+	}
+}
+
+.no-js .pricing-switcher {
+	display: none;
+}
+
 /********************************** HEADER **********************************/
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -122,7 +191,6 @@ header {
 		/*Styling Links*/
 		.nav_links {
 			display: flex;
-			list-style: none;
 			justify-content: center;
 			align-items: center;
 			margin-bottom: 0;
@@ -138,7 +206,7 @@ header {
 					transition: color 0.5s ease-in-out;
 
 					&:hover {
-						color: var(--hover-btns-bg);
+						color: var(--hover-color);
 					}
 				}
 			}
@@ -310,6 +378,11 @@ section {
 			background: var(--secondary-color);
 		}
 
+		.card--tertiary-color-invert {
+			color: var(--secondary-color);
+			background: var(--tertiary-color-invert);
+		}
+
 		.box {
 			border-radius: 20px;
 
@@ -334,8 +407,37 @@ section {
 
 			a {
 				font-size: 1.25rem;
-				color: var(--hover-btns-bg);
+				color: var(--hover-color);
 				text-decoration: none;
+			}
+		}
+	}
+
+	&.section-membership {
+		.box-title {
+			span {
+				&.yearly {
+					display: none;
+				}
+			}
+		}
+		.box-description {
+			font-size: 1.25rem;
+			font-weight: 700;
+		}
+		.box-features {
+			font-size: 1rem;
+		}
+
+
+		ul {
+			list-style-position: outside;
+			padding: 0 1.25rem;
+			
+			font-size: 1rem;
+
+			li {
+				margin-top: 0.5rem;
 			}
 		}
 	}
@@ -371,6 +473,16 @@ section {
 				&--one-third {
 					padding: 1.875rem 1.25rem;
 				}
+			}
+			.box-content ul li:nth-child(n + 3) {
+				display: none;
+			}
+			
+			//By default more button will be hidden and have to show if LI get exceed with 5
+			
+			.box-content label.more {
+				font-weight: 600;
+				font-style: oblique;
 			}
 		}
 	}
