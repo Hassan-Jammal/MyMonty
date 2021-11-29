@@ -336,11 +336,14 @@ header {
 #section-1 {
 	&.hero-banner {
 		padding-top: calc(50px + 1rem);
+		padding-bottom: calc(50px + 1rem);
 		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 
 		input {
+			line-height: 1.2;
+			
 			&[type="text"] {
 				border-bottom-right-radius: 50rem;
 				border-top-right-radius: 50rem;
