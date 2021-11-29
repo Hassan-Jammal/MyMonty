@@ -8,7 +8,9 @@
 :root {
 	--primary-color: #000000;
 	--secondary-color: #ffffff;
-	--tertiary-color: #e5e5e5;
+	--tertiary-color: #f8f8f8;
+	--paragraph-color: #494646;
+	--special-color: #c1c1c1;
 	--tertiary-color-invert: #191c1f;
 	--glass-effect: #ffffffcc;
 	--hover-color: #346edf;
@@ -21,6 +23,8 @@ html[data-theme="dark-mode"] {
 	--primary-color: #ffffff;
 	--secondary-color: #000000;
 	--tertiary-color: #191c1f;
+	--paragraph-color: #ffffff;
+	--special-color: #000000;
 	--tertiary-color-invert: #e5e5e5;
 	--glass-effect: #000000cc;
 
@@ -30,7 +34,7 @@ html[data-theme="dark-mode"] {
 }
 
 body {
-	font: normal normal 400 24px/1.2 "Roboto";
+	font: normal normal 400 24px/32px "Roboto";
 	color: var(--primary-color);
 	background: var(--tertiary-color);
 }
@@ -178,7 +182,7 @@ header {
 
 	nav {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 
 		.logo {
@@ -330,8 +334,6 @@ header {
 #section-1 {
 	&.hero-banner {
 		padding-top: calc(50px + 1rem);
-		padding-bottom: calc(50px + 1rem);
-		// background: linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 50%, var(--tertiary-color) 100%);
 		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
 		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
 		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--tertiary-color) 100%);
@@ -381,10 +383,20 @@ section {
 		.card--tertiary-color-invert {
 			color: var(--secondary-color);
 			background: var(--tertiary-color-invert);
+
+			div{
+				color: var(--special-color);
+			}
 		}
 
 		.box {
 			border-radius: 20px;
+
+			&-content{
+				&:not(.text-black) p{
+					color: var(--paragraph-color);
+				}
+			}
 
 			&--one-whole {
 				.box-content {
@@ -443,6 +455,14 @@ section {
 	}
 }
 
+:not([data-theme="dark-mode"]) {
+	.section-content {
+		.category-description {
+			color:var(--primary-color);
+		}
+	}
+}
+
 @media screen and (max-width: 767.98px) {
 	section {
 		.box-wrapper {
@@ -474,15 +494,73 @@ section {
 					padding: 1.875rem 1.25rem;
 				}
 			}
-			.box-content ul li:nth-child(n + 3) {
-				display: none;
+		}
+	}
+}
+
+/********************************** FOOTER **********************************/
+
+footer{
+	color:var(--secondary-color);
+	background: var(--primary-color);
+	padding: 4.375rem 0 3.75rem 0;
+	font-size: 1rem;
+	
+	.logo{
+		margin-top:5rem;
+	}
+	path{
+		fill: var(--secondary-color);
+	}
+	.page{
+		font-weight: 700;
+		margin-top:5rem;
+	}
+	ul{
+		font-size:1rem;
+		margin:0;
+		padding:0;
+		margin-top:1.875rem;
+	}
+
+	hr{
+		background: var(--secondary-color);
+	}
+
+	.sub-footer{
+		select {
+			margin-top: 0.625rem;
+			color: var(--secondary-color);
+		}
+		
+		ul{
+			li{
+				margin-top: 0.625rem;
 			}
+		}
+	}
+	
+}
+
+@media screen and (max-width: 767.98px) {
+	footer{
+		padding: 2.1875rem 0 1.875rem 0;
+	
+		.logo{
+			margin-top:2.5rem;
+		}
+		.page{
+			margin-top:2.5rem;
+		}
+		ul{
+			margin-top:0.9375rem;
+		}
+
+		.sub-footer{
 			
-			//By default more button will be hidden and have to show if LI get exceed with 5
 			
-			.box-content label.more {
-				font-weight: 600;
-				font-style: oblique;
+			ul{
+				margin-top: 1.875rem;
 			}
 		}
 	}
