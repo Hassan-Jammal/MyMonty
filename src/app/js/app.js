@@ -60,12 +60,15 @@ export const run = () => {
         input.addEventListener('change', checkMembership);
     });
 
-    var liCount;
-    $(document).ready(function () {
-        $('.box-content ul').each(function () {
-            liCount = $(this).children('li').length
-            console.log(liCount);
-        });
+
+    // Logo Drawer
+
+    const logo = document.querySelector(".logo");
+    const countryWrapper = document.querySelector(".country-wrapper");
+    logo.addEventListener('click', () => {
+        //Animate Links
+        countryWrapper.classList.toggle("open");
     });
-   
+
+
 }
