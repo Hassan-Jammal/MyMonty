@@ -1,10 +1,10 @@
 export const run = () => {
     // Toggle Mobile Menu and do other stuff
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav_links");
-    const links = document.querySelectorAll(".nav_links li");
+    const menuBtn = document.querySelector(".menu-btn");
+    const navLinks = document.querySelector(".nav_center");
+    const links = document.querySelectorAll(".nav_center li");
     
-    hamburger.addEventListener('click', () => {
+    menuBtn.addEventListener('click', () => {
         //Animate Links
         navLinks.classList.toggle("open");
 
@@ -12,8 +12,8 @@ export const run = () => {
             link.classList.toggle("fading");
         });
 
-        //Hamburger Animation
-        hamburger.classList.toggle("toggle");
+        //menu-btn Animation
+        menuBtn.classList.toggle("toggle");
     });
 
     // Toggle Theme Mode
@@ -88,14 +88,14 @@ export const run = () => {
     animateText();
 
     if (navigator.userAgent.indexOf("Win") != -1)
-        document.querySelector("#downloadStore img.windows").classList.add("d-block");
+        document.querySelector("#stores img.windows").classList.add("d-block");
     else if (navigator.userAgent.indexOf("Mac") != -1)
-        document.querySelector("#downloadStore img.ios").classList.add("d-block");
+        document.querySelector("#stores img.ios").classList.add("d-block");
     else if (navigator.userAgent.indexOf("Linux") != -1)
-        document.querySelector("#downloadStore img.android").classList.add("d-block");
+        document.querySelector("#stores img.android").classList.add("d-block");
     else if (navigator.userAgent.indexOf("Android") != -1)
-        document.querySelector("#downloadStore img.android").classList.add("d-block");
+        document.querySelector("#stores img.android").classList.add("d-block");
     else if (navigator.userAgent.indexOf("like Mac") != -1)
-        document.querySelector("#downloadStore img.ios").classList.add("d-block");
+        document.querySelector("#stores img.ios").classList.add("d-block");
 
 }
