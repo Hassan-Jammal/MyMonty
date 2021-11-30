@@ -107,7 +107,7 @@ export const run = () => {
     // }
     
     // return os;
-    alert(navigator.userAgentData.platform)
+    alert(navigator.userAgentData.mobile)
     alert("!!")
     // switch (navigator.userAgentData.platform)
     // {
