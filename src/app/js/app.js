@@ -107,8 +107,8 @@ export const run = () => {
     // }
     
     // return os;
-    alert(navigator.userAgentData.mobile)
     alert("!!")
+    alert(navigator.userAgentData.mobile)
     // switch (navigator.userAgentData.platform)
     // {
     //     case "Windows":
