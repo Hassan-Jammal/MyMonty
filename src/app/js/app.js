@@ -98,10 +98,10 @@ export const run = () => {
     if (macosPlatforms.indexOf(platform) !== -1) {
         document.querySelector("#downloadStore img.ios").classList.add("d-block");
     } 
-    else if (iosPlatforms.indexOf(platform) !== -1) {
+    else if (/iPhone/.indexOf(platform) !== -1) {
         document.querySelector("#downloadStore img.ios").classList.add("d-block");
     } 
-    else if (windowsPlatforms.indexOf(platform) !== -1) {
+    else if (/Windows/.test(userAgent)) {
         document.querySelector("#downloadStore img.windows").classList.add("d-block");
     } 
     else if (/Android/.test(userAgent)) {
