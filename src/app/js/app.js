@@ -1,6 +1,4 @@
 export const run = () => {
-    alert(navigator.userAgentData.platform)
-    alert("!!!")
     // Toggle Mobile Menu and do other stuff
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav_links");
@@ -110,6 +108,7 @@ export const run = () => {
     
     // return os;
     alert(navigator.userAgentData.platform)
+    alert("!!")
     // switch (navigator.userAgentData.platform)
     // {
     //     case "Windows":
