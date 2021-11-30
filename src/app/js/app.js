@@ -87,17 +87,15 @@ export const run = () => {
         
     animateText();
 
-    var Name = "Unknown OS";
-    if (navigator.userAgent.indexOf("Win") != -1) Name = 
-        alert("Windows OS");
-    if (navigator.userAgent.indexOf("Mac") != -1) Name = 
-    alert("Macintosh");
-    if (navigator.userAgent.indexOf("Linux") != -1) Name = 
-    alert("Linux OS");
-    if (navigator.userAgent.indexOf("Android") != -1) Name = 
-    alert("Android OS");
-    if (navigator.userAgent.indexOf("like Mac") != -1) Name = 
-    alert("iOS");
+    if (navigator.userAgent.indexOf("Win") != -1)
+        document.querySelector("#downloadStore img.windows").classList.add("d-block");
+    else if (navigator.userAgent.indexOf("Mac") != -1)
+        document.querySelector("#downloadStore img.ios").classList.add("d-block");
+    else if (navigator.userAgent.indexOf("Linux") != -1)
+        document.querySelector("#downloadStore img.android").classList.add("d-block");
+    else if (navigator.userAgent.indexOf("Android") != -1)
+        document.querySelector("#downloadStore img.android").classList.add("d-block");
+    else if (navigator.userAgent.indexOf("like Mac") != -1)
+        document.querySelector("#downloadStore img.ios").classList.add("d-block");
 
-    // document.querySelector("#downloadStore img.ios").classList.add("d-block");
 }
