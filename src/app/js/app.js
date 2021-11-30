@@ -88,6 +88,6 @@ export const run = () => {
     }
         
     animateText();
-    console.log(navigator);
+    alert(navigator.userAgent);
 
 }
