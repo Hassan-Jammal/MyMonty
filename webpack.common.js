@@ -23,6 +23,6 @@ module.exports = {
     },
   },
   output: {
-    assetModuleFilename: "images/[name].[contenthash].[ext]"
+    assetModuleFilename: "images/[name].[contenthash][ext]"
   }
 };

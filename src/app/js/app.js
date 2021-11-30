@@ -1,4 +1,3 @@
-
 export const run = () => {
 
     // Toggle Mobile Menu and do other stuff
@@ -89,29 +88,42 @@ export const run = () => {
         
     animateText();
 
-    // alert(navigator.appVersion);
-
-        // var userAgent = window.navigator.userAgent,
-        //     platform = window.navigator.platform,
-        //     macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-        //     windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-        //     iosPlatforms = ['iPhone', 'iPad', 'iPod'],
-        //     os = null;
-      
-        // if (macosPlatforms.indexOf(platform) !== -1) {
-        //     document.getElementById("downloadStore").src = "./assets/apple.png";
-        // } else if (iosPlatforms.indexOf(platform) !== -1) {
-        //     document.getElementById("downloadStore").src = "./assets/apple.png";
-        // } else if (windowsPlatforms.indexOf(platform) !== -1) {
-        //     document.getElementById("downloadStore").src = "./assets/android.png";
-        // } else if (/Android/.test(userAgent)) {
-        //     document.getElementById("downloadStore").src = "./assets/android.png";
-        // } else if (!os && /Linux/.test(platform)) {
-        //     os = 'Linux';
-        // }
-      
-        // return os;
-      
-    //   alert(getOS());
-
+    // var userAgent = window.navigator.userAgent,
+    //     platform = window.navigator.platform,
+    //     macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+    //     windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+    //     iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+    //     os = null;
+    
+    // if (macosPlatforms.indexOf(platform) !== -1) {
+    //     document.getElementById("downloadStore").src = "./assets/apple.png";
+    // } else if (iosPlatforms.indexOf(platform) !== -1) {
+    //     document.getElementById("downloadStore").src = "./assets/apple.png";
+    // } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    //     document.getElementById("downloadStore").src = "./assets/android.png";
+    // } else if (/Android/.test(userAgent)) {
+    //     document.getElementById("downloadStore").src = "./assets/android.png";
+    // } else if (!os && /Linux/.test(platform)) {
+    //     os = 'Linux';
+    // }
+    
+    // return os;
+    alert(navigator.userAgentData.platform)
+    // switch (navigator.userAgentData.platform)
+    // {
+    //     case "Windows":
+    //         document.querySelector("#downloadStore img.windows").classList.add("d-block");
+    //         break;
+    //     case "Apple":
+    //         document.querySelector("#downloadStore img.apple").classList.add("d-block");
+    //         break;
+    //     case "Android":
+    //         document.querySelector("#downloadStore img.android").classList.add("d-block");
+    //         break;
+    //     case "Huwawei":
+    //         document.querySelector("#downloadStore img.Huwawei").classList.add("d-block");
+    //         break;
+    //     default:
+    //         alert("!")
+    // }
 }
