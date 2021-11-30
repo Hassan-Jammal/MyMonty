@@ -88,6 +88,7 @@ export const run = () => {
     }
         
     animateText();
-    alert(navigator.userAgent);
+
+    alert(navigator.appVersion);
 
 }
