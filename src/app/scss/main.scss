@@ -384,56 +384,7 @@ header {
 }
 
 /********************************** HOMEPAGE **********************************/
-#section-1 {
-	&.hero-banner {
-		padding-top: calc(80px + 1rem);
-		// padding-bottom: calc(50px + 1rem);
-		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
-		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
-		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 
-		.animate-text {
-			span {
-				display: none;
-				&.text-in {
-					display: block;
-					animation: textIn 0.8s ease;
-				}
-				&.text-out {
-					animation: textOut 0.8s ease;
-				}
-			}
-		}
-		@keyframes textIn {
-			0% {
-				transform: translateY(100%);
-			}
-			100% {
-				transform: translateY(0%);
-			}
-		}
-		@keyframes textOut {
-			0% {
-				transform: translateY(0%);
-			}
-			100% {
-				transform: translateY(-100%);
-			}
-		}
-
-		input {
-			&[type="text"] {
-				border-bottom-right-radius: 50rem;
-				border-top-right-radius: 50rem;
-			}
-		}
-
-		select {
-			border-bottom-left-radius: 50rem;
-			border-top-left-radius: 50rem;
-		}
-	}
-}
 
 section {
 	.sub-category {
@@ -504,6 +455,57 @@ section {
 				font-size: 1.25rem;
 				color: var(--hover-color);
 				text-decoration: none;
+			}
+		}
+	}
+
+	&#section-1 {
+		&.hero-banner {
+			padding-top: calc(80px + 1rem);
+			// padding-bottom: calc(50px + 1rem);
+			background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
+			background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
+			background: linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
+	
+			.animate-text {
+				span {
+					display: none;
+					&.text-in {
+						display: block;
+						animation: textIn 0.8s ease;
+					}
+					&.text-out {
+						animation: textOut 0.8s ease;
+					}
+				}
+			}
+			@keyframes textIn {
+				0% {
+					transform: translateY(100%);
+				}
+				100% {
+					transform: translateY(0%);
+				}
+			}
+			@keyframes textOut {
+				0% {
+					transform: translateY(0%);
+				}
+				100% {
+					transform: translateY(-100%);
+				}
+			}
+	
+			input {
+				&[type="text"] {
+					border-bottom-right-radius: 50rem;
+					border-top-right-radius: 50rem;
+				}
+			}
+	
+			select {
+				border-bottom-left-radius: 50rem;
+				border-top-left-radius: 50rem;
 			}
 		}
 	}
