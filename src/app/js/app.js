@@ -87,29 +87,17 @@ export const run = () => {
         
     animateText();
 
-    // Detect Device
-    var userAgent = window.navigator.userAgent,
-        platform = window.navigator.platform,
-        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-        iosPlatforms = ['iPhone', 'iPad', 'iPod'],
-        os = null;
-    
-    if (macosPlatforms.indexOf(platform) !== -1) {
-        document.querySelector("#downloadStore img.ios").classList.add("d-block");
-    } 
-    else if (/iPhone/.indexOf(platform) !== -1) {
-        document.querySelector("#downloadStore img.ios").classList.add("d-block");
-    } 
-    else if (/Windows/.test(userAgent)) {
-        document.querySelector("#downloadStore img.windows").classList.add("d-block");
-    } 
-    else if (/Android/.test(userAgent)) {
-        document.querySelector("#downloadStore img.android").classList.add("d-block");
-    } 
-    else if (!os && /Linux/.test(platform)) {
-        document.querySelector("#downloadStore img.huwawei").classList.add("d-block");
-        os = 'Linux';
-    }
-    
+    var Name = "Unknown OS";
+    if (navigator.userAgent.indexOf("Win") != -1) Name = 
+        alert("Windows OS");
+    if (navigator.userAgent.indexOf("Mac") != -1) Name = 
+    alert("Macintosh");
+    if (navigator.userAgent.indexOf("Linux") != -1) Name = 
+    alert("Linux OS");
+    if (navigator.userAgent.indexOf("Android") != -1) Name = 
+    alert("Android OS");
+    if (navigator.userAgent.indexOf("like Mac") != -1) Name = 
+    alert("iOS");
+
+    // document.querySelector("#downloadStore img.ios").classList.add("d-block");
 }
