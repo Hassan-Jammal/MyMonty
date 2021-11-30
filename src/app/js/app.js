@@ -38,6 +38,7 @@ export const run = () => {
         };
     }
 
+    // Toggle Membership
     var monthly = document.getElementsByClassName("monthly");
     var yearly = document.getElementsByClassName("yearly");
 
@@ -60,6 +61,7 @@ export const run = () => {
         input.addEventListener('change', checkMembership);
     });
 
+    // Hero text animation
     const txts=document.querySelector(".animate-text").children, txtsLen=txts.length;
     const textInTimer=2500, textOutTimer=2200;
     let index=0;
@@ -86,4 +88,6 @@ export const run = () => {
     }
         
     animateText();
+    console.log(navigator);
+
 }
