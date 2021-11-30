@@ -87,43 +87,29 @@ export const run = () => {
         
     animateText();
 
-    // var userAgent = window.navigator.userAgent,
-    //     platform = window.navigator.platform,
-    //     macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-    //     windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-    //     iosPlatforms = ['iPhone', 'iPad', 'iPod'],
-    //     os = null;
+    // Detect Device
+    var userAgent = window.navigator.userAgent,
+        platform = window.navigator.platform,
+        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+        iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+        os = null;
     
-    // if (macosPlatforms.indexOf(platform) !== -1) {
-    //     document.getElementById("downloadStore").src = "./assets/apple.png";
-    // } else if (iosPlatforms.indexOf(platform) !== -1) {
-    //     document.getElementById("downloadStore").src = "./assets/apple.png";
-    // } else if (windowsPlatforms.indexOf(platform) !== -1) {
-    //     document.getElementById("downloadStore").src = "./assets/android.png";
-    // } else if (/Android/.test(userAgent)) {
-    //     document.getElementById("downloadStore").src = "./assets/android.png";
-    // } else if (!os && /Linux/.test(platform)) {
-    //     os = 'Linux';
-    // }
+    if (macosPlatforms.indexOf(platform) !== -1) {
+        document.querySelector("#downloadStore img.ios").classList.add("d-block");
+    } 
+    else if (iosPlatforms.indexOf(platform) !== -1) {
+        document.querySelector("#downloadStore img.ios").classList.add("d-block");
+    } 
+    else if (windowsPlatforms.indexOf(platform) !== -1) {
+        document.querySelector("#downloadStore img.windows").classList.add("d-block");
+    } 
+    else if (/Android/.test(userAgent)) {
+        document.querySelector("#downloadStore img.android").classList.add("d-block");
+    } 
+    else if (!os && /Linux/.test(platform)) {
+        document.querySelector("#downloadStore img.huwawei").classList.add("d-block");
+        os = 'Linux';
+    }
     
-    // return os;
-    alert("!!")
-    alert(navigator.userAgentData.mobile)
-    // switch (navigator.userAgentData.platform)
-    // {
-    //     case "Windows":
-    //         document.querySelector("#downloadStore img.windows").classList.add("d-block");
-    //         break;
-    //     case "Apple":
-    //         document.querySelector("#downloadStore img.apple").classList.add("d-block");
-    //         break;
-    //     case "Android":
-    //         document.querySelector("#downloadStore img.android").classList.add("d-block");
-    //         break;
-    //     case "Huwawei":
-    //         document.querySelector("#downloadStore img.Huwawei").classList.add("d-block");
-    //         break;
-    //     default:
-    //         alert("!")
-    // }
 }
