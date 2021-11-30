@@ -238,7 +238,7 @@ header {
 	width: 100%;
 	font-size: 1rem;
 	z-index: 3;
-	padding:15px 0;
+	padding: 15px 0;
 
 	nav {
 		display: flex;
@@ -280,7 +280,7 @@ header {
 		.hamburger {
 			display: none;
 
-			.line2{
+			.line2 {
 				width: 70%;
 			}
 
@@ -402,7 +402,38 @@ header {
 		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
-
+		
+		.animate-text{
+			span{
+				display: none;
+				&.text-in{
+					display: block;
+					animation: textIn .8s ease;
+				}
+				&.text-out{
+					animation: textOut .8s ease;
+				}
+			}
+			
+		}
+		@keyframes textIn{
+			0%{
+				transform: translateY(100%);
+			}
+			100%{
+				transform: translateY(0%);
+			}
+		}
+		@keyframes textOut{
+			0%{
+				transform: translateY(0%);
+			}
+			100%{
+				transform: translateY(-100%);
+		
+			}
+		}
+		
 		input {
 			&[type="text"] {
 				border-bottom-right-radius: 50rem;
@@ -613,13 +644,13 @@ footer {
 		}
 	}
 
-	.media-icon{
+	.media-icon {
 		cursor: pointer;
 
-		path{
+		path {
 			transition: fill 0.5s ease-in-out;
-			
-			&:hover{
+
+			&:hover {
 				fill: var(--hover-color);
 			}
 		}
