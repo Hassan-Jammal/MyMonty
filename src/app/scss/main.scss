@@ -237,8 +237,8 @@ header {
 	position: fixed;
 	width: 100%;
 	font-size: 1rem;
-	padding: 0.313rem;
 	z-index: 3;
+	padding:15px 0;
 
 	nav {
 		display: flex;
@@ -280,11 +280,15 @@ header {
 		.hamburger {
 			display: none;
 
+			.line2{
+				width: 70%;
+			}
+
 			div {
 				width: 30px;
 				height: 3px;
 				background: var(--primary-color);
-				margin: 5px;
+				margin: 5px 0;
 				transition: all 0.5s ease-in-out;
 			}
 		}
@@ -393,8 +397,8 @@ header {
 /********************************** HOMEPAGE **********************************/
 #section-1 {
 	&.hero-banner {
-		padding-top: calc(50px + 1rem);
-		padding-bottom: calc(50px + 1rem);
+		padding-top: calc(80px + 1rem);
+		// padding-bottom: calc(50px + 1rem);
 		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
@@ -598,6 +602,28 @@ footer {
 	background: var(--primary-color);
 	padding: 2.1875rem 0 1.875rem 0;
 	font-size: 1rem;
+
+	a {
+		text-decoration: none;
+		color: var(--secondary-color);
+		transition: color 0.5s ease-in-out;
+
+		&:hover {
+			color: var(--hover-color);
+		}
+	}
+
+	.media-icon{
+		cursor: pointer;
+
+		path{
+			transition: fill 0.5s ease-in-out;
+			
+			&:hover{
+				fill: var(--hover-color);
+			}
+		}
+	}
 
 	.logo {
 		margin-top: 5rem;
