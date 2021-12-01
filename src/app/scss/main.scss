@@ -262,12 +262,27 @@ header {
 				padding: 0;
 			}
 
-			.nav-item {
-				::-webkit-scrollbar {
-					display: none;
+			.navbar-nav{
+				width:180px;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+
+				&.open{
+					background: var(--primary-color);
+
+					.logo{
+						path{
+							fill: var(--secondary-color);
+						}
+					}
 				}
-				-ms-overflow-style: none; /* IE and Edge */
-				scrollbar-width: none; /* Firefox */
+				.nav-item {
+					::-webkit-scrollbar {
+						display: none;
+					}
+					-ms-overflow-style: none; /* IE and Edge */
+					scrollbar-width: none; /* Firefox */
+				}
 			}
 
 			.dropdown-menu {
@@ -452,7 +467,6 @@ section {
 		font-weight: 500;
 	}
 	.category {
-		font-size: 3.75rem;
 		font-weight: 700;
 		line-height: 70px;
 	}

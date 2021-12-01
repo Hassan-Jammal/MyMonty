@@ -16,6 +16,13 @@ export const run = () => {
         menuBtn.classList.toggle("toggle");
     });
 
+    const navbarDropdown = document.getElementById("navbarDropdown");
+    const navbarNav = document.querySelector(".navbar-nav");
+    navbarDropdown.addEventListener('click', () => {
+        navbarNav.classList.toggle("open");
+    });
+
+
     // Toggle Theme Mode
     var toggle = document.getElementsByClassName("theme-mode");
     var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark-mode)").matches ? "dark-mode" : "light-mode");
