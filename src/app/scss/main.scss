@@ -468,11 +468,12 @@ section {
 	}
 	.category {
 		font-weight: 700;
-		line-height: 70px;
+		line-height: 4.375rem;
 	}
 	.box-wrapper {
 		border-radius: 20px;
-
+		overflow: hidden;
+		
 		@media screen and (min-width: 767.98px) {
 			&--one-half {
 				&:nth-child(odd) {
