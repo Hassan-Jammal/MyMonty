@@ -87,15 +87,15 @@ export const run = () => {
         
     animateText();
 
-    if (navigator.userAgent.indexOf("Win") != -1)
-        document.querySelector("#stores img.windows").classList.add("d-block");
-    else if (navigator.userAgent.indexOf("Mac") != -1)
-        document.querySelector("#stores img.ios").classList.add("d-block");
-    else if (navigator.userAgent.indexOf("Linux") != -1)
-        document.querySelector("#stores img.android").classList.add("d-block");
-    else if (navigator.userAgent.indexOf("Android") != -1)
-        document.querySelector("#stores img.android").classList.add("d-block");
-    else if (navigator.userAgent.indexOf("like Mac") != -1)
-        document.querySelector("#stores img.ios").classList.add("d-block");
+    // if (navigator.userAgent.indexOf("Win") != -1)
+    //     document.querySelector("#stores img.windows").classList.add("d-block");
+    // else if (navigator.userAgent.indexOf("Mac") != -1)
+    //     document.querySelector("#stores img.ios").classList.add("d-block");
+    // else if (navigator.userAgent.indexOf("Linux") != -1)
+    //     document.querySelector("#stores img.android").classList.add("d-block");
+    // else if (navigator.userAgent.indexOf("Android") != -1)
+    //     document.querySelector("#stores img.android").classList.add("d-block");
+    // else if (navigator.userAgent.indexOf("like Mac") != -1)
+    //     document.querySelector("#stores img.ios").classList.add("d-block");
 
 }

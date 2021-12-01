@@ -10,7 +10,7 @@ $font-sizes: (
 );
 
 $theme-colors: (
-  "dark": #494646
+  "dark": #494646,
 );
 
 $spacers: (
@@ -23,4 +23,14 @@ $spacers: (
 	6: 5rem, //80px
 	7: 7rem, //80px
 	150: 9.375rem, //150px
+);
+
+$display-font-weight: 900;
+$display-font-sizes: (
+  1: 4.5rem,
+  2: 4rem,
+  3: 3.5rem,
+  4: 3rem,
+  5: 2.5rem,
+  6: 2rem
 );
