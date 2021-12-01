@@ -711,17 +711,7 @@ footer {
 			color: var(--hover-color);
 		}
 	}
-	.media-icon {
-		cursor: pointer;
-
-		path {
-			transition: fill 0.5s ease-in-out;
-
-			&:hover {
-				fill: var(--hover-color);
-			}
-		}
-	}
+	
 	.page {
 		font-weight: 700;
 		margin-top: 5rem;
@@ -746,6 +736,19 @@ footer {
 				margin-top: 1.25rem;
 			}
 		}
+		.media-icon {
+			cursor: pointer;
+	
+			path {
+				transition: fill 0.5s ease-in-out;
+				fill: var(--secondary-color);
+	
+				&:hover {
+					fill: var(--hover-color);
+				}
+			}
+			margin-top: 1.25rem;
+		}
 	}
 }
 
@@ -758,6 +761,12 @@ footer {
 		}
 		.page {
 			margin-top: 2.5rem;
+			& + ul {
+				// display: none;
+			}
+			&:after{
+				// content: " ➜"
+			}
 		}
 		ul {
 			margin-top: 0.9375rem;
