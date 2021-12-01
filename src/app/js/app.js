@@ -104,5 +104,4 @@ export const run = () => {
     //     document.querySelector("#stores img.android").classList.add("d-block");
     // else if (navigator.userAgent.indexOf("like Mac") != -1)
     //     document.querySelector("#stores img.ios").classList.add("d-block");
-
 }
