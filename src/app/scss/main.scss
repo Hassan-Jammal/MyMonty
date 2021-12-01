@@ -473,7 +473,7 @@ section {
 	.box-wrapper {
 		border-radius: 20px;
 		overflow: hidden;
-		
+
 		@media screen and (min-width: 767.98px) {
 			&--one-half {
 				&:nth-child(odd) {
@@ -694,7 +694,14 @@ footer {
 	background: var(--primary-color);
 	padding: 2.1875rem 0 1.875rem 0;
 	font-size: 1rem;
-
+	p, a{
+		opacity: 0.8;
+	}
+	.company-information{
+		a{
+			text-decoration: underline;
+		}
+	}
 	a {
 		text-decoration: none;
 		color: var(--secondary-color);
