@@ -50,13 +50,13 @@ export const run = () => {
     function checkMembership(event) {
         if(event.target.id == 'monthly'){
             for (var i = 0; i < monthly.length; i++) {
-                monthly[i].style.display = "block";
+                monthly[i].style.display = "inline-block";
                 yearly[i].style.display = "none";
             }
         }
         else{
             for (var i = 0; i < yearly.length; i++) {
-                yearly[i].style.display = "block";
+                yearly[i].style.display = "inline-block";
                 monthly[i].style.display = "none";
             }
         }

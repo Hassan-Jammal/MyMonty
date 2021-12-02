@@ -116,6 +116,8 @@ div {
 }
 
 ul {
+	margin: 0;
+	padding: 0;
 	list-style: none;
 }
 
@@ -645,21 +647,26 @@ section {
 			display: none;
 		}
 		.box {
-			&-title {
-				span {
-					&.yearly {
-						display: none;
-					}
-				}
-			}
-			&-description {
+			&-pricing {
 				font-size: 1.25rem;
 				font-weight: 700;
+
+				.yearly {
+					display: none;
+				}
+				.yearly, .monthly{
+					color: var(--hover-color);
+				}
+				.per-membership{
+					font-size:1rem;
+					opacity: 0.5;
+				}
 			}
 			&-features {
 				font-size: 1rem;
-				list-style-position: outside;
-				padding: 0 1.25rem;
+				line-height:20px;
+				list-style-position: oustide;
+				padding: 0 0 0 1.25rem;
 			}
 		}
 	}
@@ -747,7 +754,6 @@ footer {
 					fill: var(--hover-color);
 				}
 			}
-			margin-top: 1.25rem;
 		}
 	}
 }
