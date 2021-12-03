@@ -517,10 +517,12 @@ path {
 @media screen and (max-width: 991.98px) {
 	.mobile-header {
 		position: fixed;
+		top:0;
+		left:0;
 		width: 100%;
 		z-index: 3;
 		font-size: 1rem;
-		padding: 1rem 0;
+		// padding: 1rem 0;
 		// line-height: inherit;
 		.mobile {
 			&-nav {
