@@ -1,29 +1,6 @@
 export const run = () => {
-    // Toggle Mobile Menu and do other stuff
-    const menuBtn = document.querySelector(".menu-btn");
-    const navLinks = document.querySelector(".nav_center");
-    const links = document.querySelectorAll(".nav_center li");
-    
-    menuBtn.addEventListener('click', () => {
-        //Animate Links
-        navLinks.classList.toggle("open");
 
-        links.forEach(link => {
-            link.classList.toggle("fading");
-        });
-
-        //menu-btn Animation
-        menuBtn.classList.toggle("toggle");
-    });
-
-    const navbarDropdown = document.getElementById("navbarDropdown");
-    const navbarNav = document.querySelector(".navbar-nav");
-    navbarDropdown.addEventListener('click', () => {
-        navbarNav.classList.toggle("open");
-    });
-
-
-    // Toggle Theme Mode
+    //  Toggle Theme Mode
     var toggle = document.getElementsByClassName("theme-mode");
     var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark-mode)").matches ? "dark-mode" : "light-mode");
     if (storedTheme)
@@ -94,14 +71,21 @@ export const run = () => {
         
     animateText();
 
-    // if (navigator.userAgent.indexOf("Win") != -1)
-    //     document.querySelector("#stores img.windows").classList.add("d-block");
-    // else if (navigator.userAgent.indexOf("Mac") != -1)
-    //     document.querySelector("#stores img.ios").classList.add("d-block");
-    // else if (navigator.userAgent.indexOf("Linux") != -1)
-    //     document.querySelector("#stores img.android").classList.add("d-block");
-    // else if (navigator.userAgent.indexOf("Android") != -1)
-    //     document.querySelector("#stores img.android").classList.add("d-block");
-    // else if (navigator.userAgent.indexOf("like Mac") != -1)
-    //     document.querySelector("#stores img.ios").classList.add("d-block");
+    // Toggle Mobile Menu Animation
+    let subMenu = document.querySelector(".sub-menu");
+    let navLinks = document.querySelector(".nav-links");
+    let menuBtn = document.querySelector(".menu");
+    let hasSubMenu = document.querySelector(".has-sub-menu");
+    let arrow = document.querySelector(".has-sub-menu span svg");
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle("open");
+        menuBtn.classList.toggle("toggle");
+    });
+    
+    hasSubMenu.onclick = function() {
+        subMenu.classList.toggle("d-block");
+        arrow.classList.toggle("rotate");
+    }
+    
 }
