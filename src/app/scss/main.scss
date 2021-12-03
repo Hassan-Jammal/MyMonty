@@ -42,8 +42,6 @@ header {
 	}
 }
 
-
-
 @mixin dropdown-arrow-black() {
 	background: url("../../assets/chevron-down-solid-black.svg") 100% no-repeat;
 	background-size: 15px 15px;
@@ -244,6 +242,8 @@ path {
 
 .desktop-header {
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	z-index: 3;
 	font-size: 1rem;
@@ -517,14 +517,14 @@ path {
 @media screen and (max-width: 991.98px) {
 	.mobile-header {
 		position: fixed;
-		top:0;
-		left:0;
+		top: 0;
+		left: 0;
 		width: 100%;
-		height:auto;
 		z-index: 3;
 		font-size: 1rem;
 		padding: 1rem 0;
-		// line-height: inherit;
+		line-height: inherit;
+
 		.mobile {
 			&-nav {
 				display: flex;
@@ -664,10 +664,10 @@ section {
 		border-radius: 20px;
 		overflow: hidden;
 
-		.card-body{
-			padding:0;
+		.card-body {
+			padding: 0;
 		}
-		
+
 		@media screen and (min-width: 767.98px) {
 			&--one-half {
 				&:nth-child(odd) {
@@ -706,7 +706,7 @@ section {
 					padding: 3.75rem;
 					padding-right: 0;
 
-					&.download-app{
+					&.download-app {
 						padding-top: 6rem;
 						padding-bottom: 6rem;
 					}
@@ -883,7 +883,7 @@ section {
 					.box-content {
 						padding: 1.875rem;
 
-						&.download-app{
+						&.download-app {
 							padding-top: 2.5rem;
 						}
 					}
