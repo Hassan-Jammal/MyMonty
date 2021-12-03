@@ -87,5 +87,20 @@ export const run = () => {
         subMenu.classList.toggle("d-block");
         arrow.classList.toggle("rotate");
     }
+
+    // SVG Rotation
+    gsap.set('#website-logo', {});
+
+    var rotate = gsap.timeline({
+        scrollTrigger:{
+            scrub:0.2,
+            start: 'top top',
+            end:'+=10000',
+        }
+    }).to('#website-logo', {
+        rotation:360*5,
+        duration:1, 
+        ease: 'none',
+    })
     
 }
