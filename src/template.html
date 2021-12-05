@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
 	<div class="website-fixed-logo position-fixed" style="width:80%; height:80%; top:50%;left:50% ;transform: translate(-50%, -50%);">
 		<svg width="50%" id="website-logo" viewBox="0 0 760 760" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<g style="mix-blend-mode:color-burn" opacity="0.03">
@@ -94,7 +93,7 @@
 		<div class="container">
 			<div class="desktop-nav">
 				<a class="desktop-nav__logo d-flex" href="#">
-					<svg width="100%" height="100px" viewBox="0 0 206 70" fill="none" style="z-index:3"
+					<svg width="100%" viewBox="0 0 206 70" fill="none" style="z-index:3"
 						xmlns="http://www.w3.org/2000/svg">
 						<path d="M38.4854 60.9011H39.0121V62.5121H39.3655V60.9011H39.8911V60.624H38.4854V60.9011Z">
 						</path>
@@ -315,17 +314,31 @@
 					<button>Contact</button>
 					<div class="menu-pointer"></div>
 				</div>
+				
 				<div class="desktop-nav__options d-flex justify-content-center align-items-center">
-					<select name="" id="" class="border-0 bg-transparent cursor-pointer">
-						<option value="English">En</option>
-						<option value="French">Fr</option>
-						<option value="Spanish">Sp</option>
-					</select>
-					<svg class="theme-mode ms-2 cursor-pointer" width="15" height="20" viewBox="0 0 15 20" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M4.8125 19C4.8125 19.55 5.2625 20 5.8125 20H9.8125C10.3625 20 10.8125 19.55 10.8125 19V18H4.8125V19ZM7.8125 0C3.9475 0 0.8125 3.135 0.8125 7C0.8125 9.38 2.0025 11.475 3.8125 12.74V15C3.8125 15.55 4.2625 16 4.8125 16H10.8125C11.3625 16 11.8125 15.55 11.8125 15V12.74C13.6225 11.475 14.8125 9.38 14.8125 7C14.8125 3.135 11.6775 0 7.8125 0ZM10.6675 11.1L9.8125 11.695V14H5.8125V11.7L4.9575 11.105C3.6125 10.165 2.8125 8.635 2.8125 7.005C2.8125 4.25 5.0575 2.005 7.8125 2.005C10.5675 2.005 12.8125 4.25 12.8125 7.005C12.8125 8.63 12.0125 10.16 10.6675 11.1Z"
-							fill="#010101" />
+					<!-- <select name="" id="" class="border-0 bg-transparent cursor-pointer">
+						<option value="English"style="background:url(./assets/united-kingdom.png) center no-repeat; background-size:20px 20px;" selected></option>
+						<option value="French"><img src="./assets/france.png" alt="" width="100%"></option>
+						<option value="Spanish"><img src="./assets/spain.png" alt="" width="100%"></option>
+						<option value="Polish"><img src="./assets/poland.png" alt="" width="100%"></option>
+					</select> -->
+					<div class="languages d-flex align-items-center justify-content-center  cursor-pointer">
+						<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10px">
+							<path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+						</svg>
+						<div class="wrapper-languages me-3">
+							<div class="wrapper-languages__list">
+								<div class="wrapper-languages__list-language d-flex flex-column">
+									<img src="./assets/poland.png" alt="" width="25px">
+									<img src="./assets/france.png" alt="" width="25px">
+									<img  src="./assets/united-kingdom.png" alt="" width="25px">
+									<img selected src="./assets/spain.png" alt="" width="25px">
+								</div>
+							</div>
+						</div>
+					</div>
+					<svg class="theme-mode ms-2 cursor-pointer" width="15" height="20" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M4.8125 19C4.8125 19.55 5.2625 20 5.8125 20H9.8125C10.3625 20 10.8125 19.55 10.8125 19V18H4.8125V19ZM7.8125 0C3.9475 0 0.8125 3.135 0.8125 7C0.8125 9.38 2.0025 11.475 3.8125 12.74V15C3.8125 15.55 4.2625 16 4.8125 16H10.8125C11.3625 16 11.8125 15.55 11.8125 15V12.74C13.6225 11.475 14.8125 9.38 14.8125 7C14.8125 3.135 11.6775 0 7.8125 0ZM10.6675 11.1L9.8125 11.695V14H5.8125V11.7L4.9575 11.105C3.6125 10.165 2.8125 8.635 2.8125 7.005C2.8125 4.25 5.0575 2.005 7.8125 2.005C10.5675 2.005 12.8125 4.25 12.8125 7.005C12.8125 8.63 12.0125 10.16 10.6675 11.1Z" fill="#010101" />
 					</svg>
 					<button id="login" class="ms-2 border-0 bg-transparent">Login</button>
 					<button id="sign-up" class="ms-2 px-2 py-1 border-0 rounded-pill fs-4">Sign Up</button>
@@ -785,13 +798,23 @@
 									<li class="mt-2">
 										<button id="sign-up" class="px-2 py-1 border-0 rounded-pill">Sign Up</button>
 									</li>
-									<li class="mt-2">
-										<select name="" id="" class="border-0 bg-transparent cursor-pointer">
-											<option value="English">EN</option>
-											<option value="French">FR</option>
-											<option value="Spanish">IT</option>
-											<option value="Polish">PL</option>
-										</select>
+									<li class="mt-2 d-flex justify-content-center align-items-center">
+										<div class="languages d-flex align-items-center justify-content-center cursor-pointer">
+											<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10px">
+												<path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+											</svg>
+											<div class="wrapper-languages me-3">
+												<div class="wrapper-languages__list">
+													<div class="wrapper-languages__list-language d-flex flex-column">
+														<img src="./assets/poland.png" alt="" width="25px">
+														<img src="./assets/france.png" alt="" width="25px">
+														<img  src="./assets/united-kingdom.png" alt="" width="25px">
+														<img selected src="./assets/spain.png" alt="" width="25px">
+													</div>
+												</div>
+											</div>
+										</div>
+										
 										<svg class="theme-mode ms-2 cursor-pointer" width="15" height="20" viewBox="0 0 15 20" fill="none"
 											xmlns="http://www.w3.org/2000/svg">
 											<path d="M4.8125 19C4.8125 19.55 5.2625 20 5.8125 20H9.8125C10.3625 20 10.8125 19.55 10.8125 19V18H4.8125V19ZM7.8125 0C3.9475 0 0.8125 3.135 0.8125 7C0.8125 9.38 2.0025 11.475 3.8125 12.74V15C3.8125 15.55 4.2625 16 4.8125 16H10.8125C11.3625 16 11.8125 15.55 11.8125 15V12.74C13.6225 11.475 14.8125 9.38 14.8125 7C14.8125 3.135 11.6775 0 7.8125 0ZM10.6675 11.1L9.8125 11.695V14H5.8125V11.7L4.9575 11.105C3.6125 10.165 2.8125 8.635 2.8125 7.005C2.8125 4.25 5.0575 2.005 7.8125 2.005C10.5675 2.005 12.8125 4.25 12.8125 7.005C12.8125 8.63 12.0125 10.16 10.6675 11.1Z" fill="#010101" />
@@ -1281,6 +1304,7 @@
 			</div>
 		</div>
 	</footer>
+	
 
 	<script>
 		window.onload = () => {

@@ -301,6 +301,55 @@ path {
 				select {
 					color: var(--primary-color);
 				}
+				.languages{
+					.wrapper{
+						&-languages{
+							z-index:1;
+
+							&__list{
+								&-language{
+									position:absolute;
+									top:-13px;
+									left:7px;
+									
+									img{
+										opacity: 0;
+										// display: none;
+										visibility: hidden;
+
+										&:not([selected]){
+											margin-top: 0.5rem;
+										}
+
+										&[selected] {
+											opacity: 1;
+											// display: block;
+											visibility: visible;
+										}
+
+										&.visible{
+											opacity: 1;
+											visibility: visible;
+										}
+
+										&.order{
+											&-2{
+												transition: opacity 0.1s ease-in-out;
+											}
+											&-3{
+												transition: opacity 0.5s ease-in-out;
+											}
+											&-4{
+												transition: opacity 1s ease-in-out;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
 				button {
 					&#sign-up {
 						transition: background-color 0.5s ease;
@@ -389,13 +438,12 @@ path {
 				transition: none;
 				will-change: opacity, transform;
 				opacity: 0;
-				z-index: 1;
 
 				&--visible {
 					opacity: 1;
 					transform: translateX(0px);
 					transition: 0s ease opacity, 0s ease transform;
-					z-index: 3;
+					z-index: 1;
 				}
 
 				&.section {
@@ -429,7 +477,6 @@ path {
 					padding: 2.5rem 2rem;
 					position: relative;
 					margin: 2rem -2rem 0 -2rem;
-					z-index: 1;
 
 					.menu-link {
 						p {
@@ -632,6 +679,52 @@ path {
 
 											&:hover {
 												color: var(--hover-color);
+											}
+										}
+									}
+									.languages{
+										.wrapper{
+											&-languages{
+												z-index:1;
+					
+												&__list{
+													&-language{
+														position:absolute;
+														top:-13px;
+														left:7px;
+														
+														img{
+															opacity: 0;
+															visibility: hidden;
+					
+															&:not([selected]){
+																margin-top: 0.5rem;
+															}
+					
+															&[selected] {
+																opacity: 1;
+																visibility: visible;
+															}
+					
+															&.visible{
+																opacity: 1;
+																visibility: visible;
+															}
+					
+															&.order{
+																&-2{
+																	transition: opacity 0.1s ease-in-out;
+																}
+																&-3{
+																	transition: opacity 0.5s ease-in-out;
+																}
+																&-4{
+																	transition: opacity 1s ease-in-out;
+																}
+															}
+														}
+													}
+												}
 											}
 										}
 									}
