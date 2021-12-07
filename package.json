@@ -1,16 +1,14 @@
 {
-  "name": "my-montyyy",
-  "source": "src/index.html",
-  "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.1",
-    "bootstrap": "^5.1.3",
-    "parcel": "^2.0.1"
-  }
+    "name": "my-monty",
+    "source": "src/index.html",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "scripts": {
+        "start": "parcel",
+        "build": "parcel build"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.0.1",
+        "bootstrap": "^5.1.3",
+        "parcel": "^2.0.1"
+    }
 }
