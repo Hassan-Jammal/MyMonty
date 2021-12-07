@@ -161,10 +161,10 @@
   *******************************/
 
   let languages = document.querySelectorAll(".languages");
-  let languagesListImages = document.querySelectorAll(".wrapper-languages__list-language img");
-  let selectedLanguage = document.querySelectorAll(".wrapper-languages__list-language img[selected]");
-  let desktopLanguages = document.querySelectorAll(".desktop-header .wrapper-languages__list-language img:not([selected])");
-  let mobileLanguages = document.querySelectorAll(".mobile-header .wrapper-languages__list-language img:not([selected])");
+  let languagesListImages = document.querySelectorAll(".wrapper-languages__list-language__icon");
+  let selectedLanguage = document.querySelectorAll(".wrapper-languages__list-language__icon[selected]");
+  let desktopLanguages = document.querySelectorAll(".desktop-header .wrapper-languages__list-language__icon:not([selected])");
+  let mobileLanguages = document.querySelectorAll(".mobile-header .wrapper-languages__list-language__icon:not([selected])");
 
   // open images list
   for (var i = 0; i < languages.length; i++) {
@@ -206,12 +206,16 @@
    * 
   *******************************/
 
-  let locations = document.querySelector(".locations");
+  let locationsWrapper = document.querySelector(".locations");
   let toggleLocations = document.querySelector(".toggle-locations");
+  let location = document.querySelectorAll(".locations-wrapper__list-location");
   let logo = document.querySelector(".logo");
   toggleLocations.onclick = function() {
-      locations.classList.toggle('open');
-      logo.classList.toggle('open');
+    locationsWrapper.classList.toggle('open');
+    for(var i = 0; i < location.length; i++){
+        location[i].classList.toggle('toggle');
+    }
+    logo.classList.toggle('open');
   }
   
 
