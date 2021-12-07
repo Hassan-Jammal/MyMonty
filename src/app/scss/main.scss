@@ -272,25 +272,26 @@ path {
 
 				.logo{
 					z-index:1;
-					transition: background-color 0.00001s;
-					border-radius:20px;
-					transition-delay: 0.00001s;
+					// transition: background-color 0.00001s;
+					// border-radius:20px;
+					// transition-delay: 0.00001s;
 
-					&.open{
-						transition-delay: 0.4s;
-						background: var(--secondary-color);
-					}
+					// &.open{
+					// 	transition-delay: 0.4s;
+					// 	background: var(--secondary-color);
+					// }
 				}
 
 				.locations{
 					position: absolute; 
-					top: 0px; 
-					left: 0; 
-					width: 0px;
-					height: 0px;
+					top:65px;
+					left: 0;
+					// height:150px; 
 					background: var(--secondary-color);
-					padding-bottom: 1rem;
-					border-radius:20px;
+					padding: 1rem 0;
+					font-size:1.5rem;
+					border-bottom-left-radius:20px;
+					border-bottom-right-radius:20px;
 					transition: width 0.4s, height 0.4s;
 					visibility: hidden;
 					overflow: scroll;
@@ -303,14 +304,26 @@ path {
 
 					&.open{
 						visibility: visible;
-						width: 190px;
-						height: 150px;
 					}
 
 					&-wrapper__list{
-						padding-top:3.125rem;
+						hr{
+							opacity:0.05;
+						}
+
 						&-location{
-							margin-top: 0.5rem;
+							opacity:1;
+
+							&:nth-child(1){
+								color:red;
+							}
+							&:nth-child(2){
+								color:blue;
+							}
+
+							a{
+								padding: 0 2.5rem 0 3.186rem;
+							}
 						}
 					}
 				}
@@ -365,10 +378,18 @@ path {
 									position: absolute;
 									top: -13px;
 									left: 7px;
+									padding: 0.3rem ;
+									border-radius: 20px;
+									background-color: var(--secondary-color);
 
-									img {
+									&__icon {
 										opacity: 0;
 										visibility: hidden;
+
+										img{
+											width:25px;
+											height:25px;
+										}
 
 										&:not([selected]) {
 											margin-top: 0.5rem;
