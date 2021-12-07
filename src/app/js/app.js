@@ -135,27 +135,13 @@ export const run = () => {
 
     /*******************************
      * 
-     * START SVG Rotation (GSAP or the simpler one)
+     * START SVG Rotation
      * 
     *******************************/
 
-    /* gsap.set('#website-logo', {});
-        var rotate = gsap.timeline({
-            scrollTrigger:{
-                scrub:0.2,
-                start: 'top top',
-                end:'+=10000',
-            }
-        }).to('#website-logo', {
-            rotation:360*5,
-            duration:1, 
-            ease: 'none',
-        })
-    */
-
     window.onscroll = function () {
         let image = document.getElementById("website-logo");
-        image.style.transform = "rotate(" + window.pageYOffset/10 + "deg)"
+        image.style.transform = "rotate(" + window.pageYOffset/5 + "deg)"
     };
 
     /*******************************
@@ -214,4 +200,26 @@ export const run = () => {
      * END Selecting Language
      * 
     *******************************/
+
+    /*******************************
+     * 
+     * START Logos Dropdown
+     * 
+    *******************************/
+
+    let locations = document.querySelector(".locations");
+    let toggleLocations = document.querySelector(".toggle-locations");
+    let logo = document.querySelector(".logo");
+    toggleLocations.onclick = function() {
+        locations.classList.toggle('open');
+        logo.classList.toggle('open');
+    }
+    
+
+    /*******************************
+     * 
+     * END Logos Dropdown
+     * 
+    *******************************/
+
 }
