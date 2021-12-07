@@ -1,231 +1,222 @@
-/*******************************
- *
- * START Toggle Theme Mode
- *
- *******************************/
 
-var toggle = document.getElementsByClassName("theme-mode");
-var storedTheme =
-  localStorage.getItem("theme") ||
-  (window.matchMedia("(prefers-color-scheme: dark-mode)").matches
-    ? "dark-mode"
-    : "light-mode");
-if (storedTheme)
-  document.documentElement.setAttribute("data-theme", storedTheme);
+  /*******************************
+   * 
+   * START Toggle Theme Mode
+   * 
+  *******************************/
 
-for (var i = 0; i < toggle.length; i++) {
-  toggle[i].onclick = function () {
-    var currentTheme = document.documentElement.getAttribute("data-theme");
-    var targetTheme = "light-mode";
+      var toggle = document.getElementsByClassName("theme-mode");
+      var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark-mode)").matches ? "dark-mode" : "light-mode");
+      if (storedTheme)
+          document.documentElement.setAttribute('data-theme', storedTheme)
 
-    if (currentTheme === "light-mode") {
-      targetTheme = "dark-mode";
-    }
+      for (var i = 0; i < toggle.length; i++) {
+          toggle[i].onclick = function() {
+              var currentTheme = document.documentElement.getAttribute("data-theme");
+              var targetTheme = "light-mode";
 
-    document.documentElement.setAttribute("data-theme", targetTheme);
-    localStorage.setItem("theme", targetTheme);
-  };
-}
+              if (currentTheme === "light-mode") {
+                  targetTheme = "dark-mode";
+              }
 
-/*******************************
- *
- * END Toggle Theme Mode
- *
- *******************************/
+              document.documentElement.setAttribute('data-theme', targetTheme)
+              localStorage.setItem('theme', targetTheme);
+          };
+      }
+  
+  /*******************************
+   * 
+   * END Toggle Theme Mode
+   * 
+  *******************************/
 
-/*******************************
- *
- * START Toggle Membership
- *
- *******************************/
+  /*******************************
+   * 
+   * START Toggle Membership
+   * 
+  *******************************/
 
-var monthly = document.getElementsByClassName("monthly");
-var yearly = document.getElementsByClassName("yearly");
+  var monthly = document.getElementsByClassName("monthly");
+  var yearly = document.getElementsByClassName("yearly");
 
-function checkMembership(event) {
-  if (event.target.id == "monthly") {
-    for (var i = 0; i < monthly.length; i++) {
-      monthly[i].style.display = "inline-block";
-      yearly[i].style.display = "none";
-    }
-  } else {
-    for (var i = 0; i < yearly.length; i++) {
-      yearly[i].style.display = "inline-block";
-      monthly[i].style.display = "none";
-    }
+  function checkMembership(event) {
+      if(event.target.id == 'monthly'){
+          for (var i = 0; i < monthly.length; i++) {
+              monthly[i].style.display = "inline-block";
+              yearly[i].style.display = "none";
+          }
+      }
+      else{
+          for (var i = 0; i < yearly.length; i++) {
+              yearly[i].style.display = "inline-block";
+              monthly[i].style.display = "none";
+          }
+      }
   }
-}
 
-document.querySelectorAll("input[name='membership']").forEach((input) => {
-  input.addEventListener("change", checkMembership);
-});
+  document.querySelectorAll("input[name='membership']").forEach((input) => {
+      input.addEventListener('change', checkMembership);
+  });
 
-/*******************************
- *
- * END Toggle Membership
- *
- *******************************/
+  /*******************************
+   * 
+   * END Toggle Membership
+   * 
+  *******************************/
 
-/*******************************
- *
- * START Hero text animation
- *
- *******************************/
+  /*******************************
+   * 
+   * START Hero text animation
+   * 
+  *******************************/
 
-const txts = document.querySelector(".animate-text").children,
-  txtsLen = txts.length;
-const textInTimer = 2500,
-  textOutTimer = 2200;
-let index = 0;
+  const txts=document.querySelector(".animate-text").children, txtsLen=txts.length;
+  const textInTimer=2500, textOutTimer=2200;
+  let index=0;
 
-function animateText() {
-  for (let i = 0; i < txtsLen; i++) {
-    txts[i].classList.remove("text-in", "text-out");
+  function animateText() {
+      for(let i=0; i<txtsLen; i++){
+          txts[i].classList.remove("text-in","text-out");  
+      }
+      txts[index].classList.add("text-in");
+
+      setTimeout(function(){
+          txts[index].classList.add("text-out");              
+      },textOutTimer)
+
+      setTimeout(function(){
+          if(index == txtsLen-1){
+              index=0;
+          }
+          else{
+              index++;
+          }
+          animateText();
+      },textInTimer); 
   }
-  txts[index].classList.add("text-in");
+      
+  animateText();
 
-  setTimeout(function () {
-    txts[index].classList.add("text-out");
-  }, textOutTimer);
+  /*******************************
+   * 
+   * END Hero text animation
+   * 
+  *******************************/
 
-  setTimeout(function () {
-    if (index == txtsLen - 1) {
-      index = 0;
-    } else {
-      index++;
-    }
-    animateText();
-  }, textInTimer);
-}
 
-animateText();
+  /*******************************
+   * 
+   * START Toggle Mobile Menu Animation
+   * 
+  *******************************/
 
-/*******************************
- *
- * END Hero text animation
- *
- *******************************/
+  let subMenu = document.querySelector(".sub-menu");
+  let navLinks = document.querySelector(".nav-links");
+  let menuBtn = document.querySelector(".menu");
+  let hasSubMenu = document.querySelector(".has-sub-menu");
+  let arrow = document.querySelector(".has-sub-menu span svg");
 
-/*******************************
- *
- * START Toggle Mobile Menu Animation
- *
- *******************************/
+  menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle("open");
+      menuBtn.classList.toggle("toggle");
+  });
+  
+  hasSubMenu.onclick = function() {
+      subMenu.classList.toggle("d-block");
+      arrow.classList.toggle("rotate");
+  }
 
-let subMenu = document.querySelector(".sub-menu");
-let navLinks = document.querySelector(".nav-links");
-let menuBtn = document.querySelector(".menu");
-let hasSubMenu = document.querySelector(".has-sub-menu");
-let arrow = document.querySelector(".has-sub-menu span svg");
+  /*******************************
+   * 
+   * END Toggle Mobile Menu Animation
+   * 
+  *******************************/
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-  menuBtn.classList.toggle("toggle");
-});
+  /*******************************
+   * 
+   * START SVG Rotation
+   * 
+  *******************************/
 
-hasSubMenu.onclick = function () {
-  subMenu.classList.toggle("d-block");
-  arrow.classList.toggle("rotate");
-};
-
-/*******************************
- *
- * END Toggle Mobile Menu Animation
- *
- *******************************/
-
-/*******************************
- *
- * START SVG Rotation
- *
- *******************************/
-
-window.onscroll = function () {
-  let image = document.getElementById("website-logo");
-  image.style.transform = "rotate(" + window.pageYOffset / 5 + "deg)";
-};
-
-/*******************************
- *
- * END SVG Rotation (GSAP or the simpler one)
- *
- *******************************/
-
-/*******************************
- *
- * START Selecting Language
- *
- * MUST READ
- * This function let you choose between languages.
- * when you choose a language, you should add "selected" attribute to the img in the languages section
- * and then let the magic do its work
- *
- *******************************/
-
-let languages = document.querySelectorAll(".languages");
-let languagesListImages = document.querySelectorAll(
-  ".wrapper-languages__list-language img"
-);
-let selectedLanguage = document.querySelectorAll(
-  ".wrapper-languages__list-language img[selected]"
-);
-let desktopLanguages = document.querySelectorAll(
-  ".desktop-header .wrapper-languages__list-language img:not([selected])"
-);
-let mobileLanguages = document.querySelectorAll(
-  ".mobile-header .wrapper-languages__list-language img:not([selected])"
-);
-
-// open images list
-for (var i = 0; i < languages.length; i++) {
-  languages[i].onclick = function () {
-    for (var i = 0; i < languagesListImages.length; i++) {
-      languagesListImages[i].classList.toggle("visible");
-    }
+  window.onscroll = function () {
+      let image = document.getElementById("website-logo");
+      image.style.transform = "rotate(" + window.pageYOffset/5 + "deg)"
   };
-}
 
-// order selected image
-for (var i = 0; i < selectedLanguage.length; i++) {
-  selectedLanguage[i].classList.toggle("order-1");
-}
+  /*******************************
+   * 
+   * END SVG Rotation (GSAP or the simpler one)
+   * 
+  *******************************/
 
-// order other images for desktop
-var j = 2;
-for (var i = 0; i < desktopLanguages.length; i++) {
-  desktopLanguages[i].classList.toggle("order-" + j);
-  j++;
-}
+  /*******************************
+   * 
+   * START Selecting Language
+   * 
+   * MUST READ
+   * This function let you choose between languages.
+   * when you choose a language, you should add "selected" attribute to the img in the languages section
+   * and then let the magic do its work
+   * 
+  *******************************/
 
-// order other images for moible
-var j = 2;
-for (var i = 0; i < mobileLanguages.length; i++) {
-  mobileLanguages[i].classList.toggle("order-" + j);
-  j++;
-}
+  let languages = document.querySelectorAll(".languages");
+  let languagesListImages = document.querySelectorAll(".wrapper-languages__list-language img");
+  let selectedLanguage = document.querySelectorAll(".wrapper-languages__list-language img[selected]");
+  let desktopLanguages = document.querySelectorAll(".desktop-header .wrapper-languages__list-language img:not([selected])");
+  let mobileLanguages = document.querySelectorAll(".mobile-header .wrapper-languages__list-language img:not([selected])");
 
-/*******************************
- *
- * END Selecting Language
- *
- *******************************/
+  // open images list
+  for (var i = 0; i < languages.length; i++) {
+      languages[i].onclick = function() {
+          for (var i = 0; i < languagesListImages.length; i++) {
+              languagesListImages[i].classList.toggle("visible");
+          }
+      }
+  }
 
-/*******************************
- *
- * START Logos Dropdown
- *
- *******************************/
+  // order selected image
+  for (var i = 0; i < selectedLanguage.length; i++) {
+      selectedLanguage[i].classList.toggle("order-1");
+  }
+  
+  // order other images for desktop 
+  var j = 2;
+  for (var i = 0; i < desktopLanguages.length; i++) {
+      desktopLanguages[i].classList.toggle("order-" + j);
+      j++;
+  }
+  
+  // order other images for moible 
+  var j = 2;
+  for (var i = 0; i < mobileLanguages.length; i++) {
+      mobileLanguages[i].classList.toggle("order-" + j);
+      j++;
+  }
 
-let locations = document.querySelector(".locations");
-let toggleLocations = document.querySelector(".toggle-locations");
-let logo = document.querySelector(".logo");
-toggleLocations.onclick = function () {
-  locations.classList.toggle("open");
-  logo.classList.toggle("open");
-};
+  /*******************************
+   * 
+   * END Selecting Language
+   * 
+  *******************************/
 
-/*******************************
- *
- * END Logos Dropdown
- *
- *******************************/
+  /*******************************
+   * 
+   * START Logos Dropdown
+   * 
+  *******************************/
+
+  let locations = document.querySelector(".locations");
+  let toggleLocations = document.querySelector(".toggle-locations");
+  let logo = document.querySelector(".logo");
+  toggleLocations.onclick = function() {
+      locations.classList.toggle('open');
+      logo.classList.toggle('open');
+  }
+  
+
+  /*******************************
+   * 
+   * END Logos Dropdown
+   * 
+  *******************************/

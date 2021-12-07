@@ -993,12 +993,17 @@ section {
 			&-pricing {
 				font-size: 1.25rem;
 				font-weight: 700;
-				color: var(--hover-color);
 
+				.yearly {
+					display: none;
+				}
+				.yearly,
+				.monthly {
+					color: var(--hover-color);
+				}
 				.per-membership {
 					font-size: 1rem;
 					opacity: 0.5;
-					color: var(--primary-color);
 				}
 			}
 			&-features {

@@ -1,16 +1,1 @@
-{
-  "name": "my-montyyy",
-  "source": "src/index.html",
-  "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.1",
-    "bootstrap": "^5.1.3",
-    "parcel": "^2.0.1"
-  }
-}
+{}
