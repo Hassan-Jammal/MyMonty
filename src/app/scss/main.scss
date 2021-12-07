@@ -42,8 +42,6 @@ header {
 	}
 }
 
-
-
 @mixin dropdown-arrow-black() {
 	background: url("../../assets/chevron-down-solid-black.svg") 100% no-repeat;
 	background-size: 15px 15px;
@@ -162,7 +160,7 @@ path {
 }
 
 /* Y Bootstrap Spacing Media Query */
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 991.98px) {
 	.mt-1 {
 		margin-top: 0.25rem !important;
 	}
@@ -244,6 +242,8 @@ path {
 
 .desktop-header {
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	z-index: 3;
 	font-size: 1rem;
@@ -301,6 +301,55 @@ path {
 				select {
 					color: var(--primary-color);
 				}
+				.languages{
+					.wrapper{
+						&-languages{
+							z-index:1;
+
+							&__list{
+								&-language{
+									position:absolute;
+									top:-13px;
+									left:7px;
+									
+									img{
+										opacity: 0;
+										// display: none;
+										visibility: hidden;
+
+										&:not([selected]){
+											margin-top: 0.5rem;
+										}
+
+										&[selected] {
+											opacity: 1;
+											// display: block;
+											visibility: visible;
+										}
+
+										&.visible{
+											opacity: 1;
+											visibility: visible;
+										}
+
+										&.order{
+											&-2{
+												transition: opacity 0.1s ease-in-out;
+											}
+											&-3{
+												transition: opacity 0.5s ease-in-out;
+											}
+											&-4{
+												transition: opacity 1s ease-in-out;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
 				button {
 					&#sign-up {
 						transition: background-color 0.5s ease;
@@ -389,13 +438,12 @@ path {
 				transition: none;
 				will-change: opacity, transform;
 				opacity: 0;
-				z-index: 1;
 
 				&--visible {
 					opacity: 1;
 					transform: translateX(0px);
 					transition: 0s ease opacity, 0s ease transform;
-					z-index: 3;
+					z-index: 1;
 				}
 
 				&.section {
@@ -429,7 +477,6 @@ path {
 					padding: 2.5rem 2rem;
 					position: relative;
 					margin: 2rem -2rem 0 -2rem;
-					z-index: 1;
 
 					.menu-link {
 						p {
@@ -514,14 +561,17 @@ path {
 	}
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 991.98px) {
 	.mobile-header {
 		position: fixed;
+		top: 0;
+		left: 0;
 		width: 100%;
 		z-index: 3;
 		font-size: 1rem;
 		padding: 1rem 0;
 		line-height: inherit;
+
 		.mobile {
 			&-nav {
 				display: flex;
@@ -632,6 +682,52 @@ path {
 											}
 										}
 									}
+									.languages{
+										.wrapper{
+											&-languages{
+												z-index:1;
+					
+												&__list{
+													&-language{
+														position:absolute;
+														top:-13px;
+														left:7px;
+														
+														img{
+															opacity: 0;
+															visibility: hidden;
+					
+															&:not([selected]){
+																margin-top: 0.5rem;
+															}
+					
+															&[selected] {
+																opacity: 1;
+																visibility: visible;
+															}
+					
+															&.visible{
+																opacity: 1;
+																visibility: visible;
+															}
+					
+															&.order{
+																&-2{
+																	transition: opacity 0.1s ease-in-out;
+																}
+																&-3{
+																	transition: opacity 0.5s ease-in-out;
+																}
+																&-4{
+																	transition: opacity 1s ease-in-out;
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -661,10 +757,10 @@ section {
 		border-radius: 20px;
 		overflow: hidden;
 
-		.card-body{
-			padding:0;
+		.card-body {
+			padding: 0;
 		}
-		
+
 		@media screen and (min-width: 767.98px) {
 			&--one-half {
 				&:nth-child(odd) {
@@ -703,7 +799,7 @@ section {
 					padding: 3.75rem;
 					padding-right: 0;
 
-					&.download-app{
+					&.download-app {
 						padding-top: 6rem;
 						padding-bottom: 6rem;
 					}
@@ -741,7 +837,7 @@ section {
 		.animate-text {
 			span {
 				display: none;
-				font-weight: 200;
+				font-weight: 400;
 				&.text-in {
 					display: block;
 					animation: textIn 0.8s ease;
@@ -872,7 +968,7 @@ section {
 	}
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 991.98px) {
 	section {
 		.box-wrapper {
 			.box {
@@ -880,7 +976,7 @@ section {
 					.box-content {
 						padding: 1.875rem;
 
-						&.download-app{
+						&.download-app {
 							padding-top: 2.5rem;
 						}
 					}
@@ -912,7 +1008,7 @@ section {
 
 /*---------------------------------------
 -----------------------------------------
-	FOOTER
+	FOOTERs
 -----------------------------------------
 ---------------------------------------*/
 
@@ -979,7 +1075,7 @@ footer {
 	}
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 991.98px) {
 	footer {
 		padding: 2.1875rem 0 1.875rem 0;
 
