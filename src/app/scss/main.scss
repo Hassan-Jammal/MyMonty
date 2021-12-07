@@ -213,6 +213,13 @@ path {
 }
 
 .website-fixed-logo {
+	position: fixed;
+	top:50%;
+	left:50%;
+	width:80%; 
+	height:80%; 
+	transform: translate(-50%, -50%);
+
 	svg {
 		object-fit: cover;
 		width: 100%;
@@ -247,6 +254,7 @@ path {
 	width: 100%;
 	z-index: 3;
 	font-size: 1rem;
+	padding: 0.5rem 0;
 
 	a {
 		color: var(--primary-color);
@@ -260,14 +268,59 @@ path {
 			justify-content: space-between;
 
 			&__logo {
-				width: 150px;
+				width: 180px;
+
+				.logo{
+					z-index:1;
+					transition: background-color 0.00001s;
+					border-radius:20px;
+					transition-delay: 0.00001s;
+
+					&.open{
+						transition-delay: 0.4s;
+						background: var(--secondary-color);
+					}
+				}
+
+				.locations{
+					position: absolute; 
+					top: 0px; 
+					left: 0; 
+					width: 0px;
+					height: 0px;
+					background: var(--secondary-color);
+					padding-bottom: 1rem;
+					border-radius:20px;
+					transition: width 0.4s, height 0.4s;
+					visibility: hidden;
+					overflow: scroll;
+					-ms-overflow-style: none; 
+  					scrollbar-width: none;
+
+					&::-webkit-scrollbar {
+						display: none;
+					}
+
+					&.open{
+						visibility: visible;
+						width: 190px;
+						height: 150px;
+					}
+
+					&-wrapper__list{
+						padding-top:3.125rem;
+						&-location{
+							margin-top: 0.5rem;
+						}
+					}
+				}
 			}
 
 			&__tabs {
 				button {
 					-webkit-appearance: none;
 					background: transparent;
-					padding: 1.5rem 0.4rem;
+					padding: 1rem 0.6rem;
 					border: none;
 					color: var(--primary-color);
 					transition: color 0.5s ease;
@@ -301,45 +354,44 @@ path {
 				select {
 					color: var(--primary-color);
 				}
-				.languages{
-					.wrapper{
-						&-languages{
-							z-index:1;
+				
+				.languages {
+					.wrapper {
+						&-languages {
+							z-index: 1;
 
-							&__list{
-								&-language{
-									position:absolute;
-									top:-13px;
-									left:7px;
-									
-									img{
+							&__list {
+								&-language {
+									position: absolute;
+									top: -13px;
+									left: 7px;
+
+									img {
 										opacity: 0;
-										// display: none;
 										visibility: hidden;
 
-										&:not([selected]){
+										&:not([selected]) {
 											margin-top: 0.5rem;
 										}
 
 										&[selected] {
 											opacity: 1;
-											// display: block;
 											visibility: visible;
 										}
 
-										&.visible{
+										&.visible {
 											opacity: 1;
 											visibility: visible;
 										}
 
-										&.order{
-											&-2{
+										&.order {
+											&-2 {
 												transition: opacity 0.1s ease-in-out;
 											}
-											&-3{
+											&-3 {
 												transition: opacity 0.5s ease-in-out;
 											}
-											&-4{
+											&-4 {
 												transition: opacity 1s ease-in-out;
 											}
 										}
@@ -378,7 +430,7 @@ path {
 			left: 50%;
 			border-radius: 20px;
 			background: var(--secondary-color);
-			box-shadow: 0 45px 25px -40px hsla(0, 0%, 0%, 0.25), 0 15px 25px 10px hsla(0, 0%, 0%, 0.1);
+			box-shadow: 0 45px 25px -40px var(--primary-color), 0 15px 25px 10px var(--primary-color);
 			transform: translateX(-50%);
 			transform-origin: 50% -50px;
 			transition: 0.25s ease transform, 0.25s ease opacity;
@@ -569,7 +621,7 @@ path {
 		width: 100%;
 		z-index: 3;
 		font-size: 1rem;
-		padding: 1rem 0;
+		padding: 0.75rem 0;
 		line-height: inherit;
 
 		.mobile {
@@ -579,7 +631,7 @@ path {
 				justify-content: space-between;
 
 				&__logo {
-					width: 150px;
+					width: 180px;
 					z-index: 4;
 				}
 				&__tabs {
@@ -617,7 +669,7 @@ path {
 						.nav-links {
 							display: block;
 							position: fixed;
-							top: 0px;
+							top: 0;
 							left: -100%;
 							width: 100%;
 							height: 100vh;
@@ -682,43 +734,43 @@ path {
 											}
 										}
 									}
-									.languages{
-										.wrapper{
-											&-languages{
-												z-index:1;
-					
-												&__list{
-													&-language{
-														position:absolute;
-														top:-13px;
-														left:7px;
-														
-														img{
+									.languages {
+										.wrapper {
+											&-languages {
+												z-index: 1;
+
+												&__list {
+													&-language {
+														position: absolute;
+														top: -13px;
+														left: 7px;
+
+														img {
 															opacity: 0;
 															visibility: hidden;
-					
-															&:not([selected]){
+
+															&:not([selected]) {
 																margin-top: 0.5rem;
 															}
-					
+
 															&[selected] {
 																opacity: 1;
 																visibility: visible;
 															}
-					
-															&.visible{
+
+															&.visible {
 																opacity: 1;
 																visibility: visible;
 															}
-					
-															&.order{
-																&-2{
+
+															&.order {
+																&-2 {
 																	transition: opacity 0.1s ease-in-out;
 																}
-																&-3{
+																&-3 {
 																	transition: opacity 0.5s ease-in-out;
 																}
-																&-4{
+																&-4 {
 																	transition: opacity 1s ease-in-out;
 																}
 															}
@@ -828,7 +880,7 @@ section {
 	}
 
 	&#section-1 {
-		padding-top: calc(80px + 1rem);
+		padding-top: calc(80px + 2.5rem);
 		// padding-bottom: calc(50px + 1rem);
 		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
 		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
@@ -941,17 +993,12 @@ section {
 			&-pricing {
 				font-size: 1.25rem;
 				font-weight: 700;
+				color: var(--hover-color);
 
-				.yearly {
-					display: none;
-				}
-				.yearly,
-				.monthly {
-					color: var(--hover-color);
-				}
 				.per-membership {
 					font-size: 1rem;
 					opacity: 0.5;
+					color: var(--primary-color);
 				}
 			}
 			&-features {
@@ -1017,6 +1064,15 @@ footer {
 	background: var(--primary-color);
 	padding: 2.1875rem 0 1.875rem 0;
 	font-size: 1rem;
+
+	input[type="submit"]{
+		background: var(--hover-color);
+		color: var(--primary-color);
+
+		&:hover{
+			background: var(--secondary-color);
+		}
+	}
 	p,
 	a {
 		opacity: 0.8;
