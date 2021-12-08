@@ -154,7 +154,7 @@
 				<div class="desktop-nav__logo">
 					<div class="logo d-flex justify-content-between align-items-center">
 						<a href="" class="">
-							<svg viewBox="0 0 206 70" width="150px" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<svg viewBox="0 0 206 70" width="150px" height="50px" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M38.4854 60.9011H39.0121V62.5121H39.3655V60.9011H39.8911V60.624H38.4854V60.9011Z" />
 								<path
@@ -301,27 +301,29 @@
 									d="M203.281 26.1729L197.876 39.6906L192.473 26.1729H189.754L196.595 42.9079L193.909 49.2443H196.502L199.096 43.069L206 26.1729H203.281Z" />
 							</svg>
 						</a>
-						<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down"
-							class="toggle-locations svg-inline--fa fa-chevron-down fa-w-14 cursor-pointer" role="img"
-							xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15px">
-							<path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
-						</svg>
-					</div>
-					<div class="locations"> 
-						<div class="locations-wrapper">
-							<ul class="locations-wrapper__list">
-								<li class="locations-wrapper__list-location">
-									<a href="">
-										<span class="fw-bolder">My</span>Poland
-									</a>
-								</li>
-								<hr>
-								<li class="locations-wrapper__list-location">
-									<a href="">
-										<span class="fw-bolder">My</span>Italy
-									</a>
-								</li>
-							</ul>
+						<div class="ms-1">
+							<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down"
+								class="toggle-locations svg-inline--fa fa-chevron-down fa-w-14 cursor-pointer" role="img"
+								xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15px">
+								<path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+							</svg>
+						</div>
+						<div id="selected-location" class="ms-1">poland</div>
+						<div class="locations"> 
+							<div class="locations-wrapper">
+								<ul class="locations-wrapper__list">
+									<li class="locations-wrapper__list-location">
+										<a href="">
+											<span class="fw-bolder">My</span>Poland
+										</a>
+									</li>
+									<li class="locations-wrapper__list-location">
+										<a href="">
+											<span class="fw-bolder">My</span>Italy
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -333,7 +335,7 @@
 					<div class="menu-pointer"></div>
 				</div>
 				<div class="desktop-nav__options d-flex justify-content-center align-items-center">
-					<div class="languages d-flex align-items-start justify-content-between cursor-pointer">
+					<div class="language-toggler cursor-pointer d-flex justify-content-center align-items-center">
 						<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down"
 							class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 448 512" width="10px">
@@ -341,26 +343,25 @@
 								d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z">
 							</path>
 						</svg>
-						<div class="wrapper-languages me-3">
-							<div class="wrapper-languages__list">
-								<div class="wrapper-languages__list-language d-flex flex-column">
-									<div class="wrapper-languages__list-language__icon d-flex">
-										<img src="./assets/poland.png" alt="" width="25px">
-										<span class="ms-1">Poland</span>
-									</div>
-									<div class="wrapper-languages__list-language__icon d-flex">
-										<img src="./assets/france.png" alt="" width="25px">
-										<span class="ms-1">French</span>
-									</div>
-									<div class="wrapper-languages__list-language__icon d-flex">
-										<img src="./assets/united-kingdom.png" alt="" width="25px">
-										<span class="ms-1">English</span>
-									</div>
-									<div class="wrapper-languages__list-language__icon d-flex" selected>
-										<img  src="./assets/spain.png" alt="" width="25px">
-										<span class="ms-1">Italian</span>
-									</div>
-								</div>
+						<div id="selected-language" class="ms-1">
+							<img src="./assets/united-kingdom.png" alt="" width="25px">
+						</div>
+						<div class="languages"> 
+							<div class="languages-wrapper">
+								<ul class="languages-wrapper__list">
+									<li class="languages-wrapper__list-language">
+										<a href="">
+											<img src="./assets/united-kingdom.png" alt="" width="25px">
+											<span class="ms-1">Italiano</span>
+										</a>
+									</li>
+									<li class="languages-wrapper__list-language">
+										<a href="">
+											<img src="./assets/united-kingdom.png" alt="" width="25px">
+											<span class="ms-1">Espagnalo</span>
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -371,104 +372,13 @@
 							fill="#010101" />
 					</svg>
 					<button id="login" class="ms-2 border-0 bg-transparent">Login</button>
-					<button id="sign-up" class="ms-2 px-2 py-1 border-0 rounded-pill fs-4">Sign Up</button>
+					<button id="sign-up" class="ms-2 px-3 py-1 border-0 rounded-pill fs-4">Sign Up</button>
 				</div>
 			</div>
 			<div class="desktop-menu">
 				<div class="desktop-menu__wrapper">
+					
 					<section class="desktop-menu__section section-company" data-section="company">
-						<div class="desktop-menu__section-content">
-							<div class="desktop-menu__column">
-								<h6 class="desktop-menu__column-title">Who we are</h6>
-								<div class="desktop-menu__column-content">
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png"
-											alt="Pound money bag icon">
-										<div>
-											<p>Payments<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>Online payments</small>
-										</div>
-									</a>
-									<a class="menu-link menu-link--big" href=""> <img
-											src="https://i.ibb.co/SBLyQNw/icons8-card-security-48.png"
-											alt="Card security icon">
-										<div>
-											<p>Payment links<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>No-code payments</small>
-										</div>
-									</a>
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/8zc7vfd/icons8-purchase-order-48.png"
-											alt="Receipt icon">
-										<div>
-											<p>Invoicing<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>Online invoices</small>
-										</div>
-									</a>
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/1LfYpWg/icons8-handshake-48.png" alt="Handshake icon">
-										<div>
-											<p>Billing<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>Subscription management</small>
-										</div>
-									</a>
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/BG9HjcL/icons8-wallet-48.png" alt="Wallet icon">
-										<div>
-											<p>Connect<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>Payments for platforms</small>
-										</div>
-									</a>
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/QQ42ZN5/icons8-cash-register-48.png"
-											alt="Cash register icon">
-										<div>
-											<p>Terminal<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>In-person payments</small>
-										</div>
-									</a>
-								</div>
-							</div>
-							<div class="desktop-menu__column">
-								<h6 class="desktop-menu__column-title">Financial services</h6>
-								<div class="desktop-menu__column-content">
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/mJ3xggS/icons8-debit-card-48.png"
-											alt="Debit card icon">
-										<div>
-											<p>Corporate card<span class="material-icons hidden-arrow">&#8250;</span>
-											</p> <small>Spend management</small>
-										</div>
-									</a>
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/rwBv1S4/icons8-money-box-48.png"
-											alt="Piggy bank icon">
-										<div>
-											<p>Capital<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>Business financing</small>
-										</div>
-									</a>
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/GJkH51m/icons8-insert-credit-card-48.png"
-											alt="Inserting credit card icon">
-										<div>
-											<p>Issuing<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>Card creation</small>
-										</div>
-									</a>
-									<a class="menu-link menu-link--big" href="#"> <img
-											src="https://i.ibb.co/yPfGS7M/icons8-online-money-transfer-48.png"
-											alt="Online transfer icon">
-										<div>
-											<p>Treasury<span class="material-icons hidden-arrow">&#8250;</span></p>
-											<small>Banking-as-a-service</small>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="desktop-menu__section section-features" data-section="features">
 						<div class="desktop-menu__section-content">
 							<div class="desktop-menu__column">
 								<a class="menu-link" href="#">
@@ -500,6 +410,139 @@
 									</div>
 								</a>
 							</div>
+						</div>
+					</section>
+					<section class="desktop-menu__section section-features" data-section="features">
+						<div class="desktop-menu__section-content">
+							<div class="desktop-menu__column">
+								<h6 class="desktop-menu__column-title">Cards</h6>
+								<div class="desktop-menu__column-content">
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Prepaid Card Issuing<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Request Physical Card<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Secure Online Payments<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Full Control<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="desktop-menu__column">
+								<h6 class="desktop-menu__column-title">Payments</h6>
+								<div class="desktop-menu__column-content">
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Send Money Worldwide<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Mobile Payments<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>International Money Transfer<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Foreign Currency Exchange<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Employee Payroll<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="desktop-menu__column">
+								<h6 class="desktop-menu__column-title">Favorites</h6>
+								<div class="desktop-menu__column-content">
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Create Online Subscriptions<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Bill Splitting<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Recurring Payments<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Peer to Peer Payments<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="desktop-menu__column">
+								<h6 class="desktop-menu__column-title">Tools</h6>
+								<div class="desktop-menu__column-content">
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>IBAN<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Accept Online Payments<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Online Services<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Online Customer Onboarding<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+									<a class="menu-link menu-link--big align-items-center" href="who-we-are.html"> 
+										<img src="https://i.ibb.co/bsJK68H/icons8-money-pound-48.png" alt="Pound money bag icon" width="30px">
+										<div>
+											<p>Reporting & Compliance<span class="material-icons hidden-arrow">&#8250;</span></p>
+										</div>
+									</a>
+								</div>
+							</div>
+							
 						</div>
 					</section>
 					<section class="desktop-menu__section section-plans" data-section="plans">
@@ -1144,7 +1187,7 @@
 						<div class="box-action text-center mt-4">
 							<a href="" class="fs-4">See all features</a>
 							<div class="mt-2">
-								<input type="submit" value="Choose Plan" class="fs-4 py-2 px-4 border-0 rounded-pill">
+								<input type="submit" value="Choose Plan" class="fs-4 py-2 px-3 rounded-pill border-0">
 							</div>
 						</div>
 					</div>
@@ -1170,7 +1213,7 @@
 						<div class="box-action text-center mt-4">
 							<a href="" class="fs-4">See all features</a>
 							<div class="mt-2">
-								<input type="submit" value="Choose Plan" class="fs-4 py-2 px-4 border-0 rounded-pill">
+								<input type="submit" value="Choose Plan" class="fs-4 py-2 px-3 rounded-pill border-0">
 							</div>
 						</div>
 					</div>
@@ -1195,7 +1238,7 @@
 						<div class="box-action text-center mt-4">
 							<a href="" class="fs-4">See all features</a>
 							<div class="mt-2">
-								<input type="submit" value="Choose Plan" class="fs-4 p-2 px-4 border-0 rounded-pill">
+								<input type="submit" value="Choose Plan" class="fs-4 py-2 px-3 rounded-pill border-0">
 							</div>
 						</div>
 					</div>
@@ -1212,8 +1255,8 @@
 					<p class="mt-2 fw-light">Enter you email to the latest news from MyMonty</p>
 					<div class="mt-2">	
 						<form action="">
-							<input type="text" class="p-1 mt-3 rounded-pill border-0" placeholder="Enter your email">
-							<input type="submit" class="p-1 mt-3 border-0 rounded-pill" value="Subscribe">
+							<input type="text" class="py-1 px-2 mt-3 border-0 rounded-pill" placeholder="Enter your email">
+							<input type="submit" class="py-1 px-3 mt-3 border-0 rounded-pill fs-4" value="Subscribe">
 						</form>
 					</div>
 				</div>

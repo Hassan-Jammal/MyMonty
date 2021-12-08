@@ -127,6 +127,7 @@ button {
 	outline: none;
 	margin: 0;
 	padding: 0;
+	line-height: 20px !important;
 }
 
 option {
@@ -254,7 +255,7 @@ path {
 	width: 100%;
 	z-index: 3;
 	font-size: 1rem;
-	padding: 0.5rem 0;
+	padding: 1rem 0;
 
 	a {
 		color: var(--primary-color);
@@ -268,32 +269,17 @@ path {
 			justify-content: space-between;
 
 			&__logo {
-				width: 180px;
-
-				.logo{
-					z-index:1;
-					// transition: background-color 0.00001s;
-					// border-radius:20px;
-					// transition-delay: 0.00001s;
-
-					// &.open{
-					// 	transition-delay: 0.4s;
-					// 	background: var(--secondary-color);
-					// }
-				}
+				width: auto;
 
 				.locations{
 					position: absolute; 
-					top:65px;
+					top:calc(1rem + 50px); //padding and height of logo
 					left: 0;
-					// height:150px; 
 					background: var(--secondary-color);
-					padding: 1rem 0;
 					font-size:1.5rem;
 					border-bottom-left-radius:20px;
 					border-bottom-right-radius:20px;
-					transition: width 0.4s, height 0.4s;
-					visibility: hidden;
+					display: none;
 					overflow: scroll;
 					-ms-overflow-style: none; 
   					scrollbar-width: none;
@@ -303,26 +289,26 @@ path {
 					}
 
 					&.open{
-						visibility: visible;
+						display: block;
 					}
 
 					&-wrapper__list{
-						hr{
-							opacity:0.05;
-						}
+						width: max-content;
 
 						&-location{
-							opacity:1;
-
-							&:nth-child(1){
-								color:red;
-							}
+							border-bottom: 1px solid rgba(0,0,0,0.05);
+							padding: 1rem  2.5rem 1rem 3.186rem;
+							
 							&:nth-child(2){
-								color:blue;
+								border-bottom:0;
 							}
-
-							a{
-								padding: 0 2.5rem 0 3.186rem;
+							&:hover{
+								&:nth-child(odd){
+									background:red;
+								}
+								&:nth-child(even){
+									background:blue;
+								}
 							}
 						}
 					}
@@ -349,7 +335,7 @@ path {
 					height: 16px;
 					width: 16px;
 					border-radius: 3px;
-					background: var(--primary-color);
+					background: var(--secondary-color);
 					transform: translateX(0) rotate(45deg);
 					opacity: 0;
 
@@ -367,56 +353,44 @@ path {
 				select {
 					color: var(--primary-color);
 				}
-				
-				.languages {
-					.wrapper {
-						&-languages {
-							z-index: 1;
 
-							&__list {
-								&-language {
-									position: absolute;
-									top: -13px;
-									left: 7px;
-									padding: 0.3rem ;
-									border-radius: 20px;
-									background-color: var(--secondary-color);
+				.languages{
+					position: absolute; 
+					top:calc(2rem + 25px); //padding and height of logo
+					left: 0;
+					background: var(--secondary-color);
+					font-size:1rem;
+					border-bottom-left-radius:20px;
+					border-bottom-right-radius:20px;
+					display: none;
+					overflow: scroll;
+					-ms-overflow-style: none; 
+  					scrollbar-width: none;
 
-									&__icon {
-										opacity: 0;
-										visibility: hidden;
+					&::-webkit-scrollbar {
+						display: none;
+					}
 
-										img{
-											width:25px;
-											height:25px;
-										}
+					&.open{
+						display: block;
+					}
 
-										&:not([selected]) {
-											margin-top: 0.5rem;
-										}
+					&-wrapper__list{
+						width: max-content;
 
-										&[selected] {
-											opacity: 1;
-											visibility: visible;
-										}
-
-										&.visible {
-											opacity: 1;
-											visibility: visible;
-										}
-
-										&.order {
-											&-2 {
-												transition: opacity 0.1s ease-in-out;
-											}
-											&-3 {
-												transition: opacity 0.5s ease-in-out;
-											}
-											&-4 {
-												transition: opacity 1s ease-in-out;
-											}
-										}
-									}
+						&-language{
+							border-bottom: 1px solid rgba(0,0,0,0.05);
+							padding: 1rem;
+							
+							&:nth-child(2){
+								border-bottom:0;
+							}
+							&:hover{
+								&:nth-child(odd){
+									background:red;
+								}
+								&:nth-child(even){
+									background:blue;
 								}
 							}
 						}
@@ -450,8 +424,9 @@ path {
 			top: 100%;
 			left: 50%;
 			border-radius: 20px;
-			background: var(--secondary-color);
-			box-shadow: 0 45px 25px -40px var(--primary-color), 0 15px 25px 10px var(--primary-color);
+			background: #f8f8f8;
+			box-shadow: 0px 4px 10px var(--primary-color);
+			opacity: 0.04;
 			transform: translateX(-50%);
 			transform-origin: 50% -50px;
 			transition: 0.25s ease transform, 0.25s ease opacity;
@@ -483,7 +458,7 @@ path {
 			}
 
 			&__column {
-				margin: 0 1.875rem;
+				margin: 0 0.9375rem;
 
 				&:first-of-type,
 				&:last-of-type {
@@ -492,8 +467,8 @@ path {
 
 				&-title {
 					margin: 0 0 1.25rem;
-					text-transform: uppercase;
 					white-space: nowrap;
+					font-weight: 900;
 
 					&--compact {
 						margin-bottom: 1rem;
@@ -550,11 +525,6 @@ path {
 					padding: 2.5rem 2rem;
 					position: relative;
 					margin: 2rem -2rem 0 -2rem;
-
-					.menu-link {
-						p {
-						}
-					}
 				}
 
 				.menu {
@@ -582,9 +552,9 @@ path {
 						}
 
 						img {
-							max-height: 44px;
-							max-width: 44px;
-							margin-right: 1rem;
+							max-height: 25px;
+							max-width: 25px;
+							margin-right: 0.5rem;
 						}
 
 						p {
@@ -613,14 +583,8 @@ path {
 								opacity: 1;
 								// transform: translate(0%, -50%);
 							}
-							small {
-								color: green;
-							}
-							> span {
-								color: blue;
-							}
 							p {
-								color: yellow;
+								color: var(--hover-color);
 							}
 						}
 
