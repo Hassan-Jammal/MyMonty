@@ -124,9 +124,10 @@ ul {
 select,
 input,
 button {
-  outline: none;
-  margin: 0;
-  padding: 0;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	line-height: 20px !important;
 }
 
 option {
@@ -248,13 +249,13 @@ path {
 }
 
 .desktop-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-  font-size: 1rem;
-  padding: 0.5rem 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	font-size: 1rem;
+	padding: 1rem 0;
 
   a {
     color: var(--primary-color);
@@ -267,67 +268,52 @@ path {
       align-items: center;
       justify-content: space-between;
 
-      &__logo {
-        width: 180px;
+			&__logo {
+				width: auto;
 
-        .logo {
-          z-index: 1;
-          // transition: background-color 0.00001s;
-          // border-radius:20px;
-          // transition-delay: 0.00001s;
-
-          // &.open{
-          // 	transition-delay: 0.4s;
-          // 	background: var(--secondary-color);
-          // }
-        }
-
-        .locations {
-          position: absolute;
-          top: 65px;
-          left: 0;
-          // height:150px;
-          background: var(--secondary-color);
-          padding: 1rem 0;
-          font-size: 1.5rem;
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
-          transition: width 0.4s, height 0.4s;
-          visibility: hidden;
-          overflow: scroll;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+				.locations{
+					position: absolute; 
+					top:calc(1rem + 50px); //padding and height of logo
+					left: 0;
+					background: var(--secondary-color);
+					font-size:1.5rem;
+					border-bottom-left-radius:20px;
+					border-bottom-right-radius:20px;
+					display: none;
+					overflow: scroll;
+					-ms-overflow-style: none; 
+  					scrollbar-width: none;
 
           &::-webkit-scrollbar {
             display: none;
           }
 
-          &.open {
-            visibility: visible;
-          }
+					&.open{
+						display: block;
+					}
 
-          &-wrapper__list {
-            hr {
-              opacity: 0.05;
-            }
+					&-wrapper__list{
+						width: max-content;
 
-            &-location {
-              opacity: 1;
-
-              &:nth-child(1) {
-                color: red;
-              }
-              &:nth-child(2) {
-                color: blue;
-              }
-
-              a {
-                padding: 0 2.5rem 0 3.186rem;
-              }
-            }
-          }
-        }
-      }
+						&-location{
+							border-bottom: 1px solid rgba(0,0,0,0.05);
+							padding: 1rem  2.5rem 1rem 3.186rem;
+							
+							&:nth-child(2){
+								border-bottom:0;
+							}
+							&:hover{
+								&:nth-child(odd){
+									background:red;
+								}
+								&:nth-child(even){
+									background:blue;
+								}
+							}
+						}
+					}
+				}
+			}
 
       &__tabs {
         button {
@@ -343,15 +329,15 @@ path {
           }
         }
 
-        .menu-pointer {
-          position: absolute;
-          bottom: -16px;
-          height: 16px;
-          width: 16px;
-          border-radius: 3px;
-          background: var(--primary-color);
-          transform: translateX(0) rotate(45deg);
-          opacity: 0;
+				.menu-pointer {
+					position: absolute;
+					bottom: -16px;
+					height: 16px;
+					width: 16px;
+					border-radius: 3px;
+					background: var(--secondary-color);
+					transform: translateX(0) rotate(45deg);
+					opacity: 0;
 
           &--anim-transform {
             transition: 0.5s ease transform;
@@ -363,47 +349,53 @@ path {
         }
       }
 
-      &__options {
-        select {
-          color: var(--primary-color);
-        }
+			&__options {
+				select {
+					color: var(--primary-color);
+				}
 
-        .languages {
-          .wrapper {
-            &-languages {
-              z-index: 1;
+				.languages{
+					position: absolute; 
+					top:calc(2rem + 25px); //padding and height of logo
+					left: 0;
+					background: var(--secondary-color);
+					font-size:1rem;
+					border-bottom-left-radius:20px;
+					border-bottom-right-radius:20px;
+					display: none;
+					overflow: scroll;
+					-ms-overflow-style: none; 
+  					scrollbar-width: none;
 
-              &__list {
-                &-language {
-                  position: absolute;
-                  top: -13px;
-                  left: 7px;
-                  padding: 0.3rem;
-                  border-radius: 20px;
-                  background-color: var(--secondary-color);
+					&::-webkit-scrollbar {
+						display: none;
+					}
 
-                  &__icon {
-                    opacity: 0;
-                    visibility: hidden;
+					&.open{
+						display: block;
+					}
 
-                    img {
-                      width: 25px;
-                      height: 25px;
-                    }
+					&-wrapper__list{
+						width: max-content;
 
-                    &:not([selected]) {
-                      margin-top: 0.5rem;
-                    }
-
-                    &[selected] {
-                      opacity: 1;
-                      visibility: visible;
-                    }
-
-                    &.visible {
-                      opacity: 1;
-                      visibility: visible;
-                    }
+						&-language{
+							border-bottom: 1px solid rgba(0,0,0,0.05);
+							padding: 1rem;
+							
+							&:nth-child(2){
+								border-bottom:0;
+							}
+							&:hover{
+								&:nth-child(odd){
+									background:red;
+								}
+								&:nth-child(even){
+									background:blue;
+								}
+							}
+						}
+					}
+				}
 
                     &.order {
                       &-2 {
@@ -437,13 +429,20 @@ path {
             transition: color 0.5s ease;
             color: var(--primary-color);
 
-            &:hover {
-              color: var(--hover-color);
-            }
-          }
-        }
-      }
-    }
+		&-menu {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			border-radius: 20px;
+			background: #f8f8f8;
+			box-shadow: 0px 4px 10px var(--primary-color);
+			opacity: 0.04;
+			transform: translateX(-50%);
+			transform-origin: 50% -50px;
+			transition: 0.25s ease transform, 0.25s ease opacity;
+			will-change: opacity, transform;
+			opacity: 0;
+			overflow: hidden;
 
     &-menu {
       position: absolute;
@@ -477,18 +476,16 @@ path {
         transform: translateX(-50%) rotateX(-15deg);
       }
 
-      &--visible {
-        opacity: 1;
-        transform: translateX(-50%) rotateX(0deg);
-      }
+			&__column {
+				margin: 0 0.9375rem;
 
       &__column {
         margin: 0 1.875rem;
 
-        &:first-of-type,
-        &:last-of-type {
-          margin-left: 0;
-        }
+				&-title {
+					margin: 0 0 1.25rem;
+					white-space: nowrap;
+					font-weight: 900;
 
         &-title {
           margin: 0 0 1.25rem;
@@ -538,18 +535,13 @@ path {
             transition: 0.25s ease color;
             white-space: nowrap;
 
-            &:hover {
-              color: red;
-            }
-          }
-        }
-
-        &-footer {
-          align-items: flex-start;
-          display: flex;
-          padding: 2.5rem 2rem;
-          position: relative;
-          margin: 2rem -2rem 0 -2rem;
+				&-footer {
+					align-items: flex-start;
+					display: flex;
+					padding: 2.5rem 2rem;
+					position: relative;
+					margin: 2rem -2rem 0 -2rem;
+				}
 
           .menu-link {
             p {
@@ -576,10 +568,11 @@ path {
               z-index: -1;
             }
 
-            > span {
-              margin-right: 0.5rem;
-              transition: 0.25s ease color;
-            }
+						img {
+							max-height: 25px;
+							max-width: 25px;
+							margin-right: 0.5rem;
+						}
 
             img {
               max-height: 44px;
@@ -604,9 +597,15 @@ path {
               margin-bottom: 2rem;
             }
 
-            &:last-of-type {
-              margin-bottom: 0;
-            }
+						&:hover {
+							.hidden-arrow {
+								opacity: 1;
+								// transform: translate(0%, -50%);
+							}
+							p {
+								color: var(--hover-color);
+							}
+						}
 
             &:hover {
               .hidden-arrow {

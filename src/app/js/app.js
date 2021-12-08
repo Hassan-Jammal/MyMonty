@@ -162,47 +162,13 @@ window.onscroll = function () {
  *
  *******************************/
 
-let languages = document.querySelectorAll(".languages");
-let languagesListImages = document.querySelectorAll(
-  ".wrapper-languages__list-language__icon"
-);
-let selectedLanguage = document.querySelectorAll(
-  ".wrapper-languages__list-language__icon[selected]"
-);
-let desktopLanguages = document.querySelectorAll(
-  ".desktop-header .wrapper-languages__list-language__icon:not([selected])"
-);
-let mobileLanguages = document.querySelectorAll(
-  ".mobile-header .wrapper-languages__list-language__icon:not([selected])"
-);
+let languagesWrapper = document.querySelector(".languages");
+let languageToggler = document.querySelector(".language-toggler");
+let language = document.querySelectorAll(".languages-wrapper__list-language");
 
-// open images list
-for (var i = 0; i < languages.length; i++) {
-  languages[i].onclick = function () {
-    for (var i = 0; i < languagesListImages.length; i++) {
-      languagesListImages[i].classList.toggle("visible");
-    }
-  };
-}
-
-// order selected image
-for (var i = 0; i < selectedLanguage.length; i++) {
-  selectedLanguage[i].classList.toggle("order-1");
-}
-
-// order other images for desktop
-var j = 2;
-for (var i = 0; i < desktopLanguages.length; i++) {
-  desktopLanguages[i].classList.toggle("order-" + j);
-  j++;
-}
-
-// order other images for moible
-var j = 2;
-for (var i = 0; i < mobileLanguages.length; i++) {
-  mobileLanguages[i].classList.toggle("order-" + j);
-  j++;
-}
+languageToggler.onclick = function () {
+  languagesWrapper.classList.toggle("open");
+};
 
 /*******************************
  *
