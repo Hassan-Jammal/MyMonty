@@ -869,7 +869,16 @@ section {
 			}
     }
   }
-
+  .box-wrapper > .box:not(.no-cta) {
+    cursor: pointer;
+  }
+  .box-wrapper > .box:hover:not(.no-zoom) img {
+    transform: scale(1.05);
+    transition: transform .4s;    
+  }
+  .box-wrapper > .box:not(.no-zoom) img {
+    transition: 0.5s all ease-in-out;
+  }
   &#section-1 {
     padding-top: calc(80px + 2.5rem);
     // padding-bottom: calc(50px + 1rem);
