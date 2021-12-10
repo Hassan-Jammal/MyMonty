@@ -80,10 +80,10 @@ navLinks.classList.toggle("open");
 menuBtn.classList.toggle("toggle");
 });
 
-$('.menu-item-has-children').on("click", function(){
-$(this).next('.sub-menu-wrapper').toggle();
-$(this).find('svg').toggleClass('rotate');
-});
+// $('.menu-item-has-children').on("click", function(){
+// $(this).next('.sub-menu-wrapper').toggle();
+// $(this).find('svg').toggleClass('rotate');
+// });
 
 
 /*******************************
