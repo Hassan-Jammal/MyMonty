@@ -13,6 +13,7 @@
   --primary-color: #000000;
   --secondary-color: #ffffff;
   --tertiary-color: #f8f8f8;
+  --menu-color: #efefef;
   --test-color: #efefef;
   --paragraph-color: #494646;
   --special-color: #c1c1c1;
@@ -25,6 +26,7 @@ html[data-theme="dark-mode"] {
   --primary-color: #ffffff;
   --secondary-color: #000000;
   --tertiary-color: #191c1f;
+  --menu-color: #303030;
   --test-color: #101214;
   --paragraph-color: #ffffff;
   --special-color: #000000;
@@ -217,8 +219,8 @@ path {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   transform: translate(-50%, -50%);
 
   svg {
@@ -227,6 +229,104 @@ path {
     height: 100%;
   }
 }
+
+/*---------------------------------------
+-----------------------------------------
+	Start Common Between Header (Mobile and Desktop)
+-----------------------------------------
+---------------------------------------*/
+
+.locations {
+  position: absolute;
+  top: calc(1rem + 50px); //padding and height of logo
+  left: 0;
+  background: var(--secondary-color);
+  font-size: 1.5rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: none;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.open {
+    display: block;
+  }
+
+  &-wrapper__list {
+    width: max-content;
+
+    &-location {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1rem 2.5rem 1rem 3.186rem;
+
+      &:nth-child(2) {
+        border-bottom: 0;
+      }
+      &:hover {
+        &:nth-child(odd) {
+          background: red;
+        }
+        &:nth-child(even) {
+          background: blue;
+        }
+      }
+    }
+  }
+}
+
+.languages {
+  position: absolute;
+  top: calc(2rem + 25px); //padding and height of logo
+  left: 0;
+  background: var(--secondary-color);
+  font-size: 1rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: none;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.open {
+    display: block;
+  }
+
+  &-wrapper__list {
+    width: max-content;
+
+    &-language {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+
+      &:nth-child(2) {
+        border-bottom: 0;
+      }
+      &:hover {
+        &:nth-child(odd) {
+          background: red;
+        }
+        &:nth-child(even) {
+          background: blue;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------------
+-----------------------------------------
+	End Common Between Header (Mobile and Desktop)
+-----------------------------------------
+---------------------------------------*/
 
 /*---------------------------------------
 -----------------------------------------
@@ -270,49 +370,6 @@ path {
 
       &__logo {
         width: auto;
-
-        .locations {
-          position: absolute;
-          top: calc(1rem + 50px); //padding and height of logo
-          left: 0;
-          background: var(--secondary-color);
-          font-size: 1.5rem;
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
-          display: none;
-          overflow: scroll;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-
-          &::-webkit-scrollbar {
-            display: none;
-          }
-
-          &.open {
-            display: block;
-          }
-
-          &-wrapper__list {
-            width: max-content;
-
-            &-location {
-              border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-              padding: 1rem 2.5rem 1rem 3.186rem;
-
-              &:nth-child(2) {
-                border-bottom: 0;
-              }
-              &:hover {
-                &:nth-child(odd) {
-                  background: red;
-                }
-                &:nth-child(even) {
-                  background: blue;
-                }
-              }
-            }
-          }
-        }
       }
 
       &__tabs {
@@ -331,11 +388,11 @@ path {
 
         .menu-pointer {
           position: absolute;
-          bottom: -16px;
+          bottom: -30px;
           height: 16px;
           width: 16px;
           border-radius: 3px;
-          background: var(--secondary-color);
+          background: var(--menu-color);
           transform: translateX(0) rotate(45deg);
           opacity: 0;
 
@@ -350,70 +407,13 @@ path {
       }
 
       &__options {
-        select {
-          color: var(--primary-color);
-        }
-
-        .languages {
-          position: absolute;
-          top: calc(2rem + 25px); //padding and height of logo
-          left: 0;
-          background: var(--secondary-color);
-          font-size: 1rem;
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
-          display: none;
-          overflow: scroll;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-
-          &::-webkit-scrollbar {
-            display: none;
-          }
-
-          &.open {
-            display: block;
-          }
-
-          &-wrapper__list {
-            width: max-content;
-
-            &-language {
-              border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-              padding: 1rem;
-
-              &:nth-child(2) {
-                border-bottom: 0;
-              }
-              &:hover {
-                &:nth-child(odd) {
-                  background: red;
-                }
-                &:nth-child(even) {
-                  background: blue;
-                }
-              }
-            }
-          }
-        }
-
         button {
-          &#sign-up {
-            transition: background-color 0.5s ease;
-            background: var(--primary-color);
-            color: var(--secondary-color);
+          transition: background-color 0.5s ease;
+          background: var(--primary-color);
+          color: var(--secondary-color);
 
-            &:hover {
-              background: var(--hover-color);
-            }
-          }
-          &#login {
-            transition: color 0.5s ease;
-            color: var(--primary-color);
-
-            &:hover {
-              color: var(--hover-color);
-            }
+          &:hover {
+            background: var(--hover-color);
           }
         }
       }
@@ -423,11 +423,12 @@ path {
       position: absolute;
       top: 100%;
       left: 50%;
-      border-radius: 20px;
-      background: #f8f8f8;
-      box-shadow: 0px 4px 10px var(--primary-color);
+      margin-top: 1rem;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      background: var(--menu-color);
       opacity: 0.04;
-      transform: translateX(-50%);
+      transform: translateX(0%);
       transform-origin: 50% -50px;
       transition: 0.25s ease transform, 0.25s ease opacity;
       will-change: opacity, transform;
@@ -606,8 +607,13 @@ path {
     width: 100%;
     z-index: 3;
     font-size: 1rem;
-    padding: 0.75rem 0;
+    padding: 1rem 0;
     line-height: inherit;
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
 
     .mobile {
       &-nav {
@@ -616,7 +622,7 @@ path {
         justify-content: space-between;
 
         &__logo {
-          width: 180px;
+          width: auto;
           z-index: 4;
         }
         &__tabs {
@@ -625,6 +631,7 @@ path {
               display: block;
               transition: all 0.5s ease-in-out;
               z-index: 4;
+              direction: rtl;
 
               &.toggle {
                 .line1 {
@@ -679,90 +686,28 @@ path {
               .links {
                 margin-top: 80px;
 
+                .sub-menu-wrapper {
+                  display: none;
+                  font-weight: 200;
+                }
                 li {
-                  .has-sub-menu {
-                    span {
-                      svg {
-                        transition: transform 0.25s ease;
-                        transform: rotate(-90deg);
-                        &.rotate {
-                          transform: rotate(0deg);
-                          -webkit-transform: rotate(0deg);
-                          -ms-transform: rotate(0deg);
-                        }
-                      }
+                  svg {
+                    transition: transform 0.25s ease;
+                    transform: rotate(-90deg);
+
+                    &.rotate {
+                      transform: rotate(0deg);
+                      -webkit-transform: rotate(0deg);
+                      -ms-transform: rotate(0deg);
                     }
-                  }
-                  .sub-menu {
-                    display: none;
-                    font-weight: 200;
-                  }
-                  select {
-                    color: var(--primary-color);
                   }
                   button {
-                    &#sign-up {
-                      transition: background-color 0.5s ease;
-                      background: var(--primary-color);
-                      color: var(--secondary-color);
+                    transition: background-color 0.5s ease;
+                    background: var(--primary-color);
+                    color: var(--secondary-color);
 
-                      &:hover {
-                        background: var(--hover-color);
-                      }
-                    }
-                    &#login {
-                      transition: color 0.5s ease;
-                      color: var(--primary-color);
-
-                      &:hover {
-                        color: var(--hover-color);
-                      }
-                    }
-                  }
-                  .languages {
-                    .wrapper {
-                      &-languages {
-                        z-index: 1;
-
-                        &__list {
-                          &-language {
-                            position: absolute;
-                            top: -13px;
-                            left: 7px;
-
-                            img {
-                              opacity: 0;
-                              visibility: hidden;
-
-                              &:not([selected]) {
-                                margin-top: 0.5rem;
-                              }
-
-                              &[selected] {
-                                opacity: 1;
-                                visibility: visible;
-                              }
-
-                              &.visible {
-                                opacity: 1;
-                                visibility: visible;
-                              }
-
-                              &.order {
-                                &-2 {
-                                  transition: opacity 0.1s ease-in-out;
-                                }
-                                &-3 {
-                                  transition: opacity 0.5s ease-in-out;
-                                }
-                                &-4 {
-                                  transition: opacity 1s ease-in-out;
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
+                    &:hover {
+                      background: var(--hover-color);
                     }
                   }
                 }
@@ -863,13 +808,22 @@ section {
       }
 
       img.mobile-payments {
-				background: #FFFFFF;
-				box-shadow: 0px 2px 9px 5px rgba(110, 178, 208, 0.2);
-				border-radius: 14px;
-			}
+        background: #ffffff;
+        box-shadow: 0px 2px 9px 5px rgba(110, 178, 208, 0.2);
+        border-radius: 14px;
+      }
     }
   }
-
+  .box-wrapper > .box:not(.no-cta) {
+    cursor: pointer;
+  }
+  .box-wrapper > .box:hover:not(.no-zoom) img {
+    transform: scale(1.05);
+    transition: transform 0.4s;
+  }
+  .box-wrapper > .box:not(.no-zoom) img {
+    transition: 0.5s all ease-in-out;
+  }
   &#section-1 {
     padding-top: calc(80px + 2.5rem);
     // padding-bottom: calc(50px + 1rem);
