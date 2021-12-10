@@ -4,7 +4,6 @@ class Header extends HTMLElement {
     }
     connectedCallback() {
       this.innerHTML = `
-        <body>
           <div class="website-fixed-logo">
             <svg
               id="website-logo"

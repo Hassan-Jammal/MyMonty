@@ -227,10 +227,8 @@ path {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    
   }
 }
-
 
 /*---------------------------------------
 -----------------------------------------
@@ -330,7 +328,6 @@ path {
 -----------------------------------------
 ---------------------------------------*/
 
-
 /*---------------------------------------
 -----------------------------------------
 	HEADER
@@ -410,27 +407,13 @@ path {
       }
 
       &__options {
-        select {
-          color: var(--primary-color);
-        }
-
         button {
-          &#sign-up {
-            transition: background-color 0.5s ease;
-            background: var(--primary-color);
-            color: var(--secondary-color);
+          transition: background-color 0.5s ease;
+          background: var(--primary-color);
+          color: var(--secondary-color);
 
-            &:hover {
-              background: var(--hover-color);
-            }
-          }
-          &#login {
-            transition: color 0.5s ease;
-            color: var(--primary-color);
-
-            &:hover {
-              color: var(--hover-color);
-            }
+          &:hover {
+            background: var(--hover-color);
           }
         }
       }
@@ -440,7 +423,7 @@ path {
       position: absolute;
       top: 100%;
       left: 50%;
-      margin-top:1rem;
+      margin-top: 1rem;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
       background: var(--menu-color);
@@ -711,7 +694,7 @@ path {
                   svg {
                     transition: transform 0.25s ease;
                     transform: rotate(-90deg);
-                    
+
                     &.rotate {
                       transform: rotate(0deg);
                       -webkit-transform: rotate(0deg);
@@ -719,22 +702,12 @@ path {
                     }
                   }
                   button {
-                    &#sign-up {
-                      transition: background-color 0.5s ease;
-                      background: var(--primary-color);
-                      color: var(--secondary-color);
+                    transition: background-color 0.5s ease;
+                    background: var(--primary-color);
+                    color: var(--secondary-color);
 
-                      &:hover {
-                        background: var(--hover-color);
-                      }
-                    }
-                    &#login {
-                      transition: color 0.5s ease;
-                      color: var(--primary-color);
-
-                      &:hover {
-                        color: var(--hover-color);
-                      }
+                    &:hover {
+                      background: var(--hover-color);
                     }
                   }
                 }
@@ -835,10 +808,10 @@ section {
       }
 
       img.mobile-payments {
-				background: #FFFFFF;
-				box-shadow: 0px 2px 9px 5px rgba(110, 178, 208, 0.2);
-				border-radius: 14px;
-			}
+        background: #ffffff;
+        box-shadow: 0px 2px 9px 5px rgba(110, 178, 208, 0.2);
+        border-radius: 14px;
+      }
     }
   }
   .box-wrapper > .box:not(.no-cta) {
@@ -846,7 +819,7 @@ section {
   }
   .box-wrapper > .box:hover:not(.no-zoom) img {
     transform: scale(1.05);
-    transition: transform .4s;    
+    transition: transform 0.4s;
   }
   .box-wrapper > .box:not(.no-zoom) img {
     transition: 0.5s all ease-in-out;
