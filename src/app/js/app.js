@@ -76,15 +76,51 @@ let menuBtn = document.querySelector(".menu");
 let navLinks = document.querySelector(".nav-links");
 
 menuBtn.addEventListener("click", () => {
-navLinks.classList.toggle("open");
-menuBtn.classList.toggle("toggle");
+  navLinks.classList.toggle("open");
+  menuBtn.classList.toggle("toggle");
 });
 
-$('.menu-item-has-children').on("click", function(){
-$(this).next('.sub-menu-wrapper').toggle();
-$(this).find('svg').toggleClass('rotate');
-});
 
+
+/* Translation of next func in jQuery*/
+var getNextSibling = function (elem, selector) {
+	// Get the next sibling element
+	var sibling = elem.nextElementSibling;
+
+	// If there's no selector, return the first sibling
+	if (!selector) return sibling;
+
+	// If the sibling matches our selector, use it
+	// If not, jump to the next sibling and continue the loop
+	while (sibling) {
+		if (sibling.matches(selector)) return sibling;
+		sibling = sibling.nextElementSibling
+	}
+
+};
+
+// TODO: Read me [Notification]
+// Loop over each element
+// Add event listener
+// Toggle display (none|block) style of each next sibling element with selector {n}
+// Toggle class rotate of the element
+document.querySelectorAll('.menu-item-has-children').forEach(element => {
+	element.addEventListener('click', function() {
+		const subMenuWrapper = getNextSibling(this, '.sub-menu-wrapper');
+		const style = getComputedStyle(subMenuWrapper);
+
+		if(style.display === 'none') {
+			subMenuWrapper.style.display = "block"
+		} else {
+			subMenuWrapper.style.display = "none";
+		}
+			this.querySelectorAll('svg').forEach(element => {
+		// element
+		element.classList.toggle('rotate')
+	});
+	})
+
+})
 
 /*******************************
  *
