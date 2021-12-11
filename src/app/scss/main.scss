@@ -1108,3 +1108,22 @@ footer {
     }
   }
 }
+
+
+.arrow-shaft {
+  transition: transform .3s;
+}
+
+#accounts_link:hover .arrow-shaft {
+  transform: scaleX(1.2) translateX(-15%);
+  transition: transform .3s;
+}
+
+.s-transitions-hover-shift {
+  transition: width .3s;
+}
+
+#accounts_link:hover .s-transitions-hover-shift {
+  width: 40px;
+  transition: width .3s;
+}
