@@ -35,6 +35,7 @@ toggle[i].onclick = function () {
 
 /*******************************
  *
+<<<<<<< HEAD
  * START Toggle Membership
  *
  *******************************/
@@ -68,6 +69,8 @@ input.addEventListener("change", checkMembership);
 
 /*******************************
  *
+=======
+>>>>>>> 144cfe9... fixes11
  * START Toggle Mobile Menu Animation
  *
  *******************************/

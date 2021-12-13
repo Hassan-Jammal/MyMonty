@@ -131,12 +131,26 @@ button {
   padding: 0;
   line-height: 20px !important;
 }
+<<<<<<< HEAD
 
 option {
   border: 20px;
   color: var(--primary-color);
   background: var(--tertiary-color);
 }
+=======
+p {
+	overflow: hidden;
+}
+/* input colors and hover */
+input {
+	line-height: 1.5;
+
+	&[type="submit"] {
+		color: var(--secondary-color);
+		background: var(--primary-color);
+		transition: background-color 0.5s ease-in-out;
+>>>>>>> 144cfe9... fixes11
 
 /* buttons color and hover */
 input {
@@ -727,6 +741,7 @@ path {
 ---------------------------------------*/
 
 section {
+<<<<<<< HEAD
   .sub-category {
     opacity: 0.7;
     font-weight: 500;
@@ -963,6 +978,286 @@ section {
       }
     }
   }
+=======
+	.sub-category {
+		opacity: 0.7;
+		font-weight: 500;
+	}
+	.category {
+		font-weight: 700;
+		line-height: 4.375rem;
+	}
+	.box-wrapper {
+		border-radius: 20px;
+		overflow: hidden;
+
+		.card-body {
+			padding: 0;
+		}
+
+		@media screen and (min-width: 767.98px) {
+			&--one-half {
+				&:nth-child(odd) {
+					padding-right: 1.875rem;
+				}
+				&:nth-child(even) {
+					padding-left: 1.875rem;
+				}
+			}
+		}
+
+		.card--theme-color {
+			background: var(--secondary-color);
+		}
+
+		.card--tertiary-color-invert {
+			color: var(--secondary-color);
+			background: var(--tertiary-color-invert);
+
+			div {
+				color: var(--special-color);
+			}
+		}
+
+		.box {
+			border-radius: 20px;
+
+			&-content {
+				&:not(.text-black) p {
+					color: var(--paragraph-color);
+				}
+			}
+
+			&-description {
+				&__numbering {
+					width: 32px;
+					height: 32px;
+					padding: 8px;
+					font-size: 1rem;
+					line-height: normal;
+					background: var(--primary-color);
+					color: var(--secondary-color);
+					text-align: center;
+				}
+			}
+
+			&-list {
+				ul {
+					list-style-type: disc;
+					list-style-position: outside;
+					padding-left: 1rem;
+
+					li {
+						font-size: 1rem;
+						opacity: 0.5;
+					}
+				}
+
+				&__values {
+					ul {
+						padding-left: 0;
+						list-style-type: none;
+						-moz-column-count: 2;
+						-moz-column-gap: 20px;
+						-webkit-column-count: 2;
+						-webkit-column-gap: 20px;
+						column-count: 2;
+						column-gap: 20px;
+					}
+				}
+			}
+
+			&--one-whole {
+				.box-content {
+					padding: 3.75rem;
+					padding-right: 0;
+
+					&__reverse {
+						padding-right: 3.75rem;
+						padding-left: 0;
+					}
+
+					&.download-app {
+						padding-top: 6rem;
+						padding-bottom: 6rem;
+					}
+				}
+			}
+
+			&--one-half {
+				padding: 3.75rem;
+			}
+
+			&--one-third {
+				padding: 2rem 1.875rem;
+			}
+
+			&-title {
+				font-size: 2.25rem;
+				font-weight: 700;
+			}
+
+			a {
+				font-size: 1.25rem;
+				color: var(--hover-color);
+			}
+
+			img.mobile-payments {
+				background: #ffffff;
+				box-shadow: 0px 2px 9px 5px rgba(110, 178, 208, 0.2);
+				border-radius: 20px;
+			}
+		}
+	}
+	.box-wrapper > .box:not(.no-cta) {
+		cursor: pointer;
+	}
+	.box-wrapper > .box:hover:not(.no-zoom) img {
+		transform: scale(1.05);
+		transition: transform 0.5s ease-in-out;
+	}
+	.box-wrapper > .box:not(.no-zoom) img {
+		transition: 0.5s all ease-in-out;
+	}
+	&#section-1 {
+		padding-top: calc(80px + 2.5rem);
+		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
+		background: -webkit-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
+		background: linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
+
+		.animate-text {
+			span {
+				display: none;
+				font-weight: 400;
+				&.text-in {
+					display: block;
+					animation: textIn 0.8s ease;
+				}
+				&.text-out {
+					animation: textOut 0.8s ease;
+				}
+			}
+		}
+		@keyframes textIn {
+			0% {
+				transform: translateY(100%);
+			}
+			100% {
+				transform: translateY(0%);
+			}
+		}
+		@keyframes textOut {
+			0% {
+				transform: translateY(0%);
+			}
+			100% {
+				transform: translateY(-100%);
+			}
+		}
+		input {
+			&[type="text"] {
+				border-bottom-right-radius: 50rem;
+				border-top-right-radius: 50rem;
+			}
+		}
+		select {
+			border-bottom-left-radius: 50rem;
+			border-top-left-radius: 50rem;
+		}
+	}
+
+	&#section-4 {
+		#stores {
+			img {
+			}
+		}
+	}
+
+	&#section-5 {
+		.pricing-switcher {
+			text-align: center;
+
+			.fieldset {
+				position: relative;
+				display: inline-block;
+				background: var(--secondary-color);
+				border-radius: 50rem;
+			}
+
+			input[type="radio"] {
+				position: absolute;
+				opacity: 0;
+
+				&:checked + label {
+					color: var(--secondary-color);
+					& + .switch,
+					&:nth-of-type(n) + .switch {
+						-webkit-transform: translateX(130px);
+						-moz-transform: translateX(130px);
+						-ms-transform: translateX(130px);
+						-o-transform: translateX(130px);
+						transform: translateX(130px);
+					}
+				}
+			}
+
+			label {
+				position: relative;
+				width: 130px;
+				float: left;
+				padding: 15px 0;
+				color: var(--primary-color);
+				font-size: 1rem;
+				cursor: pointer;
+				z-index: 1;
+			}
+
+			.switch {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 130px;
+				height: 100%;
+				background-color: var(--primary-color);
+				border-radius: 50rem;
+				-webkit-transition: -webkit-transform 0.5s ease-in-out;
+				-moz-transition: -moz-transform 0.5s ease-in-out;
+				transition: transform 0.5s ease-in-out;
+			}
+		}
+		.no-js .pricing-switcher {
+			display: none;
+		}
+		.box {
+			&-pricing {
+				font-size: 1.25rem;
+				font-weight: 700;
+
+				.yearly {
+					display: none;
+				}
+				.yearly,
+				.monthly {
+					color: var(--hover-color);
+				}
+				.per-membership {
+					font-size: 1rem;
+					opacity: 0.5;
+				}
+			}
+			&-features {
+				font-size: 1rem;
+				line-height: 20px;
+				list-style-position: oustide;
+				padding: 0 0 0 1.25rem;
+				list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 12 12' fill='none'><path d='M4.49859 8.10016L2.74859 6.35016C2.55359 6.15516 2.24359 6.15516 2.04859 6.35016C1.85359 6.54516 1.85359 6.85516 2.04859 7.05016L4.14359 9.14516C4.33859 9.34016 4.65359 9.34016 4.84859 9.14516L10.1486 3.85016C10.3436 3.65516 10.3436 3.34516 10.1486 3.15016C9.95359 2.95516 9.64359 2.95516 9.44859 3.15016L4.49859 8.10016Z' fill='white'/></svg>");
+				html:not([data-theme="dark-mode"]) {
+					list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'><path d='M4.49859 8.10016L2.74859 6.35016C2.55359 6.15516 2.24359 6.15516 2.04859 6.35016C1.85359 6.54516 1.85359 6.85516 2.04859 7.05016L4.14359 9.14516C4.33859 9.34016 4.65359 9.34016 4.84859 9.14516L10.1486 3.85016C10.3436 3.65516 10.3436 3.34516 10.1486 3.15016C9.95359 2.95516 9.64359 2.95516 9.44859 3.15016L4.49859 8.10016Z' fill='black'/></svg>");
+				}
+			}
+		}
+	}
+>>>>>>> 144cfe9... fixes11
 }
 
 @media screen and (max-width: 991.98px) {
@@ -1010,6 +1305,7 @@ section {
 ---------------------------------------*/
 
 footer {
+<<<<<<< HEAD
   color: var(--secondary-color);
   background: var(--primary-color);
   padding: 2.1875rem 0 1.875rem 0;
@@ -1108,3 +1404,103 @@ footer {
     }
   }
 }
+=======
+	color: var(--secondary-color);
+	background: var(--primary-color);
+	padding: 2.1875rem 0 1.875rem 0;
+	font-size: 1rem;
+
+	input[type="submit"] {
+		color: var(--primary-color);
+		background: var(--hover-color);
+
+		&:hover {
+			background: var(--secondary-color);
+		}
+	}
+
+	p,
+	a {
+		opacity: 0.8;
+	}
+
+	.page {
+		font-weight: 700;
+		margin-top: 5rem;
+	}
+
+	ul {
+		font-size: 1rem;
+		margin-top: 1.875rem;
+	}
+
+	hr {
+		background: var(--secondary-color);
+	}
+
+	.sub-footer {
+		.social-media-icons {
+			margin-top: 1.25rem;
+			color: var(--secondary-color);
+		}
+
+		ul {
+			li {
+				margin-top: 1.25rem;
+			}
+		}
+
+		.media-icon {
+			cursor: pointer;
+
+			path {
+				transition: fill 0.5s ease-in-out;
+				fill: var(--secondary-color);
+
+				&:hover {
+					fill: var(--hover-color);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767.98px) {
+	footer {
+		padding: 2.1875rem 0 1.875rem 0;
+
+		.logo {
+			margin-top: 2.5rem;
+		}
+		.page {
+			margin-top: 2.5rem;
+		}
+		ul {
+			margin-top: 0.9375rem;
+		}
+		.sub-footer {
+			ul {
+				margin-top: 1.875rem;
+			}
+		}
+	}
+}
+
+.arrow-shaft {
+	transition: transform 0.3s;
+}
+
+#accounts_link:hover .arrow-shaft {
+	transform: scaleX(1.2) translateX(-15%);
+	transition: transform 0.3s;
+}
+
+.s-transitions-hover-shift {
+	transition: width 0.3s;
+}
+
+#accounts_link:hover .s-transitions-hover-shift {
+	width: 40px;
+	transition: width 0.3s;
+}
+>>>>>>> 144cfe9... fixes11
