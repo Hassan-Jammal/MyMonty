@@ -9,11 +9,10 @@
 		<!-- Remixicon icons library -->
 		<link rel="stylesheet" href="./app/scss/main.scss" />
 		<script type="module" src="./app/js/app.js"></script>
-		<script type="module" src="./app/js/index.js"></script>
+		<script type="module" src="./app/js/who-we-are.js"></script>
 	</head>
 
 	<body>
-
 		<div class="rotating-compass d-none d-md-block">
 			<svg id="website-logo" viewBox="0 0 760 760" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g style="mix-blend-mode: color-burn" opacity="0.03">
@@ -92,7 +91,7 @@
 
 		<header id="header" class="header">
 			<!-- Desktop Header -->
-			<div class="desktop d-none d-lg-block">
+			<div class="desktop d-none d-md-block">
 				<div class="container">
 					<div class="desktop-nav">
 						<div class="desktop-nav__logo">
@@ -325,7 +324,7 @@
 							<section class="desktop-menu__section section-company" data-section="company">
 								<div class="desktop-menu__section-content">
 									<div class="desktop-menu__column">
-										<a class="menu-link" href="who-we-are.html">Who we are<span class="hidden-arrow">&#8250;</span></a>
+										<a class="menu-link" href="">Who we are<span class="hidden-arrow">&#8250;</span></a>
 										<a class="menu-link" href="#">Why MyMonty<span class="hidden-arrow">&#8250;</span></a>
 										<a class="menu-link" href="#">Leadership Team<span class="hidden-arrow">&#8250;</span></a>
 										<a class="menu-link" href="#">Newsroom<span class="hidden-arrow">&#8250;</span></a>
@@ -394,7 +393,7 @@
 			</div>
 
 			<!-- Mobile Header -->
-			<div class="mobile d-block d-lg-none">
+			<div class="mobile d-block d-md-none">
 				<div class="container">
 					<div class="mobile-nav">
 						<div class="mobile-nav__logo">
@@ -809,66 +808,36 @@
 			</div>
 		</header>
 
-		<section id="section-1">
+        <section id="section-2" class="mt-150">
 			<div class="container">
-				<div class="row align-items-center justify-content-center text-center text-md-start">
-					<div class="col-md-5 order-md-1 align-self-end text-end">
-						<img src="./assets/hero--desktop.png" class="img-fluid" alt="MyMonty - Shaping the future of money"/>
-					</div>
-					<div class="col-md-7">
-						<div class="pb-5">
-							<div class="title display-1 mt-4">Shaping The</div>
-							<div>
-								<p class="animate-text">
-									<span class="display-1">Finance Gateway</span>
-									<span class="display-1">Banking Experience</span>
-									<span class="display-1">Future of Money</span>
-								</p>
-							</div>
-							<div>
-								<p class="col-md-8 col-12 mt-4">Enter your phone number, and we'll send you an invite link to download the app.</p>
-								<form action="">
-									<div class="row">
-										<div class="col-md-8 col-12 mt-3">
-											<div class="input-group position-static">
-												<select id="code" class="border-0 p-2 cursor-pointer fs-5 bg-white">
-													<option value="">Code</option>
-													<option value="+961">+961</option>
-													<option value="+962">+962</option>
-													<option value="+963">+963</option>
-												</select>
-												<input type="text" class="form-control position-static border-0 p-2 fs-5" placeholder="Enter your Number"/>
-											</div>
-										</div>
-										<div class="col-md-4 col-12 mt-3">
-											<input type="submit" value="Get MyMonty" class="border-0 rounded-pill py-2 px-4 fs-5"/>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="section-2" class="mt-150">
-			<div class="container">
-				<div class="section-content text-center">
-					<h3 class="sub-category">What we do</h3>
-					<h1 class="category display-1 mt-1">Get Started Today</h1>
-					<p class="category-description mt-2">Start managing your money via mobile app today!</p>
-				</div>
-
 				<!-- One Whole -->
 				<div class="box-wrapper box-wrapper--one-whole mt-5">
 					<div class="box box--one-whole" style="background: #d9edf5">
 						<div class="row g-0 justify-content-center">
-							<div class="box-content order-md-1 order-3 col-md-6 col-12 d-flex flex-column">
-								<h2 class="box-title mt-auto text-black">International Money Transfers made casual</h2>
-								<div class="box-description mt-3 mb-2 text-dark">Send, receive, and request payments worldwide</div>
-								<div class="box-action mt-auto">
-									<a href="">Accounts &#10140;</a>
+							<div class="box-content order-md-1 order-3 col-md-6 col-12 d-flex flex-column justify-content-center">
+								<h2 class="box-title text-black">MyMonty connect you to the financial world</h2>
+								<div class="box-description mt-3 mb-2 text-dark">
+                                    <div class="row mt-3">
+                                        <div class="col-4">
+                                            <div class="box-description__numbering rounded-circle">1</div>
+                                            <div class="mt-1">Open a Bank Account</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="box-description__numbering rounded-circle">2</div>
+                                            <div class="mt-1">Top up your account</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="box-description__numbering rounded-circle">3</div>
+                                            <div class="mt-1">Transact anywhere</div>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="box-list">
+                                    <ul>
+                                        <li>You can request to have your physical card delivered to your home</li>
+                                        <li>Market exchange rates</li>
+                                        <li>No hidden costs</li>
+                                    </ul>
 								</div>
 							</div>
 							<div class="col-md-1 col-12 order-md-2 order-2"></div>
@@ -879,488 +848,100 @@
 					</div>
 				</div>
 
-				<!-- Two Halves -->
-				<div class="row">
-				<div class="box-wrapper box-wrapper--one-half col-md-6 col-12 mt-5 d-flex align-items-stretch">
-					<div class="box box--one-half card-body d-flex flex-column" style="background: #f4e8e8">
-						<div class="box-content">
-							<h2 class="box-title mt-auto text-black">Stay Protected</h2>
-							<p class="box-description my-2 text-dark">Passwordless Biometric Protection</p>
-						</div>
-						<div class="d-flex justify-content-between mt-auto">
-							<a href="#" class="box-action mt-auto align-self-start">Security &#10140;</a>
-							<img src="./assets/lock.png" alt="Lock" width="50%" />
-						</div>
-					</div>
-				</div>
-
-				<div class="box-wrapper box-wrapper--one-half col-md-6 col-12 mt-5 d-flex align-items-stretch">
-					<div class="box box--one-half card-body card--theme-color d-flex flex-column">
-					<div class="box-content">
-						<h2 class="box-title mt-auto">Favorite Payments</h2>
-						<p max="3" class="box-description mt-3 mb-2">
-						Save and manage recent & common payments, make your routine
-						flow easily.
-						</p>
-					</div>
-					<div class="d-flex justify-content-between mt-auto">
-						<a href="#" class="box-action mt-auto align-self-start"
-						>Payments &#10140;</a
-						>
-						<img src="./assets/coins.png" alt="Coins" width="50%" />
-					</div>
-					</div>
-				</div>
-				</div>
-
-				<!-- One Whole -->
+                <!-- One Whole -->
 				<div class="box-wrapper box-wrapper--one-whole mt-5">
-				<div class="box box--one-whole card--theme-color">
-					<div class="row g-0 justify-content-center">
-					<div
-						class="
-						box-content
-						order-md-1 order-3
-						col-md-6 col-12
-						d-flex
-						flex-column
-						justify-content-center
-						"
-					>
-						<h2 class="box-title mt-auto">Request Money Painlessly</h2>
-						<div class="box-description mt-3 mb-2">
-						Skip the hustle and bustle and get straight to the money.
-						Request it from any person globally via link
+					<div class="box box--one-whole" style="background:#FDEDDE;">
+						<div class="row g-0 justify-content-center">
+							
+							<div class="col-md-5 col-12 align-self-end text-center">
+								<img src="./assets/cards.png" alt="" width="60%" />
+							</div>
+							<div class="col-md-1 col-12"></div>
+							<div class="box-content box-content__reverse col-md-6 col-12 d-flex flex-column justify-content-center">
+								<h2 class="box-title text-black">We believe in equal opportunity & banking accessibility for all</h2>
+								<div class="box-description mt-3 mb-2 text-dark">
+                                    <p>Our values define who we are:</p>
+                                </div>
+								<div class="box-list box-list__values">
+                                    <ul>
+										<li><span class="me-1"><img src="./assets/diamond.png" alt=""></span>Integrity</li>
+										<li class="mt-1"><span class="me-1"><img src="./assets/diamond.png" alt=""></span>Teamwork</li>
+										<li class="mt-1"><span class="me-1"><img src="./assets/diamond.png" alt=""></span>Excellence</li>
+										<li class="mt-1"><span class="me-1"><img src="./assets/diamond.png" alt=""></span>Commitment</li>
+										<li class="mt-1"><span class="me-1"><img src="./assets/diamond.png" alt=""></span>Honesty</li>
+										<li class="mt-1"><span class="me-1"><img src="./assets/diamond.png" alt=""></span>Professionalism</li>
+										<li class="mt-1"><span class="me-1"><img src="./assets/diamond.png" alt=""></span>Eco-Friendliness</li>
+									</ul>
+								</div>
+							</div>
 						</div>
-						<div class="box-action mt-auto">
-						<a href="">Payments &#10140;</a>
-						</div>
 					</div>
-					<div class="col-md-1 col-12 order-md-2 order-2"></div>
-					<div class="col-md-5 order-md-3 order-1 col-12 align-self-end">
-						<img src="./assets/location.png" alt="" width="100%" />
-					</div>
-					</div>
-				</div>
 				</div>
 			</div>
 		</section>
 
 		<section id="section-3" class="mt-150">
-		<div class="container">
-			<div class="section-content text-center">
-			<h3 class="sub-category">Free Account</h3>
-			<h1 class="category display-1 mt-1">
-				Global, Digital, and Unrivalled!
-			</h1>
-			<p class="category-description mt-2">
-				Transact anytime, anywhere with confidence!
-			</p>
-			</div>
-
-			<!-- Three Thirds -->
-			<div class="row justify-content-between">
-			<div
-				class="
-				box-wrapper box-wrapper--one-third
-				col-md-4 col-12
-				mt-5
-				d-flex
-				align-items-stretch
-				"
-			>
-				<div
-				class="
-					box box--one-third
-					card-body card--theme-color
-					d-flex
-					flex-column
-				"
-				>
-				<div class="box-content">
-					<h2 class="box-title mt-auto">Transact</h2>
-					<p class="box-description mt-3">
-					whenever, wherever with confidence.
-					</p>
+			<div class="container">
+				<div class="section-content text-center">
+					<h3 class="sub-category"><span style="font-weight: 700;">We offer you the </span><span style="text-decoration: underline;">Fastest experience</span></h3>
 				</div>
+		
+				<!-- Two Halves -->
+				<div class="row">
+					<div class="box-wrapper box-wrapper--one-half col-md-6 col-12 mt-5 d-flex align-items-stretch">
+						<div class="box box--one-half card-body d-flex flex-column justify-content-between" style="background: #eaf2fc">
+							<div class="box-content">
+								<h2 class="box-title mt-auto text-black">Digital</h2>
+								<p class="box-description mt-3 mb-2" style="color:#464646">When we say it’s all digital, we mean it! <span class="fw-bolder fs-3"> Send</span>, <span class="fw-bolder fs-3">Receive</span>, and<span class="fw-bolder fs-3"> Request</span> money in multiple currencies with a single tap, and benefit from a contactless and seamless experience you will enjoy.</p>
+							</div>
+							<img class="mobile-payments" src="./assets/paper-plane.svg" alt="Paper Plane" width="100%" />
+						</div>
+					</div>
+	
+					<div class="box-wrapper box-wrapper--one-half col-md-6 col-12 mt-5 d-flex align-items-stretch">
+						<div class="box box--one-half card-body d-flex flex-column" style="background: #ADBCCF">
+							<div class="box-content">
+								<h2 class="box-title mt-auto text-white">Integration</h2>
+								<p max="3" class="box-description mt-3 mb-2 text-white">A step towards the future; by integrating the latest technologies, you can trust us to deliver a unique user experience, where all your financial needs are in the palm of your hands.</p>
+								<p class="display-1 fw-bolder text-white" style="opacity:0.3">We will never keep you waiting!</p>
+							</div>
+							
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<div
-				class="
-				box-wrapper box-wrapper--one-third
-				col-md-4 col-12
-				mt-5
-				d-flex
-				align-items-stretch
-				"
-			>
-				<div
-				class="
-					box box--one-third
-					card-body card--theme-color
-					d-flex
-					flex-column
-				"
-				>
-				<div class="box-content">
-					<h2 class="box-title mt-auto">Transact</h2>
-					<p max="3" class="box-description mt-3">
-					whenever, wherever with confidence.
-					</p>
-				</div>
-				</div>
-			</div>
-
-			<div
-				class="
-				box-wrapper box-wrapper--one-third
-				col-md-4 col-12
-				mt-5
-				d-flex
-				align-items-stretch
-				"
-			>
-				<div
-				class="
-					box box--one-third
-					card-body card--theme-color
-					d-flex
-					flex-column
-				"
-				>
-				<div class="box-content">
-					<h2 class="box-title mt-auto">Transact</h2>
-					<p max="3" class="box-description mt-3">
-					whenever, wherever with confidence.
-					</p>
-				</div>
-				</div>
-			</div>
-			</div>
-
-			<div class="phone mt-7">
-			<img src="./assets/phone.png" alt="" width="100%" />
-			</div>
-		</div>
 		</section>
 
-		<section id="section-4" class="mt-150">
-		<div class="container">
-			<div class="section-content text-center">
-			<h3 class="sub-category">What are you waiting for?</h3>
-			<h1 class="category display-1 mt-1">Feature-reach</h1>
-			<p class="category-description mt-2">
-				Enjoy dozens of useful money management tools
-			</p>
-			</div>
-
-			<!-- Two Halves -->
-			<div class="row">
-			<div
-				class="
-				box-wrapper box-wrapper--one-half
-				col-md-6 col-12
-				mt-5
-				d-flex
-				align-items-stretch
-				"
-			>
-				<div
-				class="
-					box box--one-half
-					card-body
-					d-flex
-					flex-column
-					justify-content-between
-				"
-				style="background: #d9edf5"
-				>
-				<div class="box-content">
-					<h2 class="box-title mt-auto text-black">
-					Breezy Mobile Payments
-					</h2>
-					<p class="box-description mt-3 mb-2 text-dark">
-					Google Pay and Apple Pay are our friends! We’re the
-					friendliest mobile app
-					</p>
+		<section id="section-3" class="mt-150">
+			<div class="container">
+				<div class="section-content text-center">
+					<h3 class="sub-category"><span style="font-weight: 700;">We offer you the </span><span style="text-decoration: underline;">Fastest experience</span></h3>
 				</div>
-				<div class="row mt-3 mb-2">
-					<div class="col-6">
-					<img
-						class="mobile-payments"
-						src="./assets/apple-pay.png"
-						alt="Apple Pay"
-						width="100%" />
+		
+				<!-- Two Halves -->
+				<div class="row">
+					<div class="box-wrapper box-wrapper--one-half col-md-6 col-12 mt-5 d-flex align-items-stretch">
+						<div class="box box--one-half card-body d-flex flex-column justify-content-between" style="background: #eaf2fc">
+							<div class="box-content">
+								<h2 class="box-title mt-auto text-black">Digital</h2>
+								<p class="box-description mt-3 mb-2" style="color:#464646">When we say it’s all digital, we mean it! <span class="fw-bolder fs-3"> Send</span>, <span class="fw-bolder fs-3">Receive</span>, and<span class="fw-bolder fs-3"> Request</span> money in multiple currencies with a single tap, and benefit from a contactless and seamless experience you will enjoy.</p>
+							</div>
+							<img class="mobile-payments" src="./assets/paper-plane.svg" alt="Paper Plane" width="100%" />
+						</div>
 					</div>
-					<div class="col-6">
-					<img
-						class="mobile-payments"
-						src="./assets/google-pay.png"
-						alt="Google Pay"
-						width="100%" />
+	
+					<div class="box-wrapper box-wrapper--one-half col-md-6 col-12 mt-5 d-flex align-items-stretch">
+						<div class="box box--one-half card-body d-flex flex-column" style="background: #ADBCCF">
+							<div class="box-content">
+								<h2 class="box-title mt-auto text-white">Integration</h2>
+								<p max="3" class="box-description mt-3 mb-2 text-white">A step towards the future; by integrating the latest technologies, you can trust us to deliver a unique user experience, where all your financial needs are in the palm of your hands.</p>
+								<p class="display-1 fw-bolder text-white" style="opacity:0.3">We will never keep you waiting!</p>
+							</div>
+							
+						</div>
 					</div>
 				</div>
-				<a href="#" class="box-action">Payments &#10140;</a>
-				</div>
 			</div>
-
-			<div
-				class="
-				box-wrapper box-wrapper--one-half
-				col-md-6 col-12
-				mt-5
-				d-flex
-				align-items-stretch
-				"
-			>
-				<div
-				class="box box--one-half card-body d-flex flex-column"
-				style="background: #fcf0e2"
-				>
-				<div class="box-content text-black">
-					<h2 class="box-title mt-auto text-black">Friendly Support</h2>
-					<p max="3" class="box-description mt-3 mb-2 text-dark">
-					Our customer support managers are always friendly and ready to
-					answer all of your questions 24/7. They have nothing else to
-					do, so hit them up!
-					</p>
-				</div>
-				<div class="d-flex justify-content-between mt-auto">
-					<a href="#" class="box-action mt-auto align-self-start"
-					>Support &#10140;</a
-					>
-					<img src="./assets/like.svg" alt="" width="50%" />
-				</div>
-				</div>
-			</div>
-			</div>
-
-			<!-- One Whole -->
-			<div class="box-wrapper box-wrapper--one-whole mt-5">
-			<div
-				class="
-				box box--one-whole
-				card--tertiary-color-invert
-				no-zoom no-cta
-				"
-			>
-				<div class="row g-0 justify-content-center">
-				<div
-					class="
-					box-content
-					download-app
-					col-md-7 col-12
-					d-flex
-					flex-column
-					justify-content-center
-					"
-				>
-					<h2 class="box-title">
-					Try it for free and get maximum benefits
-					</h2>
-					<div class="box-description mt-3 mb-2">
-					Register your MyMonty™ account now by downloading the app from
-					Apple Store, Play Store or App Gallery within few minutes
-					</div>
-					<div id="stores" class="row mt-4">
-					<div class="col-lg-3 col-6 mt-2">
-						<img
-						class="ios"
-						src="./assets/ios.png"
-						alt=""
-						width="100%"
-						/>
-					</div>
-					<div class="col-lg-3 col-6 mt-2">
-						<img
-						class="huwawei"
-						src="./assets/huwawei.png"
-						alt=""
-						width="100%"
-						/>
-					</div>
-					<div class="col-lg-3 col-6 mt-2">
-						<img
-						class="android"
-						src="./assets/android.png"
-						alt=""
-						width="100%"
-						/>
-					</div>
-					</div>
-				</div>
-				<div class="col-md-1 col-12"></div>
-				<div
-					class="col-md-4 col-12 text-center align-self-center"
-					style="padding: 1.875rem"
-				>
-					<img src="./assets/qr-code.svg" alt="" width="50%" />
-					<br />
-					Scan the QR <br />
-					to download the app
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
-		</section>
-
-		<section id="section-5" class="mt-150">
-		<div class="container">
-			<div class="section-content text-center">
-			<h3 class="sub-category">What are you waiting for?</h3>
-			<h1 class="category display-1 mt-1">Choose your Plan</h1>
-			</div>
-
-			<div class="pricing-switcher mt-4">
-			<div class="fieldset">
-				<input
-				type="radio"
-				name="membership"
-				value="monthly"
-				id="monthly"
-				checked
-				/>
-				<label for="monthly">Monthly</label>
-				<input type="radio" name="membership" value="yearly" id="yearly" />
-				<label for="yearly">Yearly</label>
-				<span class="switch"></span>
-				<div style="clear: both"></div>
-			</div>
-			</div>
-
-			<!-- Three Thirds -->
-			<div class="row justify-content-between">
-			<div
-				class="
-				box-wrapper box-wrapper--one-third
-				col-md-4 col-12
-				mt-5
-				d-flex
-				align-items-stretch
-				"
-			>
-				<div
-				class="
-					box box--one-third
-					card-body card--theme-color
-					d-flex
-					flex-column
-					justify-content-between
-				"
-				>
-				<div class="box-content">
-					<h2 class="box-title">Starter</h2>
-					<p class="box-pricing mt-2">
-					<span class="monthly">FREE</span>
-					<span class="yearly">FREEEEEE</span>
-					</p>
-					<ul class="box-features mt-4">
-					<li>1 free International Bank Account Number (IBAN)</li>
-					<li class="mt-2">
-						1 free virtual card, €4.99 for any additional virtual cards
-					</li>
-					<li class="mt-2">
-						Upgrade to contactless physical card option
-					</li>
-					</ul>
-				</div>
-				<div class="box-action text-center mt-4">
-					<a href="" class="fs-5">See all features</a>
-					<div class="mt-2">
-						<button class="fs-5 py-1 px-3 rounded-pill border-0">Choose Plan</button>
-					</div>
-				</div>
-				</div>
-			</div>
-
-			<div
-				class="
-				box-wrapper box-wrapper--one-third
-				col-md-4 col-12
-				mt-5
-				d-flex
-				align-items-stretch
-				"
-			>
-				<div
-				class="
-					box box--one-third
-					card-body card--theme-color
-					d-flex
-					flex-column
-					justify-content-between
-				"
-				>
-				<div class="box-content">
-					<h2 class="box-title">Classic</h2>
-					<p max="3" class="box-pricing mt-2">
-					<span class="monthly">$9.77</span>
-					<span class="yearly">$7.77</span>
-					<span class="per-membership fw-light">/month</span>
-					</p>
-					<ul class="box-features mt-4">
-					<li>Individual International Bank Account Number (IBAN)</li>
-					<li class="mt-2">
-						Virtual prepaid debit card, €1 for any additional virtual
-						cards, unlimited number of cards
-					</li>
-					<li class="mt-2">Contactless physical prepaid debit card</li>
-					</ul>
-				</div>
-				<div class="box-action text-center mt-4">
-					<a href="" class="fs-5">See all features</a>
-					<div class="mt-2">
-						<button class="fs-5 py-1 px-3 rounded-pill border-0">Choose Plan</button>
-					</div>
-				</div>
-				</div>
-			</div>
-
-			<div
-				class="
-				box-wrapper box-wrapper--one-third
-				col-md-4 col-12
-				mt-5
-				d-flex
-				align-items-stretch
-				"
-			>
-				<div
-				class="
-					box box--one-third
-					card-body card--theme-color
-					d-flex
-					flex-column
-					justify-content-between
-				"
-				>
-				<div class="box-content">
-					<h2 class="box-title">Premium</h2>
-					<p max="3" class="box-pricing mt-2">
-					<span class="monthly">soon</span>
-					<span class="yearly">sooooon</span>
-					</p>
-					<ul class="box-features mt-4">
-					<li>Multicurrency IBAN</li>
-					<li class="mt-2">Virtual prepaid debit card</li>
-					<li class="mt-2">Contactless metal prepaid debit card</li>
-					<li class="mt-2">
-						Up to 5 joint accounts for family and kids
-					</li>
-					</ul>
-				</div>
-				<div class="box-action text-center mt-4">
-					<a href="" class="fs-5">See all features</a>
-					<div class="mt-2">
-						<button class="fs-5 py-1 px-3 rounded-pill border-0">Choose Plan</button>
-					</div>
-				</div>
-				</div>
-			</div>
-			</div>
-		</div>
 		</section>
 
 		<footer id="footer" class="mt-150">

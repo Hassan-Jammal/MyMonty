@@ -8,13 +8,7 @@
 	GENERAL
 -----------------------------------------
 ---------------------------------------*/
-p {
-	display: -webkit-box;
-	-webkit-line-clamp: 4;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	overflow-wrap: break-word;
-  }
+
 :root {
 	--primary-color: #000000;
 	--secondary-color: #ffffff;
@@ -85,7 +79,9 @@ button {
 	margin: 0;
 	padding: 0;
 }
-
+p {
+	overflow: hidden;
+}
 /* input colors and hover */
 input {
 	line-height: 1.5;
@@ -651,10 +647,54 @@ section {
 				}
 			}
 
+			&-description {
+				&__numbering {
+					width: 32px;
+					height: 32px;
+					padding: 8px;
+					font-size: 1rem;
+					line-height: normal;
+					background: var(--primary-color);
+					color: var(--secondary-color);
+					text-align: center;
+				}
+			}
+
+			&-list {
+				ul {
+					list-style-type: disc;
+					list-style-position: outside;
+					padding-left: 1rem;
+
+					li {
+						font-size: 1rem;
+						opacity: 0.5;
+					}
+				}
+
+				&__values {
+					ul {
+						padding-left: 0;
+						list-style-type: none;
+						-moz-column-count: 2;
+						-moz-column-gap: 20px;
+						-webkit-column-count: 2;
+						-webkit-column-gap: 20px;
+						column-count: 2;
+						column-gap: 20px;
+					}
+				}
+			}
+
 			&--one-whole {
 				.box-content {
 					padding: 3.75rem;
 					padding-right: 0;
+
+					&__reverse {
+						padding-right: 3.75rem;
+						padding-left: 0;
+					}
 
 					&.download-app {
 						padding-top: 6rem;
@@ -710,10 +750,10 @@ section {
 				font-weight: 400;
 				&.text-in {
 					display: block;
-					animation: textIn 0.8s ease-in-out;
+					animation: textIn 0.8s ease;
 				}
 				&.text-out {
-					animation: textOut 0.8s ease-in-out;
+					animation: textOut 0.8s ease;
 				}
 			}
 		}
@@ -964,21 +1004,20 @@ footer {
 	}
 }
 
-
 .arrow-shaft {
-  transition: transform .3s;
+	transition: transform 0.3s;
 }
 
 #accounts_link:hover .arrow-shaft {
-  transform: scaleX(1.2) translateX(-15%);
-  transition: transform .3s;
+	transform: scaleX(1.2) translateX(-15%);
+	transition: transform 0.3s;
 }
 
 .s-transitions-hover-shift {
-  transition: width .3s;
+	transition: width 0.3s;
 }
 
 #accounts_link:hover .s-transitions-hover-shift {
-  width: 40px;
-  transition: width .3s;
+	width: 40px;
+	transition: width 0.3s;
 }
