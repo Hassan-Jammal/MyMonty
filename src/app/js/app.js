@@ -35,42 +35,6 @@ toggle[i].onclick = function () {
 
 /*******************************
  *
-<<<<<<< HEAD
- * START Toggle Membership
- *
- *******************************/
-
-var monthly = document.getElementsByClassName("monthly");
-var yearly = document.getElementsByClassName("yearly");
-
-function checkMembership(event) {
-if (event.target.id == "monthly") {
-	for (var i = 0; i < monthly.length; i++) {
-	monthly[i].style.display = "inline-block";
-	yearly[i].style.display = "none";
-	}
-} else {
-	for (var i = 0; i < yearly.length; i++) {
-	yearly[i].style.display = "inline-block";
-	monthly[i].style.display = "none";
-	}
-}
-}
-
-document.querySelectorAll("input[name='membership']").forEach((input) => {
-input.addEventListener("change", checkMembership);
-});
-
-/*******************************
- *
- * END Toggle Membership
- *
- *******************************/
-
-/*******************************
- *
-=======
->>>>>>> 144cfe9... fixes11
  * START Toggle Mobile Menu Animation
  *
  *******************************/
