@@ -130,8 +130,10 @@ footer {
 }
 
 /* Svgs colors */
-path {
-	fill: var(--primary-color);
+.logo {
+	path {
+		fill: var(--primary-color);
+	}
 }
 
 /* Y Bootstrap Spacing Media Query */
@@ -185,6 +187,10 @@ path {
 	.mb-150 {
 		margin-bottom: 4.6875rem !important;
 	}
+}
+
+.body-wrapper {
+	padding-top: calc(80px + 2.5rem);
 }
 
 .rotating-compass {
@@ -593,6 +599,50 @@ header {
 
 /*---------------------------------------
 -----------------------------------------
+	GENERAL STYLES FOR CARDS INTERACTIONS
+-----------------------------------------
+---------------------------------------*/
+
+.box-wrapper{
+	.box{
+		.arrow-shaft {
+			transition: transform .3s;
+		}
+		.arrow-icon {
+			transition: width .3s;
+		}
+		/* cards hover interaction */
+		&:not(.no-cta){
+			cursor: pointer;
+		}
+		&:not(.no-zoom) {
+			img {
+				transition: transform 0.5s ease-in-out;
+			}
+		}
+		&:hover{
+			&:not(.no-zoom){
+				img{
+					transform: scale(1.05);
+					transition: transform 0.5s ease-in-out;
+				}
+			}
+			.accounts-link {
+				.arrow-shaft {
+					transform: scaleX(1.3) translateX(-19%);
+					transition: transform .3s;
+				}
+				.arrow-icon {
+					width: 42px;
+					transition: width .3s;
+				}
+			}
+		}
+	}
+}
+
+/*---------------------------------------
+-----------------------------------------
 	GENERAL STYLES FOR SECTIONS
 -----------------------------------------
 ---------------------------------------*/
@@ -728,16 +778,7 @@ section {
 			}
 		}
 	}
-	.box-wrapper > .box:not(.no-cta) {
-		cursor: pointer;
-	}
-	.box-wrapper > .box:hover:not(.no-zoom) img {
-		transform: scale(1.05);
-		transition: transform 0.5s ease-in-out;
-	}
-	.box-wrapper > .box:not(.no-zoom) img {
-		transition: 0.5s all ease-in-out;
-	}
+	
 	&#section-1 {
 		padding-top: calc(80px + 2.5rem);
 		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
