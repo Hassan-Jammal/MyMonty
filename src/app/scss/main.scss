@@ -731,13 +731,18 @@ section {
 	.box-wrapper > .box:not(.no-cta) {
 		cursor: pointer;
 	}
-	.box-wrapper > .box:hover:not(.no-zoom) img {
-		transform: scale(1.05);
-		transition: transform 0.5s ease-in-out;
+
+	.zoomable{
+		img{
+			transition: 0.5s all ease-in-out;
+		}
+		&:hover{
+			img{
+				transform: scale(1.05);
+			}
+		}
 	}
-	.box-wrapper > .box:not(.no-zoom) img {
-		transition: 0.5s all ease-in-out;
-	}
+
 	&#section-1 {
 		padding-top: calc(80px + 2.5rem);
 		background: -moz-linear-gradient(180deg, var(--secondary-color) 0%, var(--test-color) 100%);
@@ -874,6 +879,25 @@ section {
 					list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'><path d='M4.49859 8.10016L2.74859 6.35016C2.55359 6.15516 2.24359 6.15516 2.04859 6.35016C1.85359 6.54516 1.85359 6.85516 2.04859 7.05016L4.14359 9.14516C4.33859 9.34016 4.65359 9.34016 4.84859 9.14516L10.1486 3.85016C10.3436 3.65516 10.3436 3.34516 10.1486 3.15016C9.95359 2.95516 9.64359 2.95516 9.44859 3.15016L4.49859 8.10016Z' fill='black'/></svg>");
 				}
 			}
+		}
+	}
+
+	/*************** Who We Are ***************/
+
+	.offices-wrapper{
+		&:nth-child(odd){
+			padding-right: 1.875rem;
+		}
+		&:nth-child(even){
+			padding-left: 1.875rem;
+		}
+
+		&__one-half{
+			border-radius: 20px; 
+			overflow:hidden; 
+		}
+		&__content{
+			padding:3.75rem 3.75rem 0 3.75rem;
 		}
 	}
 }
